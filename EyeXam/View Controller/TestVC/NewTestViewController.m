@@ -116,7 +116,7 @@
 - (void)getNode:(NSNotification *)notification{
     //NSLog(@"get peripheral via notification");
     self.peripheral = [[notification userInfo] objectForKey:@"connectedPeripheral"];
-    NSLog(@"VC peripheral name:%@ ", self.peripheral.name);
+    //NSLog(@"VC peripheral name:%@ ", self.peripheral.name);
     [self.nodeConnectionHelper connectDevice:self.peripheral forUseInBackground:NO];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"peripheral" object:nil];
 }
@@ -314,10 +314,10 @@
     [self.condition lock];
     
     float resultForEye = 0.0;
-    float result[13] = {0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0, 1.2, 1.5, 2.0};
+    float result[14] = {0.1, 0.12, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0, 1.2, 1.5, 2.0};
     //current row number
     int i = 0;
-    int errorCount = 0;//range [0, 12]
+    int errorCount = 0;//range [0, 13]
     BOOL previousJudgement = TRUE;
     
     do{
@@ -325,7 +325,6 @@
         //implement random direction of optotype E
         //int randomDirection =  rand() % 4;
         int randomDirection = rand()%3 + 1;
-        //int randomDirection = 3;
         NSLog(@"current Direction == %d, i = %d", randomDirection, i);
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", i]];
         UIImageOrientation imageOrientation = [self getImageOrientation:randomDirection];
@@ -389,7 +388,7 @@
             previousJudgement = false;
             continue;
         }
-    }while(i>=0&&i<=12);
+    }while(i>=0&&i<=13);
     
     
     if (i == -1) {
