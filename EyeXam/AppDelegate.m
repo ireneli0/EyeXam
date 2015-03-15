@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "PopoverSettingsViewController.h"
+#import "WYPopoverController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UINavigationBar *navBarInPopoverAppearance = [UINavigationBar appearanceWhenContainedIn:[UINavigationController class], [WYPopoverBackgroundView class], nil];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    [shadow setShadowColor:[UIColor clearColor]];
+    [shadow setShadowOffset:CGSizeZero];
+    
+    [navBarInPopoverAppearance setTitleTextAttributes:
+     @{
+       NSForegroundColorAttributeName : [UIColor purpleColor],
+       NSShadowAttributeName: shadow
+       }];
+    
+    WYPopoverBackgroundView *popoverAppearance = [WYPopoverBackgroundView appearance];
+    [popoverAppearance setArrowHeight:40];
+    [popoverAppearance setArrowBase:60];
+    
+    
     return YES;
 }
 

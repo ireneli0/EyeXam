@@ -7,9 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
+		CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */; };
+		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
+		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
+		CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */; };
+		CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB671A9EE06A0000D1DA /* WYPopoverController.m */; };
+		CE64FB6A1A9EE07E0000D1DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE64FB691A9EE07E0000D1DA /* QuartzCore.framework */; };
+		CE64FB6D1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB6C1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m */; };
+		CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D36791AB629FD002DE674 /* ViewController.m */; };
+		CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D367C1AB62A0E002DE674 /* AdjustDistanceViewController.m */; };
+		CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D367E1AB62A0E002DE674 /* NewTestViewController.m */; };
+		CE7D36831AB62A0E002DE674 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D36801AB62A0E002DE674 /* NewUserInformationViewController.m */; };
+		CEA1E2541A9DB07E004E3A9B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2531A9DB07E004E3A9B /* CoreBluetooth.framework */; };
+		CEA1E2561A9DB086004E3A9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2551A9DB086004E3A9B /* CoreLocation.framework */; };
+		CEA1E2581A9DB091004E3A9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2571A9DB091004E3A9B /* libz.dylib */; };
+		CEA1E25A1A9DB09A004E3A9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2591A9DB09A004E3A9B /* libsqlite3.dylib */; };
+		CEA1E25C1A9DB0A3004E3A9B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E25B1A9DB0A3004E3A9B /* GLKit.framework */; };
+		CEA1E25E1A9DB0AA004E3A9B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E25D1A9DB0AA004E3A9B /* Accelerate.framework */; };
+		CEA1E2601A9DB0B2004E3A9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E25F1A9DB0B2004E3A9B /* SystemConfiguration.framework */; };
+		CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF15291A9D961F00CF8AC4 /* RadioButton.m */; };
+		CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152B1A9D962E00CF8AC4 /* checked.png */; };
+		CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152C1A9D962E00CF8AC4 /* checked@2x.png */; };
+		CEDF15311A9D962E00CF8AC4 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152D1A9D962E00CF8AC4 /* unchecked.png */; };
+		CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152E1A9D962E00CF8AC4 /* unchecked@2x.png */; };
+		CEDFCBB11AA436AD008B18D7 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBA41AA436AD008B18D7 /* 0.jpg */; };
+		CEDFCBB21AA436AD008B18D7 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBA51AA436AD008B18D7 /* 1.jpg */; };
+		CEDFCBB31AA436AD008B18D7 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBA61AA436AD008B18D7 /* 2.jpg */; };
+		CEDFCBB41AA436AD008B18D7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBA71AA436AD008B18D7 /* 3.jpg */; };
+		CEDFCBB51AA436AD008B18D7 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBA81AA436AD008B18D7 /* 4.jpg */; };
+		CEDFCBB61AA436AD008B18D7 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBA91AA436AD008B18D7 /* 5.jpg */; };
+		CEDFCBB71AA436AD008B18D7 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBAA1AA436AD008B18D7 /* 6.jpg */; };
+		CEDFCBB81AA436AD008B18D7 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBAB1AA436AD008B18D7 /* 7.jpg */; };
+		CEDFCBB91AA436AD008B18D7 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBAC1AA436AD008B18D7 /* 8.jpg */; };
+		CEDFCBBA1AA436AD008B18D7 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBAD1AA436AD008B18D7 /* 9.jpg */; };
+		CEDFCBBB1AA436AD008B18D7 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBAE1AA436AD008B18D7 /* 10.jpg */; };
+		CEDFCBBC1AA436AD008B18D7 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBAF1AA436AD008B18D7 /* 11.jpg */; };
+		CEDFCBBD1AA436AD008B18D7 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEDFCBB01AA436AD008B18D7 /* 12.jpg */; };
 		CEEC12201A9D8F99008FF50F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEC121F1A9D8F99008FF50F /* main.m */; };
 		CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEC12221A9D8F99008FF50F /* AppDelegate.m */; };
-		CEEC12261A9D8F99008FF50F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEC12251A9D8F99008FF50F /* ViewController.m */; };
 		CEEC12291A9D8F99008FF50F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEC12271A9D8F99008FF50F /* Main.storyboard */; };
 		CEEC122B1A9D8F99008FF50F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEC122A1A9D8F99008FF50F /* Images.xcassets */; };
 		CEEC122E1A9D8F99008FF50F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEC122C1A9D8F99008FF50F /* LaunchScreen.xib */; };
@@ -27,19 +63,65 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CE249BDE1AB626DB00DE63A1 /* CoordinateAxesPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateAxesPoint.h; path = EyeXam/Model/CoordinateAxesPoint.h; sourceTree = "<group>"; };
+		CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoordinateAxesPoint.m; path = EyeXam/Model/CoordinateAxesPoint.m; sourceTree = "<group>"; };
+		CE249BE31AB6282700DE63A1 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = EyeXam/ImageResource/correct.png; sourceTree = "<group>"; };
+		CE249BE41AB6282700DE63A1 /* wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wrong.jpg; path = EyeXam/ImageResource/wrong.jpg; sourceTree = "<group>"; };
+		CE64FB631A9EDA010000D1DA /* PopoverSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopoverSettingsViewController.h; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.h"; sourceTree = "<group>"; };
+		CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopoverSettingsViewController.m; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.m"; sourceTree = "<group>"; };
+		CE64FB661A9EE06A0000D1DA /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYPopoverController.h; path = "EyeXam/View Controller/PopoverViewController/WYPopoverController.h"; sourceTree = "<group>"; };
+		CE64FB671A9EE06A0000D1DA /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WYPopoverController.m; path = "EyeXam/View Controller/PopoverViewController/WYPopoverController.m"; sourceTree = "<group>"; };
+		CE64FB691A9EE07E0000D1DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE64FB6B1A9EE5140000D1DA /* WYStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYStoryboardPopoverSegue.h; path = "EyeXam/View Controller/PopoverViewController/WYStoryboardPopoverSegue.h"; sourceTree = "<group>"; };
+		CE64FB6C1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WYStoryboardPopoverSegue.m; path = "EyeXam/View Controller/PopoverViewController/WYStoryboardPopoverSegue.m"; sourceTree = "<group>"; };
+		CE7D36781AB629FD002DE674 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "EyeXam/View Controller/ViewController.h"; sourceTree = "<group>"; };
+		CE7D36791AB629FD002DE674 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = "EyeXam/View Controller/ViewController.m"; sourceTree = "<group>"; };
+		CE7D367B1AB62A0E002DE674 /* AdjustDistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdjustDistanceViewController.h; path = "EyeXam/View Controller/TestVC/AdjustDistanceViewController.h"; sourceTree = "<group>"; };
+		CE7D367C1AB62A0E002DE674 /* AdjustDistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdjustDistanceViewController.m; path = "EyeXam/View Controller/TestVC/AdjustDistanceViewController.m"; sourceTree = "<group>"; };
+		CE7D367D1AB62A0E002DE674 /* NewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTestViewController.h; path = "EyeXam/View Controller/TestVC/NewTestViewController.h"; sourceTree = "<group>"; };
+		CE7D367E1AB62A0E002DE674 /* NewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTestViewController.m; path = "EyeXam/View Controller/TestVC/NewTestViewController.m"; sourceTree = "<group>"; };
+		CE7D367F1AB62A0E002DE674 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/TestVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
+		CE7D36801AB62A0E002DE674 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/TestVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
+		CEA1E2531A9DB07E004E3A9B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CEA1E2551A9DB086004E3A9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CEA1E2571A9DB091004E3A9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CEA1E2591A9DB09A004E3A9B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CEA1E25B1A9DB0A3004E3A9B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		CEA1E25D1A9DB0AA004E3A9B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		CEA1E25F1A9DB0B2004E3A9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CEDF15281A9D961F00CF8AC4 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioButton.h; path = EyeXam/Model/RadioButton/RadioButton.h; sourceTree = "<group>"; };
+		CEDF15291A9D961F00CF8AC4 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioButton.m; path = EyeXam/Model/RadioButton/RadioButton.m; sourceTree = "<group>"; };
+		CEDF152B1A9D962E00CF8AC4 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checked.png; path = "EyeXam/ImageResource/radio-res-ios/checked.png"; sourceTree = "<group>"; };
+		CEDF152C1A9D962E00CF8AC4 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checked@2x.png"; path = "EyeXam/ImageResource/radio-res-ios/checked@2x.png"; sourceTree = "<group>"; };
+		CEDF152D1A9D962E00CF8AC4 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unchecked.png; path = "EyeXam/ImageResource/radio-res-ios/unchecked.png"; sourceTree = "<group>"; };
+		CEDF152E1A9D962E00CF8AC4 /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "unchecked@2x.png"; path = "EyeXam/ImageResource/radio-res-ios/unchecked@2x.png"; sourceTree = "<group>"; };
+		CEDFCBA41AA436AD008B18D7 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 0.jpg; path = "EyeXam/ImageResource/E charaters/0.jpg"; sourceTree = "<group>"; };
+		CEDFCBA51AA436AD008B18D7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = "EyeXam/ImageResource/E charaters/1.jpg"; sourceTree = "<group>"; };
+		CEDFCBA61AA436AD008B18D7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = "EyeXam/ImageResource/E charaters/2.jpg"; sourceTree = "<group>"; };
+		CEDFCBA71AA436AD008B18D7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = "EyeXam/ImageResource/E charaters/3.jpg"; sourceTree = "<group>"; };
+		CEDFCBA81AA436AD008B18D7 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = "EyeXam/ImageResource/E charaters/4.jpg"; sourceTree = "<group>"; };
+		CEDFCBA91AA436AD008B18D7 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.jpg; path = "EyeXam/ImageResource/E charaters/5.jpg"; sourceTree = "<group>"; };
+		CEDFCBAA1AA436AD008B18D7 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.jpg; path = "EyeXam/ImageResource/E charaters/6.jpg"; sourceTree = "<group>"; };
+		CEDFCBAB1AA436AD008B18D7 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7.jpg; path = "EyeXam/ImageResource/E charaters/7.jpg"; sourceTree = "<group>"; };
+		CEDFCBAC1AA436AD008B18D7 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 8.jpg; path = "EyeXam/ImageResource/E charaters/8.jpg"; sourceTree = "<group>"; };
+		CEDFCBAD1AA436AD008B18D7 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9.jpg; path = "EyeXam/ImageResource/E charaters/9.jpg"; sourceTree = "<group>"; };
+		CEDFCBAE1AA436AD008B18D7 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 10.jpg; path = "EyeXam/ImageResource/E charaters/10.jpg"; sourceTree = "<group>"; };
+		CEDFCBAF1AA436AD008B18D7 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 11.jpg; path = "EyeXam/ImageResource/E charaters/11.jpg"; sourceTree = "<group>"; };
+		CEDFCBB01AA436AD008B18D7 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 12.jpg; path = "EyeXam/ImageResource/E charaters/12.jpg"; sourceTree = "<group>"; };
 		CEEC121A1A9D8F99008FF50F /* EyeXam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeXam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEC121E1A9D8F99008FF50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEC121F1A9D8F99008FF50F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEEC12211A9D8F99008FF50F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEEC12221A9D8F99008FF50F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CEEC12241A9D8F99008FF50F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CEEC12251A9D8F99008FF50F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CEEC12281A9D8F99008FF50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEEC122A1A9D8F99008FF50F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEEC122D1A9D8F99008FF50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEEC12331A9D8F99008FF50F /* EyeXamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeXamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEC12381A9D8F99008FF50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEC12391A9D8F99008FF50F /* EyeXamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EyeXamTests.m; sourceTree = "<group>"; };
+		DDDE810DC3982F04A479DA87 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +129,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE64FB6A1A9EE07E0000D1DA /* QuartzCore.framework in Frameworks */,
+				CEA1E2601A9DB0B2004E3A9B /* SystemConfiguration.framework in Frameworks */,
+				CEA1E25E1A9DB0AA004E3A9B /* Accelerate.framework in Frameworks */,
+				CEA1E25C1A9DB0A3004E3A9B /* GLKit.framework in Frameworks */,
+				CEA1E25A1A9DB09A004E3A9B /* libsqlite3.dylib in Frameworks */,
+				CEA1E2581A9DB091004E3A9B /* libz.dylib in Frameworks */,
+				CEA1E2561A9DB086004E3A9B /* CoreLocation.framework in Frameworks */,
+				CEA1E2541A9DB07E004E3A9B /* CoreBluetooth.framework in Frameworks */,
+				84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +151,132 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6386430147A1AE2853E18F97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDDE810DC3982F04A479DA87 /* Pods.debug.xcconfig */,
+				95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE64FB621A9ED8CF0000D1DA /* PopoverViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE64FB6B1A9EE5140000D1DA /* WYStoryboardPopoverSegue.h */,
+				CE64FB6C1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m */,
+				CE64FB661A9EE06A0000D1DA /* WYPopoverController.h */,
+				CE64FB671A9EE06A0000D1DA /* WYPopoverController.m */,
+				CE64FB631A9EDA010000D1DA /* PopoverSettingsViewController.h */,
+				CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */,
+			);
+			name = PopoverViewController;
+			sourceTree = "<group>";
+		};
+		CE7D36761AB629CC002DE674 /* TestVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D367B1AB62A0E002DE674 /* AdjustDistanceViewController.h */,
+				CE7D367C1AB62A0E002DE674 /* AdjustDistanceViewController.m */,
+				CE7D367D1AB62A0E002DE674 /* NewTestViewController.h */,
+				CE7D367E1AB62A0E002DE674 /* NewTestViewController.m */,
+				CE7D367F1AB62A0E002DE674 /* NewUserInformationViewController.h */,
+				CE7D36801AB62A0E002DE674 /* NewUserInformationViewController.m */,
+			);
+			name = TestVC;
+			sourceTree = "<group>";
+		};
+		CE7D36771AB629D5002DE674 /* UserManagementVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UserManagementVC;
+			sourceTree = "<group>";
+		};
+		CEDF15161A9D94A500CF8AC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE249BDE1AB626DB00DE63A1 /* CoordinateAxesPoint.h */,
+				CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */,
+				CEDF15171A9D94B200CF8AC4 /* RadioButton */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		CEDF15171A9D94B200CF8AC4 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF15281A9D961F00CF8AC4 /* RadioButton.h */,
+				CEDF15291A9D961F00CF8AC4 /* RadioButton.m */,
+			);
+			name = RadioButton;
+			sourceTree = "<group>";
+		};
+		CEDF151E1A9D959100CF8AC4 /* ImageResource */ = {
+			isa = PBXGroup;
+			children = (
+				CE249BE31AB6282700DE63A1 /* correct.png */,
+				CE249BE41AB6282700DE63A1 /* wrong.jpg */,
+				CEDFCB891AA42FF6008B18D7 /* E characters */,
+				CEDF151F1A9D95AA00CF8AC4 /* radio-res-ios */,
+			);
+			name = ImageResource;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		CEDF151F1A9D95AA00CF8AC4 /* radio-res-ios */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF152B1A9D962E00CF8AC4 /* checked.png */,
+				CEDF152C1A9D962E00CF8AC4 /* checked@2x.png */,
+				CEDF152D1A9D962E00CF8AC4 /* unchecked.png */,
+				CEDF152E1A9D962E00CF8AC4 /* unchecked@2x.png */,
+			);
+			name = "radio-res-ios";
+			sourceTree = "<group>";
+		};
+		CEDF15331A9D964500CF8AC4 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D36781AB629FD002DE674 /* ViewController.h */,
+				CE7D36791AB629FD002DE674 /* ViewController.m */,
+				CE7D36761AB629CC002DE674 /* TestVC */,
+				CE7D36771AB629D5002DE674 /* UserManagementVC */,
+				CE64FB621A9ED8CF0000D1DA /* PopoverViewController */,
+			);
+			name = "View Controller";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		CEDFCB891AA42FF6008B18D7 /* E characters */ = {
+			isa = PBXGroup;
+			children = (
+				CEDFCBA41AA436AD008B18D7 /* 0.jpg */,
+				CEDFCBA51AA436AD008B18D7 /* 1.jpg */,
+				CEDFCBA61AA436AD008B18D7 /* 2.jpg */,
+				CEDFCBA71AA436AD008B18D7 /* 3.jpg */,
+				CEDFCBA81AA436AD008B18D7 /* 4.jpg */,
+				CEDFCBA91AA436AD008B18D7 /* 5.jpg */,
+				CEDFCBAA1AA436AD008B18D7 /* 6.jpg */,
+				CEDFCBAB1AA436AD008B18D7 /* 7.jpg */,
+				CEDFCBAC1AA436AD008B18D7 /* 8.jpg */,
+				CEDFCBAD1AA436AD008B18D7 /* 9.jpg */,
+				CEDFCBAE1AA436AD008B18D7 /* 10.jpg */,
+				CEDFCBAF1AA436AD008B18D7 /* 11.jpg */,
+				CEDFCBB01AA436AD008B18D7 /* 12.jpg */,
+			);
+			name = "E characters";
+			sourceTree = "<group>";
+		};
 		CEEC12111A9D8F99008FF50F = {
 			isa = PBXGroup;
 			children = (
 				CEEC121C1A9D8F99008FF50F /* EyeXam */,
 				CEEC12361A9D8F99008FF50F /* EyeXamTests */,
 				CEEC121B1A9D8F99008FF50F /* Products */,
+				6386430147A1AE2853E18F97 /* Pods */,
+				E705B09E56A020AF24C95BC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,11 +294,12 @@
 			children = (
 				CEEC12211A9D8F99008FF50F /* AppDelegate.h */,
 				CEEC12221A9D8F99008FF50F /* AppDelegate.m */,
-				CEEC12241A9D8F99008FF50F /* ViewController.h */,
-				CEEC12251A9D8F99008FF50F /* ViewController.m */,
 				CEEC12271A9D8F99008FF50F /* Main.storyboard */,
 				CEEC122A1A9D8F99008FF50F /* Images.xcassets */,
 				CEEC122C1A9D8F99008FF50F /* LaunchScreen.xib */,
+				CEDF15331A9D964500CF8AC4 /* View Controller */,
+				CEDF15161A9D94A500CF8AC4 /* Model */,
+				CEDF151E1A9D959100CF8AC4 /* ImageResource */,
 				CEEC121D1A9D8F99008FF50F /* Supporting Files */,
 			);
 			path = EyeXam;
@@ -119,6 +331,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E705B09E56A020AF24C95BC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE64FB691A9EE07E0000D1DA /* QuartzCore.framework */,
+				CEA1E25F1A9DB0B2004E3A9B /* SystemConfiguration.framework */,
+				CEA1E25D1A9DB0AA004E3A9B /* Accelerate.framework */,
+				CEA1E25B1A9DB0A3004E3A9B /* GLKit.framework */,
+				CEA1E2591A9DB09A004E3A9B /* libsqlite3.dylib */,
+				CEA1E2571A9DB091004E3A9B /* libz.dylib */,
+				CEA1E2551A9DB086004E3A9B /* CoreLocation.framework */,
+				CEA1E2531A9DB07E004E3A9B /* CoreBluetooth.framework */,
+				546C4310E47E4FD46DB759A6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +354,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEEC123D1A9D8F99008FF50F /* Build configuration list for PBXNativeTarget "EyeXam" */;
 			buildPhases = (
+				56FD13FCF292C639E97EDD3B /* Check Pods Manifest.lock */,
 				CEEC12161A9D8F99008FF50F /* Sources */,
 				CEEC12171A9D8F99008FF50F /* Frameworks */,
 				CEEC12181A9D8F99008FF50F /* Resources */,
+				D58EAAEFBF5D9A9ABDCCF4A5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +429,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDFCBBD1AA436AD008B18D7 /* 12.jpg in Resources */,
+				CEDFCBB71AA436AD008B18D7 /* 6.jpg in Resources */,
+				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
+				CEDFCBB51AA436AD008B18D7 /* 4.jpg in Resources */,
+				CEDFCBB41AA436AD008B18D7 /* 3.jpg in Resources */,
 				CEEC12291A9D8F99008FF50F /* Main.storyboard in Resources */,
+				CEDFCBBC1AA436AD008B18D7 /* 11.jpg in Resources */,
+				CEDFCBBB1AA436AD008B18D7 /* 10.jpg in Resources */,
+				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
+				CEDFCBB31AA436AD008B18D7 /* 2.jpg in Resources */,
+				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
+				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
+				CEDFCBB61AA436AD008B18D7 /* 5.jpg in Resources */,
+				CEDFCBB11AA436AD008B18D7 /* 0.jpg in Resources */,
 				CEEC122E1A9D8F99008FF50F /* LaunchScreen.xib in Resources */,
+				CEDFCBB21AA436AD008B18D7 /* 1.jpg in Resources */,
+				CEDFCBBA1AA436AD008B18D7 /* 9.jpg in Resources */,
+				CEDFCBB91AA436AD008B18D7 /* 8.jpg in Resources */,
+				CEDFCBB81AA436AD008B18D7 /* 7.jpg in Resources */,
+				CEDF15311A9D962E00CF8AC4 /* unchecked.png in Resources */,
 				CEEC122B1A9D8F99008FF50F /* Images.xcassets in Resources */,
+				CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +463,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		56FD13FCF292C639E97EDD3B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D58EAAEFBF5D9A9ABDCCF4A5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEEC12161A9D8F99008FF50F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEC12261A9D8F99008FF50F /* ViewController.m in Sources */,
+				CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */,
+				CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */,
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
+				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,
+				CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */,
+				CE7D36831AB62A0E002DE674 /* NewUserInformationViewController.m in Sources */,
+				CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */,
 				CEEC12201A9D8F99008FF50F /* main.m in Sources */,
+				CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */,
+				CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */,
+				CE64FB6D1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,21 +633,25 @@
 		};
 		CEEC123E1A9D8F99008FF50F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDDE810DC3982F04A479DA87 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EyeXam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		CEEC123F1A9D8F99008FF50F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EyeXam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -414,6 +708,7 @@
 				CEEC123F1A9D8F99008FF50F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEEC12401A9D8F99008FF50F /* Build configuration list for PBXNativeTarget "EyeXamTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +717,7 @@
 				CEEC12421A9D8F99008FF50F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
