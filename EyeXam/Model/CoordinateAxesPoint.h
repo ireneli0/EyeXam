@@ -21,4 +21,5 @@
 @property (nonatomic) float magY;
 @property (nonatomic) float magZ;
 
+
 @end
