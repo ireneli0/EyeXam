@@ -116,7 +116,7 @@
 - (void)getNode:(NSNotification *)notification{
     //NSLog(@"get peripheral via notification");
     self.peripheral = [[notification userInfo] objectForKey:@"connectedPeripheral"];
-    NSLog(@"VC peripheral name:%@ ", self.peripheral.name);
+    //NSLog(@"VC peripheral name:%@ ", self.peripheral.name);
     [self.nodeConnectionHelper connectDevice:self.peripheral forUseInBackground:NO];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"peripheral" object:nil];
 }
