@@ -21,7 +21,7 @@
 		18AEC23D1AB64B0B009B3BE4 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC22F1AB64B0B009B3BE4 /* 11.png */; };
 		18AEC23E1AB64B0B009B3BE4 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2301AB64B0B009B3BE4 /* 12.png */; };
 		18AEC23F1AB64B0B009B3BE4 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2311AB64B0B009B3BE4 /* 13.png */; };
-		18AEC2411AB67DCA009B3BE4 /* SoundResource in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2401AB67DCA009B3BE4 /* SoundResource */; };
+		18AEC2451AB6849F009B3BE4 /* SoundResource in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2441AB6849F009B3BE4 /* SoundResource */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
 		CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
@@ -79,7 +79,7 @@
 		18AEC22F1AB64B0B009B3BE4 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
 		18AEC2301AB64B0B009B3BE4 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		18AEC2311AB64B0B009B3BE4 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
-		18AEC2401AB67DCA009B3BE4 /* SoundResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SoundResource; sourceTree = "<group>"; };
+		18AEC2441AB6849F009B3BE4 /* SoundResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SoundResource; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE249BDE1AB626DB00DE63A1 /* CoordinateAxesPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateAxesPoint.h; path = EyeXam/Model/CoordinateAxesPoint.h; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 				CEEC122C1A9D8F99008FF50F /* LaunchScreen.xib */,
 				CEDF15331A9D964500CF8AC4 /* View Controller */,
 				CEDF15161A9D94A500CF8AC4 /* Model */,
-				18AEC2401AB67DCA009B3BE4 /* SoundResource */,
+				18AEC2441AB6849F009B3BE4 /* SoundResource */,
 				CEDF151E1A9D959100CF8AC4 /* ImageResource */,
 				CEEC121D1A9D8F99008FF50F /* Supporting Files */,
 			);
@@ -441,7 +441,7 @@
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
-				18AEC2411AB67DCA009B3BE4 /* SoundResource in Resources */,
+				18AEC2451AB6849F009B3BE4 /* SoundResource in Resources */,
 				18AEC23A1AB64B0B009B3BE4 /* 8.png in Resources */,
 				18AEC23F1AB64B0B009B3BE4 /* 13.png in Resources */,
 				18AEC2371AB64B0B009B3BE4 /* 5.png in Resources */,
