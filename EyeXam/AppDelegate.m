@@ -10,6 +10,8 @@
 #import "PopoverSettingsViewController.h"
 #import "WYPopoverController.h"
 #import "ViewController.h"
+#import "NewTestViewController.h"
+#import "NewUserInformationViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +21,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    if (self.authenticatedUser){
+        self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    }else{
+        UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"NewUserInformationViewController"];
+        UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+        
+        self.window.rootViewController = navigation;
+    }
     
     UINavigationBar *navBarInPopoverAppearance = [UINavigationBar appearanceWhenContainedIn:[UINavigationController class], [WYPopoverBackgroundView class], nil];
     
@@ -35,10 +46,14 @@
     WYPopoverBackgroundView *popoverAppearance = [WYPopoverBackgroundView appearance];
     [popoverAppearance setArrowHeight:40];
     [popoverAppearance setArrowBase:60];
-    
-    
     return YES;
 }
+
+-(BOOL)authenticatedUser{
+    //wait to be implemented
+    return false;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
