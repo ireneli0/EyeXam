@@ -24,6 +24,22 @@
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
+		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
+		CE2391A11AB67219002A08A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE23919F1AB67219002A08A1 /* Main.storyboard */; };
+		CE2391B01AB68256002A08A1 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A21AB68256002A08A1 /* 0.png */; };
+		CE2391B11AB68256002A08A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A31AB68256002A08A1 /* 1.png */; };
+		CE2391B21AB68256002A08A1 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A41AB68256002A08A1 /* 2.png */; };
+		CE2391B31AB68256002A08A1 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A51AB68256002A08A1 /* 3.png */; };
+		CE2391B41AB68256002A08A1 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A61AB68256002A08A1 /* 4.png */; };
+		CE2391B51AB68256002A08A1 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A71AB68256002A08A1 /* 5.png */; };
+		CE2391B61AB68256002A08A1 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A81AB68256002A08A1 /* 6.png */; };
+		CE2391B71AB68256002A08A1 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391A91AB68256002A08A1 /* 7.png */; };
+		CE2391B81AB68256002A08A1 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391AA1AB68256002A08A1 /* 8.png */; };
+		CE2391B91AB68256002A08A1 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391AB1AB68256002A08A1 /* 9.png */; };
+		CE2391BA1AB68256002A08A1 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391AC1AB68256002A08A1 /* 10.png */; };
+		CE2391BB1AB68256002A08A1 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391AD1AB68256002A08A1 /* 11.png */; };
+		CE2391BC1AB68256002A08A1 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391AE1AB68256002A08A1 /* 12.png */; };
+		CE2391BD1AB68256002A08A1 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2391AF1AB68256002A08A1 /* 13.png */; };
 		CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
 		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
@@ -34,7 +50,6 @@
 		CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D36791AB629FD002DE674 /* ViewController.m */; };
 		CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D367C1AB62A0E002DE674 /* AdjustDistanceViewController.m */; };
 		CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D367E1AB62A0E002DE674 /* NewTestViewController.m */; };
-		CE7D36831AB62A0E002DE674 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D36801AB62A0E002DE674 /* NewUserInformationViewController.m */; };
 		CEA1E2541A9DB07E004E3A9B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2531A9DB07E004E3A9B /* CoreBluetooth.framework */; };
 		CEA1E2561A9DB086004E3A9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2551A9DB086004E3A9B /* CoreLocation.framework */; };
 		CEA1E2581A9DB091004E3A9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2571A9DB091004E3A9B /* libz.dylib */; };
@@ -49,7 +64,6 @@
 		CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152E1A9D962E00CF8AC4 /* unchecked@2x.png */; };
 		CEEC12201A9D8F99008FF50F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEC121F1A9D8F99008FF50F /* main.m */; };
 		CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEC12221A9D8F99008FF50F /* AppDelegate.m */; };
-		CEEC12291A9D8F99008FF50F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEC12271A9D8F99008FF50F /* Main.storyboard */; };
 		CEEC122B1A9D8F99008FF50F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEC122A1A9D8F99008FF50F /* Images.xcassets */; };
 		CEEC122E1A9D8F99008FF50F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEC122C1A9D8F99008FF50F /* LaunchScreen.xib */; };
 		CEEC123A1A9D8F99008FF50F /* EyeXamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEC12391A9D8F99008FF50F /* EyeXamTests.m */; };
@@ -84,6 +98,23 @@
 		18AEC2491AB6985F009B3BE4 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = SoundResource/wrong.wav; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
+		CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
+		CE2391A01AB67219002A08A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE2391A21AB68256002A08A1 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 0.png; path = "EyeXam/ImageResource/E charaters/0.png"; sourceTree = "<group>"; };
+		CE2391A31AB68256002A08A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = "EyeXam/ImageResource/E charaters/1.png"; sourceTree = "<group>"; };
+		CE2391A41AB68256002A08A1 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = "EyeXam/ImageResource/E charaters/2.png"; sourceTree = "<group>"; };
+		CE2391A51AB68256002A08A1 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = "EyeXam/ImageResource/E charaters/3.png"; sourceTree = "<group>"; };
+		CE2391A61AB68256002A08A1 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = "EyeXam/ImageResource/E charaters/4.png"; sourceTree = "<group>"; };
+		CE2391A71AB68256002A08A1 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = "EyeXam/ImageResource/E charaters/5.png"; sourceTree = "<group>"; };
+		CE2391A81AB68256002A08A1 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = "EyeXam/ImageResource/E charaters/6.png"; sourceTree = "<group>"; };
+		CE2391A91AB68256002A08A1 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 7.png; path = "EyeXam/ImageResource/E charaters/7.png"; sourceTree = "<group>"; };
+		CE2391AA1AB68256002A08A1 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = "EyeXam/ImageResource/E charaters/8.png"; sourceTree = "<group>"; };
+		CE2391AB1AB68256002A08A1 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9.png; path = "EyeXam/ImageResource/E charaters/9.png"; sourceTree = "<group>"; };
+		CE2391AC1AB68256002A08A1 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 10.png; path = "EyeXam/ImageResource/E charaters/10.png"; sourceTree = "<group>"; };
+		CE2391AD1AB68256002A08A1 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = "EyeXam/ImageResource/E charaters/11.png"; sourceTree = "<group>"; };
+		CE2391AE1AB68256002A08A1 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12.png; path = "EyeXam/ImageResource/E charaters/12.png"; sourceTree = "<group>"; };
+		CE2391AF1AB68256002A08A1 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 13.png; path = "EyeXam/ImageResource/E charaters/13.png"; sourceTree = "<group>"; };
 		CE249BDE1AB626DB00DE63A1 /* CoordinateAxesPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateAxesPoint.h; path = EyeXam/Model/CoordinateAxesPoint.h; sourceTree = "<group>"; };
 		CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoordinateAxesPoint.m; path = EyeXam/Model/CoordinateAxesPoint.m; sourceTree = "<group>"; };
 		CE249BE31AB6282700DE63A1 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = EyeXam/ImageResource/correct.png; sourceTree = "<group>"; };
@@ -101,8 +132,6 @@
 		CE7D367C1AB62A0E002DE674 /* AdjustDistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdjustDistanceViewController.m; path = "EyeXam/View Controller/TestVC/AdjustDistanceViewController.m"; sourceTree = "<group>"; };
 		CE7D367D1AB62A0E002DE674 /* NewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTestViewController.h; path = "EyeXam/View Controller/TestVC/NewTestViewController.h"; sourceTree = "<group>"; };
 		CE7D367E1AB62A0E002DE674 /* NewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTestViewController.m; path = "EyeXam/View Controller/TestVC/NewTestViewController.m"; sourceTree = "<group>"; };
-		CE7D367F1AB62A0E002DE674 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/TestVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
-		CE7D36801AB62A0E002DE674 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/TestVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
 		CEA1E2531A9DB07E004E3A9B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		CEA1E2551A9DB086004E3A9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CEA1E2571A9DB091004E3A9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -121,7 +150,6 @@
 		CEEC121F1A9D8F99008FF50F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEEC12211A9D8F99008FF50F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEEC12221A9D8F99008FF50F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CEEC12281A9D8F99008FF50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEEC122A1A9D8F99008FF50F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEEC122D1A9D8F99008FF50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEEC12331A9D8F99008FF50F /* EyeXamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeXamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,8 +223,6 @@
 				CE7D367C1AB62A0E002DE674 /* AdjustDistanceViewController.m */,
 				CE7D367D1AB62A0E002DE674 /* NewTestViewController.h */,
 				CE7D367E1AB62A0E002DE674 /* NewTestViewController.m */,
-				CE7D367F1AB62A0E002DE674 /* NewUserInformationViewController.h */,
-				CE7D36801AB62A0E002DE674 /* NewUserInformationViewController.m */,
 			);
 			name = TestVC;
 			sourceTree = "<group>";
@@ -204,6 +230,8 @@
 		CE7D36771AB629D5002DE674 /* UserManagementVC */ = {
 			isa = PBXGroup;
 			children = (
+				CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */,
+				CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */,
 			);
 			name = UserManagementVC;
 			sourceTree = "<group>";
@@ -267,20 +295,20 @@
 		CEDFCB891AA42FF6008B18D7 /* E characters */ = {
 			isa = PBXGroup;
 			children = (
-				18AEC2241AB64B0B009B3BE4 /* 0.png */,
-				18AEC2251AB64B0B009B3BE4 /* 1.png */,
-				18AEC2261AB64B0B009B3BE4 /* 2.png */,
-				18AEC2271AB64B0B009B3BE4 /* 3.png */,
-				18AEC2281AB64B0B009B3BE4 /* 4.png */,
-				18AEC2291AB64B0B009B3BE4 /* 5.png */,
-				18AEC22A1AB64B0B009B3BE4 /* 6.png */,
-				18AEC22B1AB64B0B009B3BE4 /* 7.png */,
-				18AEC22C1AB64B0B009B3BE4 /* 8.png */,
-				18AEC22D1AB64B0B009B3BE4 /* 9.png */,
-				18AEC22E1AB64B0B009B3BE4 /* 10.png */,
-				18AEC22F1AB64B0B009B3BE4 /* 11.png */,
-				18AEC2301AB64B0B009B3BE4 /* 12.png */,
-				18AEC2311AB64B0B009B3BE4 /* 13.png */,
+				CE2391A21AB68256002A08A1 /* 0.png */,
+				CE2391A31AB68256002A08A1 /* 1.png */,
+				CE2391A41AB68256002A08A1 /* 2.png */,
+				CE2391A51AB68256002A08A1 /* 3.png */,
+				CE2391A61AB68256002A08A1 /* 4.png */,
+				CE2391A71AB68256002A08A1 /* 5.png */,
+				CE2391A81AB68256002A08A1 /* 6.png */,
+				CE2391A91AB68256002A08A1 /* 7.png */,
+				CE2391AA1AB68256002A08A1 /* 8.png */,
+				CE2391AB1AB68256002A08A1 /* 9.png */,
+				CE2391AC1AB68256002A08A1 /* 10.png */,
+				CE2391AD1AB68256002A08A1 /* 11.png */,
+				CE2391AE1AB68256002A08A1 /* 12.png */,
+				CE2391AF1AB68256002A08A1 /* 13.png */,
 			);
 			name = "E characters";
 			sourceTree = "<group>";
@@ -311,7 +339,6 @@
 				18AEC2471AB6982A009B3BE4 /* SoundResource */,
 				CEEC12211A9D8F99008FF50F /* AppDelegate.h */,
 				CEEC12221A9D8F99008FF50F /* AppDelegate.m */,
-				CEEC12271A9D8F99008FF50F /* Main.storyboard */,
 				CEEC122A1A9D8F99008FF50F /* Images.xcassets */,
 				CEEC122C1A9D8F99008FF50F /* LaunchScreen.xib */,
 				CEDF15331A9D964500CF8AC4 /* View Controller */,
@@ -446,9 +473,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18AEC2331AB64B0B009B3BE4 /* 1.png in Resources */,
+				CE2391B11AB68256002A08A1 /* 1.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
-				CEEC12291A9D8F99008FF50F /* Main.storyboard in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
@@ -466,10 +492,10 @@
 				18AEC2321AB64B0B009B3BE4 /* 0.png in Resources */,
 				18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */,
 				CEDF15311A9D962E00CF8AC4 /* unchecked.png in Resources */,
-				18AEC23B1AB64B0B009B3BE4 /* 9.png in Resources */,
+				CE2391B91AB68256002A08A1 /* 9.png in Resources */,
 				CEEC122B1A9D8F99008FF50F /* Images.xcassets in Resources */,
-				18AEC2381AB64B0B009B3BE4 /* 6.png in Resources */,
-				18AEC23D1AB64B0B009B3BE4 /* 11.png in Resources */,
+				CE2391B61AB68256002A08A1 /* 6.png in Resources */,
+				CE2391BB1AB68256002A08A1 /* 11.png in Resources */,
 				CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +552,7 @@
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
 				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,
 				CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */,
-				CE7D36831AB62A0E002DE674 /* NewUserInformationViewController.m in Sources */,
+				CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */,
 				CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */,
 				CEEC12201A9D8F99008FF50F /* main.m in Sources */,
 				CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */,
@@ -554,10 +580,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CEEC12271A9D8F99008FF50F /* Main.storyboard */ = {
+		CE23919F1AB67219002A08A1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CEEC12281A9D8F99008FF50F /* Base */,
+				CE2391A01AB67219002A08A1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

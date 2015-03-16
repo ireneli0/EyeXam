@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad{
     self.title = @"Adjust Distance";
+    self.distanceSlider.value = 0.0;
 }
 
 

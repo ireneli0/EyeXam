@@ -98,11 +98,11 @@
                                                  name:@"alreadyGotUserDirection"
                                                object:nil];
     self.title = @"New Test";
-    self.accelorometerLabel.hidden = YES;
-    self.gyroLabel.hidden = YES;
-    self.magnetometerLabel.hidden = YES;
-    self.x1Label.hidden = YES;
-    self.x2Label.hidden = YES;
+//    self.accelorometerLabel.hidden = YES;
+//    self.gyroLabel.hidden = YES;
+//    self.magnetometerLabel.hidden = YES;
+//    self.x1Label.hidden = YES;
+//    self.x2Label.hidden = YES;
     
     //initialize the sounds
     //correct sound
@@ -335,12 +335,14 @@
     int i = 0;
     int errorCount = 0;//range [0, 13]
     BOOL previousJudgement = TRUE;
+    int randomDirection;
     
     do{
         [self.spinner startAnimating];
         //implement random direction of optotype E
-        //int randomDirection =  rand() % 4;
-        int randomDirection = rand()%3 + 1;
+        //randomDirection =  rand() % 4;
+        randomDirection = rand()%3 + 1;
+        //randomDirection = 2;
         NSLog(@"current Direction == %d, i = %d", randomDirection, i);
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", i]];
         UIImageOrientation imageOrientation = [self getImageOrientation:randomDirection];

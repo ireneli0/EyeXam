@@ -12,8 +12,8 @@
 
 @interface NewUserInformationViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet RadioButton *wearGlassesRadioButton;
-
 @property (weak, nonatomic) IBOutlet RadioButton *eyeTypeRadioButton;
 
 @end
