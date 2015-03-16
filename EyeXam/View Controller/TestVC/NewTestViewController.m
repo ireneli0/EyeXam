@@ -9,6 +9,7 @@
 #import "NewTestViewController.h"
 #import "PopoverSettingsViewController.h"
 #import "CoordinateAxesPoint.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface NewTestViewController ()<NodeDeviceDelegate,VTNodeConnectionHelperDelegate,WYPopoverControllerDelegate>{
     WYPopoverController *settingsPopoverController;
@@ -64,6 +65,11 @@
 //value for user input
 @property (nonatomic) int userInputDirection;
 
+//sounds
+@property (nonatomic) SystemSoundID correct_soundID;
+@property (nonatomic) SystemSoundID wrong_soundID;
+
+
 //result
 @property (nonatomic) float resultForRightEye;
 @property (nonatomic) float resultForLeftEye;
@@ -97,6 +103,16 @@
 //    self.magnetometerLabel.hidden = YES;
 //    self.x1Label.hidden = YES;
 //    self.x2Label.hidden = YES;
+    
+    //initialize the sounds
+    //correct sound
+    NSString *correct_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/correct" ofType:@"wav"];
+    NSURL *correct_soundURL = [NSURL fileURLWithPath:correct_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)correct_soundURL,&_correct_soundID);
+    //wrong sound
+    NSString *wrong_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/wrong" ofType:@"wav"];
+    NSURL *wrong_soundURL = [NSURL fileURLWithPath:wrong_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)wrong_soundURL,&_wrong_soundID);
     
 }
 - (void)viewDidDisappear:(BOOL)animated{
@@ -362,6 +378,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImage *correctImage = [UIImage imageNamed:@"correct.png"];
                 [self.eCharacterImageView setImage:correctImage];
+                AudioServicesPlaySystemSound(_correct_soundID);
                 [self.spinner stopAnimating];
             });
             //wait for the indicating image loading
@@ -380,9 +397,10 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImage *wrongImage = [UIImage imageNamed:@"wrong.jpg"];
                 [self.eCharacterImageView setImage:wrongImage];
+                AudioServicesPlaySystemSound(_wrong_soundID);
                 [self.spinner stopAnimating];
             });
-            [NSThread sleepForTimeInterval:0.4];
+            [NSThread sleepForTimeInterval:0.8];
             
             //Wrong judgement
             i--;

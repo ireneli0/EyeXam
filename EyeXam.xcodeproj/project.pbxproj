@@ -302,6 +302,7 @@
 				CEEC122C1A9D8F99008FF50F /* LaunchScreen.xib */,
 				CEDF15331A9D964500CF8AC4 /* View Controller */,
 				CEDF15161A9D94A500CF8AC4 /* Model */,
+				18AEC2441AB6849F009B3BE4 /* SoundResource */,
 				CEDF151E1A9D959100CF8AC4 /* ImageResource */,
 				CEEC121D1A9D8F99008FF50F /* Supporting Files */,
 			);
