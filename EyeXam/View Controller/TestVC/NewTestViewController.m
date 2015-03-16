@@ -382,7 +382,7 @@
                 [self.spinner stopAnimating];
             });
             //wait for the indicating image loading
-            [NSThread sleepForTimeInterval:0.4];
+            [NSThread sleepForTimeInterval:0.8];
             if (errorCount == 0 && previousJudgement == true) {
                 i++;
                 continue;
@@ -400,7 +400,7 @@
                 AudioServicesPlaySystemSound(_wrong_soundID);
                 [self.spinner stopAnimating];
             });
-            [NSThread sleepForTimeInterval:0.8];
+            [NSThread sleepForTimeInterval:0.5];
             
             //Wrong judgement
             i--;
