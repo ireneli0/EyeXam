@@ -18,6 +18,8 @@
 		CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */; };
 		CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */; };
 		CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */ = {isa = PBXBuildFile; fileRef = CE449C641AB7E6C00019CBF3 /* EYE.png */; };
+		CE449C6B1AB7FEB60019CBF3 /* ChangeUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C6A1AB7FEB60019CBF3 /* ChangeUserViewController.m */; };
+		CE449C701AB802530019CBF3 /* linechart.png in Resources */ = {isa = PBXBuildFile; fileRef = CE449C6F1AB802530019CBF3 /* linechart.png */; };
 		CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */; };
 		CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB671A9EE06A0000D1DA /* WYPopoverController.m */; };
 		CE64FB6A1A9EE07E0000D1DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE64FB691A9EE07E0000D1DA /* QuartzCore.framework */; };
@@ -84,6 +86,9 @@
 		CE449C611AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineChartResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.h"; sourceTree = "<group>"; };
 		CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineChartResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.m"; sourceTree = "<group>"; };
 		CE449C641AB7E6C00019CBF3 /* EYE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EYE.png; path = EyeXam/ImageResource/EYE.png; sourceTree = "<group>"; };
+		CE449C691AB7FEB60019CBF3 /* ChangeUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeUserViewController.h; path = "EyeXam/View Controller/UserManagementVC/ChangeUserViewController.h"; sourceTree = "<group>"; };
+		CE449C6A1AB7FEB60019CBF3 /* ChangeUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeUserViewController.m; path = "EyeXam/View Controller/UserManagementVC/ChangeUserViewController.m"; sourceTree = "<group>"; };
+		CE449C6F1AB802530019CBF3 /* linechart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linechart.png; path = EyeXam/ImageResource/linechart.png; sourceTree = "<group>"; };
 		CE64FB631A9EDA010000D1DA /* PopoverSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopoverSettingsViewController.h; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.h"; sourceTree = "<group>"; };
 		CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopoverSettingsViewController.m; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.m"; sourceTree = "<group>"; };
 		CE64FB661A9EE06A0000D1DA /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYPopoverController.h; path = "EyeXam/View Controller/PopoverViewController/WYPopoverController.h"; sourceTree = "<group>"; };
@@ -245,6 +250,8 @@
 				CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */,
 				CE449C611AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.h */,
 				CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */,
+				CE449C691AB7FEB60019CBF3 /* ChangeUserViewController.h */,
+				CE449C6A1AB7FEB60019CBF3 /* ChangeUserViewController.m */,
 			);
 			name = UserManagementVC;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 				CE249BE31AB6282700DE63A1 /* correct.png */,
 				CE249BE41AB6282700DE63A1 /* wrong.jpg */,
 				CE449C641AB7E6C00019CBF3 /* EYE.png */,
+				CE449C6F1AB802530019CBF3 /* linechart.png */,
 				CEDF151F1A9D95AA00CF8AC4 /* radio-res-ios */,
 			);
 			name = ImageResource;
@@ -466,6 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				CEC7121B1AB6AA8900B1751E /* 1.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
@@ -542,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */,
+				CE449C6B1AB7FEB60019CBF3 /* ChangeUserViewController.m in Sources */,
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
 				18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */,
 				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,

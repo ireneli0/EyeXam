@@ -10,6 +10,7 @@
 #import "AdjustDistanceViewController.h"
 #import "ResultsDisplayViewController.h"
 #import "LineChartResultsDisplayViewController.h"
+#import "ChangeUserViewController.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSString *userName;
@@ -34,11 +35,21 @@
             UITabBarController *tabar=segue.destinationViewController;
             ResultsDisplayViewController *rdVC=[tabar.viewControllers objectAtIndex:0];
             rdVC.userName = self.userName;
-    
+            
             LineChartResultsDisplayViewController *lcVC = [tabar.viewControllers objectAtIndex:1];
             lcVC.userName = self.userName;
         }
+    }else if ([segue.identifier isEqualToString:@"ChangeUser"]){
+        if ([segue.destinationViewController isKindOfClass:[ChangeUserViewController class]]) {
+            ChangeUserViewController *cuVC = (ChangeUserViewController*)segue.destinationViewController;
+            cuVC.userName = self.userName;
+        }
+
     }
+    
+    
+    
+    
     
 }
 
