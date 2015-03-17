@@ -33,7 +33,7 @@ static sqlite3_stmt *statement = nil;
                     [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
-    //create table if it does not exist
+    //create database if it does not exist
     if ([filemgr fileExistsAtPath: documentPath] == NO){
       if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
           const char *createUsers_sql = "CREATE TABLE IF NOT EXISTS Users(userName TEXT,wearGlasses TEXT,eyesightType TEXT,PRIMARY KEY(userName))";
