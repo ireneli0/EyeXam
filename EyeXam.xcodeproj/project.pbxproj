@@ -12,6 +12,8 @@
 		18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */; };
 		18B5A9FF1AB8119400276A99 /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A9FE1AB8119400276A99 /* userInfo.m */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
+		CE0839721AB8C5030036BAAB /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839701AB8C5030036BAAB /* Add.png */; };
+		CE0839731AB8C5030036BAAB /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839711AB8C5030036BAAB /* Delete.png */; };
 		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
 		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
@@ -79,6 +81,8 @@
 		18B5A9FE1AB8119400276A99 /* userInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = userInfo.m; path = "EyeXam/View Controller/userInfo.m"; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CE0839701AB8C5030036BAAB /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Add.png; path = EyeXam/ImageResource/Add.png; sourceTree = "<group>"; };
+		CE0839711AB8C5030036BAAB /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Delete.png; path = EyeXam/ImageResource/Delete.png; sourceTree = "<group>"; };
 		CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
 		CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
 		CE249BE31AB6282700DE63A1 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = EyeXam/ImageResource/correct.png; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 		CEDF151E1A9D959100CF8AC4 /* ImageResource */ = {
 			isa = PBXGroup;
 			children = (
+				CE0839701AB8C5030036BAAB /* Add.png */,
+				CE0839711AB8C5030036BAAB /* Delete.png */,
 				18AEC2891AB69D60009B3BE4 /* E characters */,
 				CE249BE31AB6282700DE63A1 /* correct.png */,
 				CE249BE41AB6282700DE63A1 /* wrong.jpg */,
@@ -482,6 +488,7 @@
 				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				CEC7121B1AB6AA8900B1751E /* 1.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
+				CE0839721AB8C5030036BAAB /* Add.png in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
 				CE449C5A1AB7DE220019CBF3 /* Main.storyboard in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
@@ -498,6 +505,7 @@
 				CEC7121E1AB6AA8900B1751E /* 4.png in Resources */,
 				CEC7121D1AB6AA8900B1751E /* 3.png in Resources */,
 				CEC7121A1AB6AA8900B1751E /* 0.png in Resources */,
+				CE0839731AB8C5030036BAAB /* Delete.png in Resources */,
 				CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */,
 				CEDF15311A9D962E00CF8AC4 /* unchecked.png in Resources */,
 				CEC712231AB6AA8900B1751E /* 9.png in Resources */,
