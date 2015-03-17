@@ -46,9 +46,14 @@
         //write user info into database
         self.user = self.userNameTextField.text;
         
-        if([[DatabaseInstance getSharedInstance]createTables]&&
-           [[DatabaseInstance getSharedInstance]addNewUser:@"Users" withName:self.user withGlasses:self.wearGlasses withEyetype:self.eyesightType]){
-            NSLog(@"create success");
+        if(![[DatabaseInstance getSharedInstance]checkNewUserisExists:self.user]){
+          if([[DatabaseInstance getSharedInstance]createTables]&&
+               [[DatabaseInstance getSharedInstance]addNewUser:@"Users" withName:self.user withGlasses:self.wearGlasses withEyetype:self.eyesightType]){
+              NSLog(@"create success");
+        }
+        }
+        else{
+            //user name has already exists
         }
         
         //post username string through NSUserDefaults

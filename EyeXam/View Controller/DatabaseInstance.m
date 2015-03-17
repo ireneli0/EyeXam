@@ -30,14 +30,14 @@ static sqlite3_stmt *statement = nil;
     BOOL isSuccess = YES;
     char *errMsg;
     //database initialization
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    documentPath = [[NSString alloc] initWithString:
-                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
-    NSFileManager *filemgr = [NSFileManager defaultManager];
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    documentPath = [[NSString alloc] initWithString:
+//                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
+
     
     //create database if it does not exist
-    if ([filemgr fileExistsAtPath: documentPath] == NO){
+
       if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
           const char *createUsers_sql = "CREATE TABLE IF NOT EXISTS Users(userName TEXT,wearGlasses TEXT,eyesightType TEXT,PRIMARY KEY(userName))";
           
@@ -61,28 +61,36 @@ static sqlite3_stmt *statement = nil;
         isSuccess = NO;
         NSAssert(0,@"Fail to open database");
       }
-    }
+    
     return isSuccess;
 }
 
 -(BOOL)checkNewUserisExists:(NSString *)user{
-    BOOL isExists = TRUE;
+    BOOL isExists = FALSE;
     
+    //database initialization
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentPath = [[NSString alloc] initWithString:
+                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+
+    if ([filemgr fileExistsAtPath: documentPath] == YES){
     if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
       NSString *findUser_sql = [NSString stringWithFormat:
                                 @"select * from Users where userName='%@'",user];
       const char *findUser_stmt = [findUser_sql UTF8String];
+      int count;
         
       if (sqlite3_prepare_v2(database, findUser_stmt, -1, &statement, NULL) == SQLITE_OK){
-          if()
-              
-            int sqlite3_column_count(sqlite3_stmt *pStmt);
-          
+            count =  sqlite3_column_count(statement);
+          if(count !=0){
+              isExists = TRUE;
+          }
       }
-        
     }
-
-    return isExists;
+}
+   return isExists;
     
 }
 
