@@ -10,6 +10,8 @@
 
 @interface ResultsDisplayViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UITableView *nakedEyeResultDisplayTable;
+@property (weak, nonatomic) IBOutlet UITableView *withGlassesResultDisplayTable;
 
 @end
 
@@ -19,22 +21,40 @@
     [super viewDidLoad];
     [self.tabBarController setTitle:@"Results Display"];
     self.userNameLabel.text = self.userName;
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(tableView.tag ==0){
+        //return naked eye result records count
+    }else if (tableView.tag ==1){
+        //return with glasses eye result records count
+    }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return 0;
 }
-*/
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+     UITableViewCell *cell = nil;
+     if(tableView.tag ==0){
+         //return naked eye result cell
+         cell = [tableView dequeueReusableCellWithIdentifier:@"nakedEyeResultsTableCell" forIndexPath:indexPath];
+
+     }else if (tableView.tag ==1){//
+         //return with glasses eye result cell
+         cell = [tableView dequeueReusableCellWithIdentifier:@"withGlassesResultsTableCell" forIndexPath:indexPath];
+
+
+     }
+     return cell;
+}
+
 
 @end

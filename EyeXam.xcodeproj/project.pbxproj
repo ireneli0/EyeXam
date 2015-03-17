@@ -17,6 +17,7 @@
 		CE449C5A1AB7DE220019CBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE449C581AB7DE220019CBF3 /* Main.storyboard */; };
 		CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */; };
 		CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */; };
+		CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */ = {isa = PBXBuildFile; fileRef = CE449C641AB7E6C00019CBF3 /* EYE.png */; };
 		CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */; };
 		CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB671A9EE06A0000D1DA /* WYPopoverController.m */; };
 		CE64FB6A1A9EE07E0000D1DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE64FB691A9EE07E0000D1DA /* QuartzCore.framework */; };
@@ -82,6 +83,7 @@
 		CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/ResultsDisplayViewController.m"; sourceTree = "<group>"; };
 		CE449C611AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineChartResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.h"; sourceTree = "<group>"; };
 		CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineChartResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.m"; sourceTree = "<group>"; };
+		CE449C641AB7E6C00019CBF3 /* EYE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EYE.png; path = EyeXam/ImageResource/EYE.png; sourceTree = "<group>"; };
 		CE64FB631A9EDA010000D1DA /* PopoverSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopoverSettingsViewController.h; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.h"; sourceTree = "<group>"; };
 		CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopoverSettingsViewController.m; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.m"; sourceTree = "<group>"; };
 		CE64FB661A9EE06A0000D1DA /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYPopoverController.h; path = "EyeXam/View Controller/PopoverViewController/WYPopoverController.h"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				18AEC2891AB69D60009B3BE4 /* E characters */,
 				CE249BE31AB6282700DE63A1 /* correct.png */,
 				CE249BE41AB6282700DE63A1 /* wrong.jpg */,
+				CE449C641AB7E6C00019CBF3 /* EYE.png */,
 				CEDF151F1A9D95AA00CF8AC4 /* radio-res-ios */,
 			);
 			name = ImageResource;
@@ -481,6 +484,7 @@
 				CEC7121E1AB6AA8900B1751E /* 4.png in Resources */,
 				CEC7121D1AB6AA8900B1751E /* 3.png in Resources */,
 				CEC7121A1AB6AA8900B1751E /* 0.png in Resources */,
+				CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */,
 				CEDF15311A9D962E00CF8AC4 /* unchecked.png in Resources */,
 				CEC712231AB6AA8900B1751E /* 9.png in Resources */,
 				CEEC122B1A9D8F99008FF50F /* Images.xcassets in Resources */,

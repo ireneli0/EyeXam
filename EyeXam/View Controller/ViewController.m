@@ -19,8 +19,6 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"EyeXam";
-
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -36,7 +34,7 @@
             UITabBarController *tabar=segue.destinationViewController;
             ResultsDisplayViewController *rdVC=[tabar.viewControllers objectAtIndex:0];
             rdVC.userName = self.userName;
-            
+    
             LineChartResultsDisplayViewController *lcVC = [tabar.viewControllers objectAtIndex:1];
             lcVC.userName = self.userName;
         }
