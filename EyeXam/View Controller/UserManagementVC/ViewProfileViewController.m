@@ -7,6 +7,7 @@
 //
 
 #import "ViewProfileViewController.h"
+#import "DatabaseInstance.h"
 
 @interface ViewProfileViewController ()
 
