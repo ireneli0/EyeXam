@@ -26,6 +26,7 @@
 
 - (IBAction)onWearGlassesRadioButton:(RadioButton *)sender {
     NSLog(@"wear glasses selected: %@", sender.titleLabel.text);
+    self.wearGlasses = sender.titleLabel.text;
 }
 - (IBAction)changeDistanceSlider:(id)sender {
     float distanceValue = self.distanceSlider.value * 3 +2;
@@ -39,6 +40,7 @@ if ([segue.identifier isEqualToString:@"DoneAdjustingDistance"]){
         NewTestViewController *ntVC = (NewTestViewController*)segue.destinationViewController;
         ntVC.userName = self.userName;
         ntVC.meterValue = self.distanceSlider.value * 3 +2;
+        ntVC.wearGlasses = self.wearGlasses;
     }
     
 }

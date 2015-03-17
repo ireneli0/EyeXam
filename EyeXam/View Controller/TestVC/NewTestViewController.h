@@ -29,5 +29,6 @@
 //passed value through segue
 @property (strong, nonatomic) NSString *userName;
 @property (nonatomic)  float meterValue;
+@property (strong, nonatomic) NSString * wearGlasses;
 
 @end
