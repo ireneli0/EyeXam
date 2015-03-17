@@ -471,7 +471,7 @@
         case 1:
             if (buttonIndex == 0) {
                 
-                NSString *testMeters = [NSString stringWithFormat:@"%f", self.meterValue];
+                NSString *testMeters = [NSString stringWithFormat:@"%.1f", self.meterValue];
                 NSString *lefteyeResult = [NSString stringWithFormat:@"%f", self.resultForLeftEye];
                 NSString *righteyeResult = [NSString stringWithFormat:@"%f", self.resultForRightEye];
                 
