@@ -53,6 +53,7 @@
         }
         }
         else{
+            NSLog(@"User has already exits");
             //user name has already exists
         }
         
