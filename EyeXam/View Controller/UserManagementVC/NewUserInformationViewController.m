@@ -11,9 +11,6 @@
 #import "AppDelegate.h"
 @interface NewUserInformationViewController ()
 
-@property (strong, nonatomic) NSString * wearGlasses;
-@property (strong, nonatomic) NSString * eyesightType;
-
 @end
 
 @implementation NewUserInformationViewController
@@ -45,9 +42,7 @@
         [signUpSucceed show];
         
         //here to write user info into database
-        //..
-        //..
-        //..
+        self.user = self.userNameTextField.text;
         
         
         //post signup successfully notificatoin with username string

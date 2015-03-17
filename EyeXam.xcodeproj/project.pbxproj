@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
+		18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
 		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
 		CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */; };
@@ -67,6 +68,8 @@
 		18AEC2481AB6985F009B3BE4 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = SoundResource/correct.wav; sourceTree = "<group>"; };
 		18AEC2491AB6985F009B3BE4 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = SoundResource/wrong.wav; sourceTree = "<group>"; };
 		18AEC2851AB69B4B009B3BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18AED71C1AB7BD1300D4EA57 /* DatabaseInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseInstance.h; path = "EyeXam/View Controller/DatabaseInstance.h"; sourceTree = "<group>"; };
+		18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseInstance.m; path = "EyeXam/View Controller/DatabaseInstance.m"; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
@@ -185,6 +188,15 @@
 			name = "E characters";
 			sourceTree = "<group>";
 		};
+		18AED71B1AB7BBA300D4EA57 /* DatabaseInstance */ = {
+			isa = PBXGroup;
+			children = (
+				18AED71C1AB7BD1300D4EA57 /* DatabaseInstance.h */,
+				18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */,
+			);
+			name = DatabaseInstance;
+			sourceTree = "<group>";
+		};
 		6386430147A1AE2853E18F97 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +287,7 @@
 			children = (
 				CE7D36781AB629FD002DE674 /* ViewController.h */,
 				CE7D36791AB629FD002DE674 /* ViewController.m */,
+				18AED71B1AB7BBA300D4EA57 /* DatabaseInstance */,
 				CE7D36761AB629CC002DE674 /* TestVC */,
 				CE7D36771AB629D5002DE674 /* UserManagementVC */,
 				CE64FB621A9ED8CF0000D1DA /* PopoverViewController */,
@@ -520,6 +533,7 @@
 				CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */,
 				CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */,
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
+				18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */,
 				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,
 				CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */,
 				CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */,

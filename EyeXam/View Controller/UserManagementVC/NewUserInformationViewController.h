@@ -16,4 +16,8 @@
 @property (weak, nonatomic) IBOutlet RadioButton *wearGlassesRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *eyeTypeRadioButton;
 
+@property (strong, nonatomic) NSString * wearGlasses;
+@property (strong, nonatomic) NSString * eyesightType;
+@property (strong, nonatomic) NSString * user;
+
 @end
