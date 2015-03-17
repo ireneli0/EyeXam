@@ -12,6 +12,6 @@
 @interface AdjustDistanceViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet RadioButton *wearGlassesRadioButton;
-
+@property (strong, nonatomic) NSString * userName;
 
 @end

@@ -26,4 +26,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *eCharacterImageView;
 
+//passed value through segue
+@property (strong, nonatomic) NSString *userName;
+@property (nonatomic)  float meterValue;
+
 @end
