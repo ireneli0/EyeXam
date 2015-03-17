@@ -15,10 +15,10 @@
 
 +(DatabaseInstance *)getSharedInstance;
 
--(BOOL)createTableUsers;
--(BOOL)createTableRecords;
+-(BOOL)createTables;
 -(BOOL) addNewUser:(NSString *) tableName
            withName:(NSString *) user
+       withGlasses:(NSString *) wearglasses
         withEyetype:(NSString *) eyesightType;
 
 -(BOOL)addNewRecords;
