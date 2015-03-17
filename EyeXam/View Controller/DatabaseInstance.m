@@ -30,7 +30,7 @@ static sqlite3_stmt *statement = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     documentPath = [[NSString alloc] initWithString:
-                    [documentsDirectory stringByAppendingPathComponent: @"Users.db"]];
+                    [documentsDirectory stringByAppendingPathComponent: @"Users.sql"]];
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
     //create table if it does not exist
@@ -40,7 +40,7 @@ static sqlite3_stmt *statement = nil;
           
            if(sqlite3_exec(database,create_sql,NULL,NULL,&errMsg)!=SQLITE_OK){
                isSuccess = NO;
-               NSLog(@"Failed to create table");
+               NSLog(@"Failed to create table Users");
             }
           sqlite3_close(database);
           return isSuccess;
@@ -62,7 +62,7 @@ static sqlite3_stmt *statement = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     documentPath = [[NSString alloc] initWithString:
-                    [documentsDirectory stringByAppendingPathComponent: @"Records.db"]];
+                    [documentsDirectory stringByAppendingPathComponent: @"Records.sql"]];
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
     //create table if it does not exist
@@ -72,7 +72,7 @@ static sqlite3_stmt *statement = nil;
             
             if(sqlite3_exec(database,create_sql,NULL,NULL,&errMsg)!=SQLITE_OK){
                 isSuccess = NO;
-                NSLog(@"Failed to create table");
+                NSLog(@"Failed to create table Records");
             }
             sqlite3_close(database);
             return isSuccess;

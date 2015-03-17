@@ -47,7 +47,8 @@
         self.user = self.userNameTextField.text;
         
         if([[DatabaseInstance getSharedInstance]createTableUsers]&&
-           [[DatabaseInstance getSharedInstance]addNewUser:@"Users" withName:self.user withEyetype:self.eyesightType]){
+           [[DatabaseInstance getSharedInstance]addNewUser:@"Users" withName:self.user withEyetype:self.eyesightType]&&
+           [[DatabaseInstance getSharedInstance]createTableRecords]){
             NSLog(@"create success");
         }
         
