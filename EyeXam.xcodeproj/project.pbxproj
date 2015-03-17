@@ -14,6 +14,9 @@
 		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
 		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
+		CE449C5A1AB7DE220019CBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE449C581AB7DE220019CBF3 /* Main.storyboard */; };
+		CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */; };
+		CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */; };
 		CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */; };
 		CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB671A9EE06A0000D1DA /* WYPopoverController.m */; };
 		CE64FB6A1A9EE07E0000D1DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE64FB691A9EE07E0000D1DA /* QuartzCore.framework */; };
@@ -66,7 +69,6 @@
 /* Begin PBXFileReference section */
 		18AEC2481AB6985F009B3BE4 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = SoundResource/correct.wav; sourceTree = "<group>"; };
 		18AEC2491AB6985F009B3BE4 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = SoundResource/wrong.wav; sourceTree = "<group>"; };
-		18AEC2851AB69B4B009B3BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18AED71C1AB7BD1300D4EA57 /* DatabaseInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseInstance.h; path = "EyeXam/View Controller/DatabaseInstance.h"; sourceTree = "<group>"; };
 		18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseInstance.m; path = "EyeXam/View Controller/DatabaseInstance.m"; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,11 @@
 		CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
 		CE249BE31AB6282700DE63A1 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = EyeXam/ImageResource/correct.png; sourceTree = "<group>"; };
 		CE249BE41AB6282700DE63A1 /* wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wrong.jpg; path = EyeXam/ImageResource/wrong.jpg; sourceTree = "<group>"; };
+		CE449C591AB7DE220019CBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE449C5E1AB7E1DA0019CBF3 /* ResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/ResultsDisplayViewController.h"; sourceTree = "<group>"; };
+		CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/ResultsDisplayViewController.m"; sourceTree = "<group>"; };
+		CE449C611AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineChartResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.h"; sourceTree = "<group>"; };
+		CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineChartResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.m"; sourceTree = "<group>"; };
 		CE64FB631A9EDA010000D1DA /* PopoverSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopoverSettingsViewController.h; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.h"; sourceTree = "<group>"; };
 		CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopoverSettingsViewController.m; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.m"; sourceTree = "<group>"; };
 		CE64FB661A9EE06A0000D1DA /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYPopoverController.h; path = "EyeXam/View Controller/PopoverViewController/WYPopoverController.h"; sourceTree = "<group>"; };
@@ -232,6 +239,10 @@
 			children = (
 				CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */,
 				CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */,
+				CE449C5E1AB7E1DA0019CBF3 /* ResultsDisplayViewController.h */,
+				CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */,
+				CE449C611AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.h */,
+				CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */,
 			);
 			name = UserManagementVC;
 			sourceTree = "<group>";
@@ -314,7 +325,7 @@
 		CEEC121C1A9D8F99008FF50F /* EyeXam */ = {
 			isa = PBXGroup;
 			children = (
-				18AEC2841AB69B4B009B3BE4 /* Main.storyboard */,
+				CE449C581AB7DE220019CBF3 /* Main.storyboard */,
 				CEEC12211A9D8F99008FF50F /* AppDelegate.h */,
 				CEEC12221A9D8F99008FF50F /* AppDelegate.m */,
 				CEEC122A1A9D8F99008FF50F /* Images.xcassets */,
@@ -455,6 +466,7 @@
 				CEC7121B1AB6AA8900B1751E /* 1.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
+				CE449C5A1AB7DE220019CBF3 /* Main.storyboard in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
 				18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */,
@@ -529,6 +541,7 @@
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
 				18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */,
 				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,
+				CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */,
 				CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */,
 				CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */,
 				CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */,
@@ -536,6 +549,7 @@
 				CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */,
 				CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */,
 				CE64FB6D1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m in Sources */,
+				CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,10 +572,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		18AEC2841AB69B4B009B3BE4 /* Main.storyboard */ = {
+		CE449C581AB7DE220019CBF3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18AEC2851AB69B4B009B3BE4 /* Base */,
+				CE449C591AB7DE220019CBF3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

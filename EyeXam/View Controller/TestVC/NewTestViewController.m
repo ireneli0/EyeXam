@@ -456,7 +456,6 @@
         UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Finished!" message:resultString delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No, thanks" ,nil];
         saveAlert.tag = 1;
         [saveAlert show];
-
     }
         //after finishing testing one eye, cancel the thread
     [self.aThread cancel];
