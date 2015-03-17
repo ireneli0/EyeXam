@@ -16,7 +16,8 @@
 -(BOOL)createUsers;
 -(BOOL)createRecords;
 -(BOOL)updateRecords;
-
+-(void)selectUsers;
+-(void)selectRecords;
 
 
 @end

@@ -49,5 +49,8 @@ static sqlite3_stmt *statement = nil;
     
 }
 
+-(void)openDB{
+    
+}
 
 @end

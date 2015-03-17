@@ -25,13 +25,13 @@
 }
 
 - (IBAction)onWearGlassesRadioButton:(RadioButton *)sender {
-    NSLog(@"wear glasses selected: %@", sender.titleLabel.text);
+    //NSLog(@"wear glasses selected: %@", sender.titleLabel.text);
     self.wearGlasses = sender.titleLabel.text;
 
 }
 
 - (IBAction)onEyeTypeRadioButton:(RadioButton *)sender {
-    NSLog(@"Eye type selected: %@", sender.titleLabel.text);
+    //NSLog(@"Eye type selected: %@", sender.titleLabel.text);
     self.eyesightType = sender.titleLabel.text;
 }
 
