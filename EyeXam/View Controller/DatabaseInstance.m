@@ -74,22 +74,30 @@ static sqlite3_stmt *statement = nil;
     documentPath = [[NSString alloc] initWithString:
                     [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
     NSFileManager *filemgr = [NSFileManager defaultManager];
+    
+    NSMutableArray *allRecordsArray = [[NSMutableArray alloc]init];
 
     if ([filemgr fileExistsAtPath: documentPath] == YES){
     if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
       NSString *findUser_sql = [NSString stringWithFormat:
                                 @"select * from Users where userName='%@'",user];
       const char *findUser_stmt = [findUser_sql UTF8String];
-      int count;
+      unsigned long count;
         
       if (sqlite3_prepare_v2(database, findUser_stmt, -1, &statement, NULL) == SQLITE_OK){
-            count =  sqlite3_column_count(statement);
-          if(count !=0){
-              isExists = TRUE;
+          while( sqlite3_step(statement) == SQLITE_ROW )
+          {
+              char *user = (char *) sqlite3_column_text(statement, 0);
+              NSString *userName = [[NSString alloc] initWithUTF8String:user];
+              [allRecordsArray addObject:userName];
           }
-      }
+          count = allRecordsArray.count;
     }
-}
+        if(count != 0){
+            isExists = TRUE;
+        }
+   }
+ }
    return isExists;
     
 }
