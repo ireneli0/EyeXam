@@ -22,7 +22,7 @@
         withEyetype:(NSString *) eyesightType;
 
 -(BOOL)addNewRecords;
--(void)getAllUsers;
+-(NSArray *)getAllUsers;
 -(void)getAllRecordsForSelectedUser;
 -(void)getNakedEyeRecordsForSelectedUser;
 -(void)getWithGlassesRecordsForSelectedUser;

@@ -8,6 +8,7 @@
 
 #import "DatabaseInstance.h"
 #import "NewUserInformationViewController.h"
+#import "userInfo.h"
 
 static DatabaseInstance *sharedInstance = nil;
 static sqlite3 *database = nil;
@@ -104,8 +105,44 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
--(void)getAllUsers{
+-(NSArray *)getAllUsers{
+    //database initialization
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentPath = [[NSString alloc] initWithString:
+                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
+    const char *dbpath = [documentPath UTF8String];
     
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        NSString *getUsers_sql = [NSString stringWithFormat:
+                              @"select * from Users"];
+        const char *getUsers_stmt = [getUsers_sql UTF8String];
+        
+        NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+        if (sqlite3_prepare_v2(database, getUsers_stmt, -1, &statement, NULL) == SQLITE_OK){
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                char *user = (char *) sqlite3_column_text(statement, 0);
+                char *Glasses = (char *) sqlite3_column_text(statement, 1);
+                char *eyeType = (char *) sqlite3_column_text(statement, 2);
+                
+                NSString *userName = [[NSString alloc] initWithUTF8String:user];
+                NSString *wearGlasses = [[NSString alloc] initWithUTF8String:Glasses];
+                NSString *eyesightType = [[NSString alloc] initWithUTF8String:eyeType];
+                
+                userInfo *info = [[userInfo alloc] init];
+                info.userName = userName;
+                info.wearGlasses = wearGlasses;
+                info.eyesightType = eyesightType;
+                
+                [resultArray addObject:info];
+                
+            }
+            sqlite3_reset(statement);
+        }
+        return resultArray;
+    }
+    return nil;
+
 }
 
 -(void)getAllRecordsForSelectedUser{

@@ -10,6 +10,7 @@
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
 		18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */; };
+		18B5A9FF1AB8119400276A99 /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A9FE1AB8119400276A99 /* userInfo.m */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
 		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
@@ -74,6 +75,8 @@
 		18AEC2491AB6985F009B3BE4 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = SoundResource/wrong.wav; sourceTree = "<group>"; };
 		18AED71C1AB7BD1300D4EA57 /* DatabaseInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseInstance.h; path = "EyeXam/View Controller/DatabaseInstance.h"; sourceTree = "<group>"; };
 		18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseInstance.m; path = "EyeXam/View Controller/DatabaseInstance.m"; sourceTree = "<group>"; };
+		18B5A9FD1AB8119400276A99 /* userInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userInfo.h; path = "EyeXam/View Controller/userInfo.h"; sourceTree = "<group>"; };
+		18B5A9FE1AB8119400276A99 /* userInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = userInfo.m; path = "EyeXam/View Controller/userInfo.m"; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 			children = (
 				18AED71C1AB7BD1300D4EA57 /* DatabaseInstance.h */,
 				18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */,
+				18B5A9FD1AB8119400276A99 /* userInfo.h */,
+				18B5A9FE1AB8119400276A99 /* userInfo.m */,
 			);
 			name = DatabaseInstance;
 			sourceTree = "<group>";
@@ -560,6 +565,7 @@
 				CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */,
 				CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */,
 				CEEC12201A9D8F99008FF50F /* main.m in Sources */,
+				18B5A9FF1AB8119400276A99 /* userInfo.m in Sources */,
 				CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */,
 				CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */,
 				CE64FB6D1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m in Sources */,
