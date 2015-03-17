@@ -8,6 +8,7 @@
 
 #import "ViewProfileViewController.h"
 #import "DatabaseInstance.h"
+#import "userInfo.h"
 
 @interface ViewProfileViewController ()
 
@@ -19,6 +20,13 @@
     [super viewDidLoad];
     self.title = @"View Profile";
     self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    
+    NSArray * currentUser = [[DatabaseInstance getSharedInstance] getAllInfoForSelectedUser:self.userName];
+    userInfo *currentUserInfo = [currentUser objectAtIndex:0];
+    
+    self.userNameLabel.text = currentUserInfo.userName;
+    self.wearGlassesLabel.text = currentUserInfo.wearGlasses;
+    self.EyesightTypeLabel.text = currentUserInfo.eyesightType;
 }
 
 @end
