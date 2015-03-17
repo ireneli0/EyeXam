@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.title = @"Change User";
     self.allUsersTableView.allowsMultipleSelectionDuringEditing = NO;
+    self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
 }
 
 #pragma mark - Table view data source
@@ -62,23 +63,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIAlertView *changeUserAlert = [[UIAlertView alloc]
-                                 initWithTitle:@"Change Account" message:@"Are you sure you want to change to this account?" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes",nil];
+                                 initWithTitle:@"Change Account" message:@"Are you sure you want to change to this account?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes",nil];
     [changeUserAlert show];
     userInfo *userInfo = [self.allUsersArray objectAtIndex:indexPath.row];
+    NSLog(@"change from user :%@", self.userName);
     self.userName = userInfo.userName;
 }
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
+        //[self.navigationController popViewControllerAnimated:YES];
         //[self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
     }else if (buttonIndex == 1) {
-        //[self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
-        
+        [[NSUserDefaults standardUserDefaults] setObject: self.userName forKey: @"userName"];
+        NSLog(@"change to user :%@", self.userName);
+        [self.navigationController popViewControllerAnimated:YES];
     }
-
-    
-    
 }
 
 
