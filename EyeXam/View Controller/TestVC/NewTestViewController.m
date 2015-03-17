@@ -474,13 +474,17 @@
                 NSString *testMeters = [NSString stringWithFormat:@"%f", self.meterValue];
                 NSString *lefteyeResult = [NSString stringWithFormat:@"%f", self.resultForLeftEye];
                 NSString *righteyeResult = [NSString stringWithFormat:@"%f", self.resultForRightEye];
-                NSString *currenttime = 0;
                 
-                if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:self.userName withtestMeter:testMeters withGlasses:self.wearGlasses withlefteyeResult:lefteyeResult withrighteyeResult:righteyeResult withTime:currenttime]){
+                NSString *currenttime;
+                NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+                [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+                currenttime = [formatter stringFromDate:[NSDate date]];
+                NSLog(currenttime);
+                
+                if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:self.userName withtestMeter:testMeters withGlasses:self.wearGlasses withlefteyeResult:lefteyeResult withrighteyeResult:righteyeResult withTime:currenttime]
+                   &&[[DatabaseInstance getSharedInstance]getAllRecordsForSelectedUser:self.userName]){
                     NSLog(@"update Records succeessfully");
                 }
-           
-                
                 
                 [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
             }
