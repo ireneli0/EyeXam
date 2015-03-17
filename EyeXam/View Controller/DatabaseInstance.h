@@ -33,6 +33,7 @@
 -(NSArray *)getAllRecordsForSelectedUser:(NSString *)currentUser;
 -(NSArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser;
 -(NSArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser;
+-(BOOL)deleteSelectedUser:(NSString *)selectedUser;
 
 
 @end

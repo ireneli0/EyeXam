@@ -11,6 +11,7 @@
 #import "userInfo.h"
 #import "allRecords.h"
 
+
 static DatabaseInstance *sharedInstance = nil;
 static sqlite3 *database = nil;
 static sqlite3_stmt *statement = nil;
@@ -64,7 +65,21 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
+-(BOOL)checkNewUserisExists:(NSString *)user{
+    BOOL isExists = TRUE;
+    
+    if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
+      NSString *findUser_sql = [NSString stringWithFormat:
+                                @"select * from Users where userName='%@'",user];
+      const char *findUser_stmt = [findUser_sql UTF8String];
+        
+        
+        
+    }
 
+    return isExists;
+    
+}
 
 -(BOOL) addNewUser:(NSString *) tableName
          withName:(NSString *) user
