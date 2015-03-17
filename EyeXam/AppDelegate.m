@@ -10,7 +10,6 @@
 #import "PopoverSettingsViewController.h"
 #import "WYPopoverController.h"
 #import "ViewController.h"
-#import "NewTestViewController.h"
 #import "NewUserInformationViewController.h"
 
 @interface AppDelegate ()
@@ -51,7 +50,7 @@
 
 -(BOOL)authenticatedUser{
     //wait to be implemented
-    return false;
+    return true;
 }
 
 

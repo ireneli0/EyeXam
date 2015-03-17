@@ -24,7 +24,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-    NSLog(@"username retrieved = %@", self.userName);
+    //NSLog(@"username retrieved = %@", self.userName);
     self.welcomeUserLabel.text =[NSString stringWithFormat:@"Welcome, %@", self.userName];
 }
 
