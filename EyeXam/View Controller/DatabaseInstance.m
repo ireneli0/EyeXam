@@ -199,6 +199,47 @@ static sqlite3_stmt *statement = nil;
 
 }
 
+-(NSArray *)getAllInfoForSelectedUser:(NSString *)currentUser{
+    //database initialization
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentPath = [[NSString alloc] initWithString:
+                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
+    const char *dbpath = [documentPath UTF8String];
+    
+    //get All Records
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        NSString *getUser_sql = [NSString stringWithFormat:
+                                    @"select * from Users where userName='%@'",currentUser];
+        const char *getUser_stmt = [getUser_sql UTF8String];
+        
+        NSMutableArray *usersArray = [[NSMutableArray alloc]init];
+        if (sqlite3_prepare_v2(database, getUser_stmt, -1, &statement, NULL) == SQLITE_OK){
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                char *user = (char *) sqlite3_column_text(statement, 0);
+                char *Glasses = (char *) sqlite3_column_text(statement, 1);
+                char *eyeType = (char *) sqlite3_column_text(statement, 2);
+                
+                NSString *userName = [[NSString alloc] initWithUTF8String:user];
+                NSString *wearGlasses = [[NSString alloc] initWithUTF8String:Glasses];
+                NSString *eyesightType = [[NSString alloc] initWithUTF8String:eyeType];
+                
+                userInfo *info = [[userInfo alloc] init];
+                info.userName = userName;
+                info.wearGlasses = wearGlasses;
+                info.eyesightType = eyesightType;
+                
+                [usersArray addObject:info];
+                
+            }
+            sqlite3_reset(statement);
+        }
+        return usersArray;
+    }
+    return nil;
+    
+}
+
 -(NSArray *)getAllRecordsForSelectedUser:(NSString *)currentUser{
     //database initialization
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

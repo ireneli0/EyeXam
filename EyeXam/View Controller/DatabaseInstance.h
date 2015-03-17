@@ -30,6 +30,7 @@
             withTime:(NSString *)currenttime;
 
 -(NSArray *)getAllUsers;
+-(NSArray *)getAllInfoForSelectedUser:(NSString *)currentUser;
 -(NSArray *)getAllRecordsForSelectedUser:(NSString *)currentUser;
 -(NSArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser;
 -(NSArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser;
