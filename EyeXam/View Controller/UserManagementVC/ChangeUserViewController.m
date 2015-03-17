@@ -61,6 +61,7 @@
         }else{
         
             [[DatabaseInstance getSharedInstance] deleteSelectedUser:userInfo.userName];
+            [[DatabaseInstance getSharedInstance] deleteSelectedUserRecord:userInfo.userName];
             [self.allUsersArray removeObjectAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }

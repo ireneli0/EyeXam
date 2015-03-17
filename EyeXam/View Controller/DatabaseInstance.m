@@ -391,12 +391,6 @@ static sqlite3_stmt *statement = nil;
 {
     BOOL isSuccess = FALSE;
     
-//    //database initialization
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    documentPath = [[NSString alloc] initWithString:
-//                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
-    
     if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
         NSString *delete_Userssql = [NSString stringWithFormat:
                                        @"DELETE FROM Users WHERE userName = '%@'",selectedUser];
@@ -415,6 +409,29 @@ static sqlite3_stmt *statement = nil;
     }
     
     
+    return isSuccess;
+}
+
+-(BOOL)deleteSelectedUserRecord:(NSString *)selectedUser
+{
+    BOOL isSuccess = FALSE;
+    
+    if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
+        NSString *delete_Recordssql = [NSString stringWithFormat:
+                                     @"DELETE FROM Records WHERE userName = '%@'",selectedUser];
+        const char *delete_selectedUserRecord = [delete_Recordssql UTF8String];
+        
+        sqlite3_prepare_v2(database, delete_selectedUserRecord, -1, &statement, NULL);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE){
+            isSuccess = TRUE;
+        }
+        else{
+            if (sqlite3_prepare_v2(database, delete_selectedUserRecord, -1, &statement, NULL) != SQLITE_DONE) {
+                NSLog(@"delete failed: %s", sqlite3_errmsg(database));}
+        }
+        sqlite3_finalize(statement);
+    }
     return isSuccess;
 }
 

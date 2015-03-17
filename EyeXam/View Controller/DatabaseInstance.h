@@ -35,6 +35,7 @@
 -(NSArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser;
 -(NSArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser;
 -(BOOL)deleteSelectedUser:(NSString *)selectedUser;
+-(BOOL)deleteSelectedUserRecord:(NSString *)selectedUser;
 -(BOOL)checkNewUserisExists:(NSString *)user;
 
 @end
