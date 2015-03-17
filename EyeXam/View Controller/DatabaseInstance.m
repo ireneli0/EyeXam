@@ -73,7 +73,12 @@ static sqlite3_stmt *statement = nil;
                                 @"select * from Users where userName='%@'",user];
       const char *findUser_stmt = [findUser_sql UTF8String];
         
-        
+      if (sqlite3_prepare_v2(database, findUser_stmt, -1, &statement, NULL) == SQLITE_OK){
+          if()
+              
+            int sqlite3_column_count(sqlite3_stmt *pStmt);
+          
+      }
         
     }
 
@@ -337,7 +342,7 @@ static sqlite3_stmt *statement = nil;
     
     if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
         NSString *delete_Userssql = [NSString stringWithFormat:
-                                       @"DELETE * FROM Users WHERE userName = '%@'",selectedUser];
+                                       @"DELETE FROM Users WHERE userName = '%@'",selectedUser];
         const char *delete_selectedUser = [delete_Userssql UTF8String];
         
         sqlite3_prepare_v2(database, delete_selectedUser, -1, &statement, NULL);
