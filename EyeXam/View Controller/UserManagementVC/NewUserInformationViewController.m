@@ -40,16 +40,17 @@
 - (IBAction)signUp:(id)sender {
     NSLog(@"wearGlasses: %@, eyetype: %@", self.wearGlasses, self.eyesightType);
     if ([self.eyesightType length] != 0&&[self.wearGlasses length]!=0 &&[self.userNameTextField.text length] !=0) {
-        
+        if([[DatabaseInstance getSharedInstance]createTables]){
+            NSLog(@"create table successfully");
+        }
         self.user = self.userNameTextField.text;
         NSLog(@"%d",[[DatabaseInstance getSharedInstance]checkNewUserisExists:self.user]);
         NSLog(@"%@",self.user);
         
         if(![[DatabaseInstance getSharedInstance]checkNewUserisExists:self.user]){
             
-            if([[DatabaseInstance getSharedInstance]createTables]&&
-               [[DatabaseInstance getSharedInstance]addNewUser:@"Users" withName:self.user withGlasses:self.wearGlasses withEyetype:self.eyesightType]){
-                NSLog(@"create success");
+            if([[DatabaseInstance getSharedInstance]addNewUser:@"Users" withName:self.user withGlasses:self.wearGlasses withEyetype:self.eyesightType]){
+                NSLog(@"insert successfully");
                 UIAlertView *signUpSucceed = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You signed up a new account successfully!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [signUpSucceed show];
                 
