@@ -21,7 +21,14 @@
        withGlasses:(NSString *) wearglasses
         withEyetype:(NSString *) eyesightType;
 
--(BOOL)addNewRecords;
+-(BOOL)addNewRecords:(NSString *)tableName
+            withName:(NSString *)user
+       withtestMeter:(float)testMeters
+         withGlasses:(NSString *)wearGlasses
+   withlefteyeResult:(float)lefteyeResult
+  withrighteyeResult:(float)righteyeResult
+            withTime:(NSString *)currenttime;
+
 -(NSArray *)getAllUsers;
 -(void)getAllRecordsForSelectedUser;
 -(void)getNakedEyeRecordsForSelectedUser;

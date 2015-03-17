@@ -44,7 +44,7 @@ static sqlite3_stmt *statement = nil;
                NSLog(@"Failed to create table Users");
             }
           
-          const char *createRecords_sql = "CREATE TABLE IF NOT EXISTS Records(userName TEXT,meters TEXT,wearGlasses TEXT,lefteyeResult TEXT,righteyeResult TEXT,date TEXT,PRIMARY KEY(userName,date))";
+          const char *createRecords_sql = "CREATE TABLE IF NOT EXISTS Records(userName TEXT,testMeters TEXT,wearGlasses TEXT,lefteyeResult FLOAT,righteyeResult FLOAT,testTime TEXT,PRIMARY KEY(userName,testTime))";
           
           if(sqlite3_exec(database,createRecords_sql,NULL,NULL,&errMsg)!=SQLITE_OK){
               isSuccess = NO;
@@ -92,16 +92,32 @@ static sqlite3_stmt *statement = nil;
 }
 
 
--(BOOL)addNewRecords{
-    BOOL isSuccess = YES;
+-(BOOL)addNewRecords:(NSString *)tableName
+            withName:(NSString *)user
+       withtestMeter:(float)testMeters
+         withGlasses:(NSString *)wearGlasses
+   withlefteyeResult:(float)lefteyeResult
+  withrighteyeResult:(float)righteyeResult
+            withTime:(NSString *)currenttime
+{
+    BOOL isSuccess = FALSE;
     
-      if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
-          
-          
-          
-      }
-    
-    
+    if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
+        NSString *insert_Recordssql = [NSString stringWithFormat:
+                                     @"INSERT INTO '%@'(userName,testMeters,wearGlasses,lefteyeResult,righteyeResult,testTime) VALUES (\"%@\",\"%f\",\"%@\",\"%f\",\"%f\",\"%@\")",tableName,user,testMeters,wearGlasses,lefteyeResult,righteyeResult,currenttime];
+        const char *insert_users = [insert_Recordssql UTF8String];
+        
+        sqlite3_prepare_v2(database, insert_users, -1, &statement, NULL);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE){
+            isSuccess = TRUE;
+        }
+        else{
+            if (sqlite3_prepare_v2(database, insert_users, -1, &statement, NULL) != SQLITE_DONE) {
+                NSLog(@"insert failed: %s", sqlite3_errmsg(database));}
+        }
+        sqlite3_finalize(statement);
+    }
     return isSuccess;
 }
 
