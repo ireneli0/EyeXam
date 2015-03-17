@@ -16,7 +16,7 @@
 +(DatabaseInstance *)getSharedInstance;
 
 -(BOOL)createTableUsers;
--(BOOL)createRecords;
+-(BOOL)createTableRecords;
 -(BOOL) addNewUser:(NSString *) tableName
            withName:(NSString *) user
         withEyetype:(NSString *) eyesightType;

@@ -55,7 +55,7 @@ static sqlite3_stmt *statement = nil;
 }
 
 
--(BOOL)createRecords{
+-(BOOL)createTableRecords{
     BOOL isSuccess = YES;
     char *errMsg;
     //database initialization
