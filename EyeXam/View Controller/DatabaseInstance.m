@@ -23,7 +23,7 @@ static sqlite3_stmt *statement = nil;
     return sharedInstance;
 }
 
--(BOOL)createUsers{
+-(BOOL)createTableUsers{
     BOOL isSuccess = YES;
     char *errMsg;
     //database initialization
@@ -88,7 +88,7 @@ static sqlite3_stmt *statement = nil;
 }
 
 
--(BOOL) updateUsers:(NSString *) tableName
+-(BOOL) addNewUser:(NSString *) tableName
          withName:(NSString *) user
          withEyetype:(NSString *) eyesightType
 {
@@ -114,7 +114,7 @@ static sqlite3_stmt *statement = nil;
 }
 
 
--(BOOL)updateRecords{
+-(BOOL)addNewRecords{
     BOOL isSuccess = YES;
     
       if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
@@ -127,13 +127,22 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
--(void)selectUsers{
+-(void)getAllUsers{
     
 }
 
--(void)selectRecords{
+-(void)getAllRecordsForSelectedUser{
     
 }
+
+-(void)getNakedEyeRecordsForSelectedUser{
+    
+}
+
+-(void)getWithGlassesRecordsForSelectedUser{
+    
+}
+
 
 
 @end

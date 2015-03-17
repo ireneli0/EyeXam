@@ -15,14 +15,17 @@
 
 +(DatabaseInstance *)getSharedInstance;
 
--(BOOL)createUsers;
+-(BOOL)createTableUsers;
 -(BOOL)createRecords;
--(BOOL) updateUsers:(NSString *) tableName
+-(BOOL) addNewUser:(NSString *) tableName
            withName:(NSString *) user
         withEyetype:(NSString *) eyesightType;
--(BOOL)updateRecords;
--(void)selectUsers;
--(void)selectRecords;
+
+-(BOOL)addNewRecords;
+-(void)getAllUsers;
+-(void)getAllRecordsForSelectedUser;
+-(void)getNakedEyeRecordsForSelectedUser;
+-(void)getWithGlassesRecordsForSelectedUser;
 
 
 @end

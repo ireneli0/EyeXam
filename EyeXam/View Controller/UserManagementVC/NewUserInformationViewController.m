@@ -46,8 +46,8 @@
         //write user info into database
         self.user = self.userNameTextField.text;
         
-        if([[DatabaseInstance getSharedInstance]createUsers]&&
-           [[DatabaseInstance getSharedInstance]updateUsers:@"Users" withName:self.user withEyetype:self.eyesightType]){
+        if([[DatabaseInstance getSharedInstance]createTableUsers]&&
+           [[DatabaseInstance getSharedInstance]addNewUser:@"Users" withName:self.user withEyetype:self.eyesightType]){
             NSLog(@"create success");
         }
         
