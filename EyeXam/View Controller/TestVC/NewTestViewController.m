@@ -470,10 +470,10 @@
             if (buttonIndex == 0) {
                 //Here
                 //saving results into database
-                //
+                //result for right eye is stored in self.resultForRightEye
+                //result for left eye is stored in self.resultForLeftEye
                 //
                 [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
-                
             }
             if (buttonIndex == 1) {
                 [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
