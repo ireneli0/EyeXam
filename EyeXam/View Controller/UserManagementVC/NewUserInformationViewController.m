@@ -50,14 +50,13 @@
         //..
         
         
-        //post signup successfully notificatoin with username string
+        //post username string through NSUserDefaults
         [[NSUserDefaults standardUserDefaults]setObject:self.userNameTextField.text forKey:@"userName"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"username saved = %@", self.userNameTextField.text);
+        //NSLog(@"username saved = %@", self.userNameTextField.text);
         
         
-        //signup successfully
-        //jump to the main VC
+        //signup successfully -> jump to the main VC
         AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
         appDelegateTemp.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
 

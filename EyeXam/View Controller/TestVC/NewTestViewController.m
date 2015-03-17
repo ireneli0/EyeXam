@@ -8,7 +8,6 @@
 
 #import "NewTestViewController.h"
 #import "PopoverSettingsViewController.h"
-#import "CoordinateAxesPoint.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface NewTestViewController ()<NodeDeviceDelegate,VTNodeConnectionHelperDelegate,WYPopoverControllerDelegate>{
@@ -43,27 +42,20 @@
 @property (nonatomic) float originMagZ;
 
 
-
 @property (weak, nonatomic) IBOutlet UILabel *x1Label;
-
 @property (weak, nonatomic) IBOutlet UILabel *x2Label;
 
 
 //Threads
 @property (strong, nonatomic) NSCondition *condition;
-//@property (strong, nonatomic) NSThread *aThread;
 @property (nonatomic) BOOL lock;
-
-
-//dynamic 9-axis
-@property (strong, nonatomic) CoordinateAxesPoint *dynamicPoint;
-//static 9-axis of original point
-@property (strong, nonatomic) CoordinateAxesPoint *originalPoint;
-
-
+@property (nonatomic) int buttonPressedCount;
+@property (strong, nonatomic) NSThread *aThread;
 
 //value for user input
 @property (nonatomic) int userInputDirection;
+@property (strong, nonatomic) UIAlertView* changeEyeAlert;
+
 
 //sounds
 @property (nonatomic) SystemSoundID correct_soundID;
@@ -98,6 +90,7 @@
                                                  name:@"alreadyGotUserDirection"
                                                object:nil];
     self.title = @"New Test";
+    self.buttonPressedCount = 0;
 //    self.accelorometerLabel.hidden = YES;
 //    self.gyroLabel.hidden = YES;
 //    self.magnetometerLabel.hidden = YES;
@@ -125,7 +118,7 @@
     
     self.lock = NO;
     [self.condition signal];
-    [self.condition unlock];
+    //[self.condition unlock];
     
 }
 
@@ -151,37 +144,78 @@
     [self.connectedDevice setAccelerometerScale:VTNodeAccelerometerScale2g];
     [self.connectedDevice setGyroScale:VTNodeGyroScale1000dps];
     [self.connectedDevice setStreamModeAcc:YES Gyro:YES Mag:YES withPeriod:10 withLifetime:0 withTimestampingEnabled:YES];
-    //-(void) setStreamModeAcc: (bool)aMode Gyro:(bool)gMode Mag:(bool)mMode withPeriod:(uint16_t)p withLifetime:(uint16_t)life withTimestampingEnabled: (bool) timestampingEnabled;
+    
 }
 
 -(void) nodeDeviceButtonPushed: (VTNodeDevice *) device{
-    self.originalPoint.accX = self.dynamicPoint.accX;
-    self.originalPoint.accY = self.dynamicPoint.accY;
-    self.originalPoint.accZ = self.dynamicPoint.accZ;
+    switch (self.buttonPressedCount) {
+        case 0:
+            //button pushed 1st
+            self.originAccX = self.accX;
+            self.originAccY = self.accY;
+            self.originAccZ = self.accZ;
+            self.originGyroX = self.gyroX;
+            self.originGyroY = self.gyroY;
+            self.originGyroZ = self.gyroZ;
+            self.originMagX = self.magX;
+            self.originMagY = self.magY;
+            self.originMagZ = self.magZ;
+            
+            NSLog(@"1_______________________________________1");
+            NSLog(@"origin\n");
+            NSLog(@"accx:%.2f, accy:%.2f, accz:%.2f", self.originAccX, self.originAccY, self.originAccZ);
+            NSLog(@"gyrx:%.2f, gyry:%.2f, gyrz:%.2f", self.originGyroX, self.originGyroY, self.originGyroZ);
+            NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.originMagX, self.originMagY, self.originMagZ);
+            NSLog(@"1_______________________________________1");
+            self.buttonPressedCount ++;
+            NSLog(@"button pressed count is :%i", self.buttonPressedCount);
+            //NSThread *aThread = [[NSThread alloc] initWithTarget:self selector:@selector(getOneEyeTested) object:nil];
+            [self launchNewTest];
+
+            
+            break;
+        case 1:
+            //button pushed 2nd
+            [self.changeEyeAlert dismissWithClickedButtonIndex:0 animated:NO];
+            self.originAccX = self.accX;
+            self.originAccY = self.accY;
+            self.originAccZ = self.accZ;
+            self.originGyroX = self.gyroX;
+            self.originGyroY = self.gyroY;
+            self.originGyroZ = self.gyroZ;
+            self.originMagX = self.magX;
+            self.originMagY = self.magY;
+            self.originMagZ = self.magZ;
+            NSLog(@"2_______________________________________2");
+            NSLog(@"origin\n");
+            NSLog(@"accx:%.2f, accy:%.2f, accz:%.2f", self.originAccX, self.originAccY, self.originAccZ);
+            NSLog(@"gyrx:%.2f, gyry:%.2f, gyrz:%.2f", self.originGyroX, self.originGyroY, self.originGyroZ);
+            NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.originMagX, self.originMagY, self.originMagZ);
+            NSLog(@"2_______________________________________2");
+            
+            self.buttonPressedCount ++;
+            NSLog(@"button pressed count is :%i", self.buttonPressedCount);
+            //NSThread *aThread = [[NSThread alloc] initWithTarget:self selector:@selector(getOneEyeTested) object:nil];
+            [self launchNewTest];
+            
+            break;
+        case 2:
+            break;
+        default:
+            break;
+    }
     
-    self.originalPoint.gyroX = self.dynamicPoint.gyroX;
-    self.originalPoint.gyroY = self.dynamicPoint.gyroY;
-    self.originalPoint.gyroZ = self.dynamicPoint.gyroZ;
     
-    self.originalPoint.magX = self.dynamicPoint.magX;
-    self.originalPoint.magY = self.dynamicPoint.magY;
-    self.originalPoint.magZ = self.dynamicPoint.magZ;
     
-    NSLog(@"_______________________________________");
-    NSLog(@"origin\n");
-    NSLog(@"accx:%.2f, accy:%.2f, accz:%.2f", self.originalPoint.accX, self.originalPoint.accY, self.originalPoint.accZ);
-    NSLog(@"gyrx:%.2f, gyry:%.2f, gyrz:%.2f", self.originalPoint.gyroX, self.originalPoint.gyroY, self.originalPoint.gyroZ);
-    NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.originalPoint.magX, self.originalPoint.magY, self.originalPoint.magZ);
-    NSLog(@"_______________________________________");
-    
-    [self launchNewTest];
 }
 
 - (void) nodeDeviceDidUpdateAccReading:(VTNodeDevice *)device withReading:(VTSensorReading *)reading{
     self.accelorometerLabel.text = [NSString stringWithFormat:@"x:%.2f,y:%.2f,z:%.2f",reading.x,reading.y,reading.z];
-    self.dynamicPoint.accX = reading.x;
-    self.dynamicPoint.accY = reading.y;
-    self.dynamicPoint.accZ = reading.z;
+    
+    self.accX = reading.x;
+    self.accY = reading.y;
+    self.accZ = reading.z;
+    
     NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
     if (reading.x>1.38) {
         //up -> 3
@@ -206,16 +240,16 @@
 
 - (void)nodeDeviceDidUpdateGyroReading:(VTNodeDevice *)device withReading:(VTSensorReading *)reading{
     self.gyroLabel.text = [NSString stringWithFormat:@"x:%.2f,y:%.2f,z:%.2f",reading.x,reading.y,reading.z];
-    self.dynamicPoint.gyroX = reading.x;
-    self.dynamicPoint.gyroY = reading.y;
-    self.dynamicPoint.gyroZ = reading.z;
+    self.gyroX = reading.x;
+    self.gyroY = reading.y;
+    self.gyroZ = reading.z;
 }
 
 - (void)nodeDeviceDidUpdateMagReading:(VTNodeDevice *)device withReading:(VTSensorReading *)reading{
     self.magnetometerLabel.text =[NSString stringWithFormat:@"x:%.2f,y:%.2f,z:%.2f",reading.x,reading.y,reading.z];
-    self.dynamicPoint.magX = reading.x;
-    self.dynamicPoint.magY = reading.y;
-    self.dynamicPoint.magZ = reading.z;
+    self.magX = reading.x;
+    self.magY = reading.y;
+    self.magZ = reading.z;
 }
 
 #pragma mark - WYPopover
@@ -308,25 +342,14 @@
 
 #pragma mark - E-character Direction Judgement
 - (void) launchNewTest{
-    //test for the right eye
-    NSThread *aThread = [[NSThread alloc] initWithTarget:self selector:@selector(getOneEyeTested) object:nil];
-    [aThread start];
-    /*
-     float resultForRightEye = [self getOneEyeTested];
-     NSLog(@"result for right eye: %.2f", resultForRightEye);
-     */
-    
-    //    UIAlertView *changeAlert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Now please change to the left eye." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    //    [changeAlert show];
-    //
-    //    //change to the left eye
-    // float resultForLeftEye = [self getOneEyeTested];
+    //test for one eye
+    self.aThread = [[NSThread alloc] initWithTarget:self selector:@selector(getOneEyeTested) object:nil];
+    [self.aThread start];
 }
 
 - (void)getOneEyeTested{
     NSThread *current = [NSThread currentThread];
     NSLog(@"current thread %@", current);
-    
     [self.condition lock];
     
     float resultForEye = 0.0;
@@ -417,22 +440,49 @@
         resultForEye = result[i-1];
     }
     NSLog(@"result for eye is :%.2f", resultForEye);
-    self.resultForRightEye = resultForEye;
-    NSString *resultString = [NSString stringWithFormat:@"Your test result is:%.2f.\nWould you like to save it?", resultForEye];
     
-    UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Finished!" message:resultString delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No, thanks" ,nil];
-    [saveAlert show];
+    if(self.buttonPressedCount ==1){
+        self.resultForRightEye = resultForEye;
+        NSString *resultString = [NSString stringWithFormat:@"Pressed the button on your NODE device to continue"];
+        
+        self.changeEyeAlert = [[UIAlertView alloc] initWithTitle:@"Change to left eye!" message:resultString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        self.changeEyeAlert.tag = 0;
+        [self.changeEyeAlert show];
+
+    }else if(self.buttonPressedCount ==2){
+        self.resultForLeftEye = resultForEye;
+        NSString *resultString = [NSString stringWithFormat:@"Your test result is:\nright:%.2f\nleft:%.2f\nWould you like to save it?", self.resultForRightEye,self.resultForLeftEye];
+        
+        UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Finished!" message:resultString delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No, thanks" ,nil];
+        saveAlert.tag = 1;
+        [saveAlert show];
+
+    }
+        //after finishing testing one eye, cancel the thread
+    [self.aThread cancel];
     
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 0) {
-        NSLog(@"Action for saving results waiting to be implemented...");
-        [self.navigationController popViewControllerAnimated:YES];
-        
+    switch (alertView.tag) {
+        case 0:
+            break;
+        case 1:
+            if (buttonIndex == 0) {
+                //Here
+                //saving results into database
+                //
+                //
+                [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
+                
+            }
+            if (buttonIndex == 1) {
+                [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
+            }
+            break;
+        default:
+            break;
     }
-    if (buttonIndex == 1) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    
 }
 
 
@@ -457,14 +507,5 @@
     }
     return imageOrientation;
 }
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if ([segue.identifier isEqualToString:@"CurrentTestResultDisplay"]) {
-//        if ([segue.destinationViewController isKindOfClass:[CurrentTestResultDisplayViewController class]]) {
-//            CurrentTestResultDisplayViewController *ctrdVC = (CurrentTestResultDisplayViewController *)segue.destinationViewController;
-//            ctrdVC.result = self.resultForRightEye;
-//        }
-//    }
-//}
 
 @end

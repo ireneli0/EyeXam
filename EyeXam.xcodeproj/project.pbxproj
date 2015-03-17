@@ -11,7 +11,6 @@
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
 		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
-		CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
 		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
 		CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64FB641A9EDA010000D1DA /* PopoverSettingsViewController.m */; };
@@ -71,8 +70,6 @@
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
 		CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
-		CE249BDE1AB626DB00DE63A1 /* CoordinateAxesPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateAxesPoint.h; path = EyeXam/Model/CoordinateAxesPoint.h; sourceTree = "<group>"; };
-		CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoordinateAxesPoint.m; path = EyeXam/Model/CoordinateAxesPoint.m; sourceTree = "<group>"; };
 		CE249BE31AB6282700DE63A1 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = EyeXam/ImageResource/correct.png; sourceTree = "<group>"; };
 		CE249BE41AB6282700DE63A1 /* wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wrong.jpg; path = EyeXam/ImageResource/wrong.jpg; sourceTree = "<group>"; };
 		CE64FB631A9EDA010000D1DA /* PopoverSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopoverSettingsViewController.h; path = "EyeXam/View Controller/PopoverViewController/PopoverSettingsViewController.h"; sourceTree = "<group>"; };
@@ -230,8 +227,6 @@
 		CEDF15161A9D94A500CF8AC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE249BDE1AB626DB00DE63A1 /* CoordinateAxesPoint.h */,
-				CE249BDF1AB626DB00DE63A1 /* CoordinateAxesPoint.m */,
 				CEDF15171A9D94B200CF8AC4 /* RadioButton */,
 			);
 			name = Model;
@@ -518,7 +513,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */,
-				CE249BE01AB626DB00DE63A1 /* CoordinateAxesPoint.m in Sources */,
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
 				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,
 				CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */,
