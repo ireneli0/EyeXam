@@ -9,6 +9,8 @@
 #import "NewUserInformationViewController.h"
 #import "RadioButton.h"
 #import "AppDelegate.h"
+#import "DatabaseInstance.h"
+
 @interface NewUserInformationViewController ()
 
 @end
@@ -41,9 +43,13 @@
         UIAlertView *signUpSucceed = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You signed up a new account successfully!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [signUpSucceed show];
         
-        //here to write user info into database
+        //write user info into database
         self.user = self.userNameTextField.text;
         
+        if([[DatabaseInstance getSharedInstance]createUsers]&&
+           [[DatabaseInstance getSharedInstance]updateUsers:@"Users" withName:self.user withWear:self.wearGlasses withEyetype:self.eyesightType]){
+            NSLog(@"create success");
+        }
         
         //post username string through NSUserDefaults
         [[NSUserDefaults standardUserDefaults]setObject:self.userNameTextField.text forKey:@"userName"];

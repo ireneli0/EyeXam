@@ -10,11 +10,17 @@
 #import <sqlite3.h>
 
 @interface DatabaseInstance : NSObject{
-    NSString *dbPath;
+    NSString *documentPath;
 }
+
++(DatabaseInstance *)getSharedInstance;
 
 -(BOOL)createUsers;
 -(BOOL)createRecords;
+-(BOOL) updateUsers:(NSString *) tableName
+           withName:(NSString *) user
+           withWear:(NSString *) wearGlasses
+        withEyetype:(NSString *) eyesightType;
 -(BOOL)updateRecords;
 -(void)selectUsers;
 -(void)selectRecords;
