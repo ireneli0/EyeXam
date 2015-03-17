@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "AdjustDistanceViewController.h"
+#import "ResultsDisplayViewController.h"
+#import "LineChartResultsDisplayViewController.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSString *userName;
@@ -28,5 +30,18 @@
     self.welcomeUserLabel.text =[NSString stringWithFormat:@"Welcome, %@", self.userName];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"CheckResults"]) {
+        if ([segue.destinationViewController isKindOfClass:[UITabBarController class]]) {
+            UITabBarController *tabar=segue.destinationViewController;
+            ResultsDisplayViewController *rdVC=[tabar.viewControllers objectAtIndex:0];
+            rdVC.userName = self.userName;
+            
+            LineChartResultsDisplayViewController *lcVC = [tabar.viewControllers objectAtIndex:1];
+            lcVC.userName = self.userName;
+        }
+    }
+    
+}
 
 @end
