@@ -11,6 +11,7 @@
 #import "WYPopoverController.h"
 #import "ViewController.h"
 #import "NewUserInformationViewController.h"
+#import "DatabaseInstance.h"
 
 @interface AppDelegate ()
 
@@ -49,8 +50,11 @@
 }
 
 -(BOOL)authenticatedUser{
-    //wait to be implemented
-    return false;
+    if([[[DatabaseInstance getSharedInstance] getAllUsers] count]==0){
+        return false;
+    }
+    else
+        return true;
 }
 
 
