@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tabBarController setTitle:@"Results Display"];
+    self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     self.userNameLabel.text = self.userName;
 }
 

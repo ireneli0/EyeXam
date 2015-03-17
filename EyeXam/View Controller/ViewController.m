@@ -11,6 +11,8 @@
 #import "ResultsDisplayViewController.h"
 #import "LineChartResultsDisplayViewController.h"
 #import "ChangeUserViewController.h"
+#import "DatabaseInstance.h"
+#import "userInfo.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSString *userName;
@@ -43,6 +45,8 @@
         if ([segue.destinationViewController isKindOfClass:[ChangeUserViewController class]]) {
             ChangeUserViewController *cuVC = (ChangeUserViewController*)segue.destinationViewController;
             cuVC.userName = self.userName;
+            cuVC.allUsersArray = [[DatabaseInstance getSharedInstance] getAllUsers];
+            NSLog(@"allusers count %lu", (unsigned long)[cuVC.allUsersArray count]);
         }
     }else if ([segue.identifier isEqualToString:@"AdjustDistance"]){
         if ([segue.destinationViewController isKindOfClass:[AdjustDistanceViewController class]]) {
@@ -51,7 +55,6 @@
         }
     }
     
-    //
     
     
     

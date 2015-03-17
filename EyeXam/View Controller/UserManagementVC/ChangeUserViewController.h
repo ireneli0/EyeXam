@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "userInfo.h"
 
 @interface ChangeUserViewController : UIViewController
 
 @property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSMutableArray *allUsersArray;
 @end

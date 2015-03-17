@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Change User";
+    self.allUsersTableView.allowsMultipleSelectionDuringEditing = NO;
+    self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
 }
 
 #pragma mark - Table view data source
@@ -28,38 +30,63 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return user count
-    return 0;
+    return [self.allUsersArray count];
 }
 
 
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserCell" forIndexPath:indexPath];
-     //configure the cell
+     userInfo *userInfo =[self.allUsersArray objectAtIndex:indexPath.row];
+     cell.textLabel.text = userInfo.userName;
  
      return cell;
 }
- 
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //hit delete
+        //here to add database delete code
+        //..
+        //..
+        //..
+        [self.allUsersArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 75;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIAlertView *changeUserAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Change Account" message:@"Are you sure you want to change to this account?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes",nil];
+    [changeUserAlert show];
+    userInfo *userInfo = [self.allUsersArray objectAtIndex:indexPath.row];
+    NSLog(@"change from user :%@", self.userName);
+    self.userName = userInfo.userName;
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        //[self.navigationController popViewControllerAnimated:YES];
+        //[self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
+    }else if (buttonIndex == 1) {
+        [[NSUserDefaults standardUserDefaults] setObject: self.userName forKey: @"userName"];
+        NSLog(@"change to user :%@", self.userName);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+
+
+
+
+
 
 /*
  // Override to support rearranging the table view.
@@ -75,13 +102,4 @@
  }
  */
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 @end
