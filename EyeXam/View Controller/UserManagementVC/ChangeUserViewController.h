@@ -12,5 +12,5 @@
 @interface ChangeUserViewController : UIViewController
 
 @property (strong, nonatomic) NSString *userName;
-@property (strong, nonatomic) NSArray *allUsersArray;
+@property (strong, nonatomic) NSMutableArray *allUsersArray;
 @end

@@ -52,10 +52,40 @@
         //..
         //..
         //..
-        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.allUsersArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
- 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 75;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIAlertView *changeUserAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Change Account" message:@"Are you sure you want to change to this account?" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes",nil];
+    [changeUserAlert show];
+    userInfo *userInfo = [self.allUsersArray objectAtIndex:indexPath.row];
+    self.userName = userInfo.userName;
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        //[self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
+    }else if (buttonIndex == 1) {
+        //[self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
+        
+    }
+
+    
+    
+}
+
+
+
+
+
+
 
 /*
  // Override to support rearranging the table view.
@@ -71,13 +101,4 @@
  }
  */
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 @end

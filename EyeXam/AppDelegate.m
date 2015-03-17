@@ -50,7 +50,7 @@
 
 -(BOOL)authenticatedUser{
     //wait to be implemented
-    return false;
+    return true;
 }
 
 
