@@ -9,6 +9,7 @@
 #import "DatabaseInstance.h"
 #import "NewUserInformationViewController.h"
 #import "userInfo.h"
+#import "allRecords.h"
 
 static DatabaseInstance *sharedInstance = nil;
 static sqlite3 *database = nil;
@@ -94,17 +95,17 @@ static sqlite3_stmt *statement = nil;
 
 -(BOOL)addNewRecords:(NSString *)tableName
             withName:(NSString *)user
-       withtestMeter:(float)testMeters
+       withtestMeter:(NSString *)testMeters
          withGlasses:(NSString *)wearGlasses
-   withlefteyeResult:(float)lefteyeResult
-  withrighteyeResult:(float)righteyeResult
+   withlefteyeResult:(NSString *)lefteyeResult
+  withrighteyeResult:(NSString *)righteyeResult
             withTime:(NSString *)currenttime
 {
     BOOL isSuccess = FALSE;
     
     if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
         NSString *insert_Recordssql = [NSString stringWithFormat:
-                                     @"INSERT INTO '%@'(userName,testMeters,wearGlasses,lefteyeResult,righteyeResult,testTime) VALUES (\"%@\",\"%f\",\"%@\",\"%f\",\"%f\",\"%@\")",tableName,user,testMeters,wearGlasses,lefteyeResult,righteyeResult,currenttime];
+                                     @"INSERT INTO '%@'(userName,testMeters,wearGlasses,lefteyeResult,righteyeResult,testTime) VALUES (\"%@\",\"%@\",\"%@\",\"%@\",\"%@\",\"%@\")",tableName,user,testMeters,wearGlasses,lefteyeResult,righteyeResult,currenttime];
         const char *insert_records = [insert_Recordssql UTF8String];
         
         sqlite3_prepare_v2(database, insert_records, -1, &statement, NULL);
@@ -129,12 +130,13 @@ static sqlite3_stmt *statement = nil;
                     [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
     const char *dbpath = [documentPath UTF8String];
     
+    //get users' information
     if (sqlite3_open(dbpath, &database) == SQLITE_OK){
         NSString *getUsers_sql = [NSString stringWithFormat:
                               @"select * from Users"];
         const char *getUsers_stmt = [getUsers_sql UTF8String];
         
-        NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+        NSMutableArray *usersArray = [[NSMutableArray alloc]init];
         if (sqlite3_prepare_v2(database, getUsers_stmt, -1, &statement, NULL) == SQLITE_OK){
             while (sqlite3_step(statement) == SQLITE_ROW){
                 char *user = (char *) sqlite3_column_text(statement, 0);
@@ -150,27 +152,162 @@ static sqlite3_stmt *statement = nil;
                 info.wearGlasses = wearGlasses;
                 info.eyesightType = eyesightType;
                 
-                [resultArray addObject:info];
+                [usersArray addObject:info];
                 
             }
             sqlite3_reset(statement);
         }
-        return resultArray;
+        return usersArray;
     }
     return nil;
 
 }
 
--(void)getAllRecordsForSelectedUser{
+-(NSArray *)getAllRecordsForSelectedUser:(NSString *)currentUser{
+    //database initialization
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentPath = [[NSString alloc] initWithString:
+                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
+    const char *dbpath = [documentPath UTF8String];
     
+    //get All Records
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        NSString *getRecords_sql = [NSString stringWithFormat:
+                                  @"select * from Records where userName='%@'",currentUser];
+        const char *getRecords_stmt = [getRecords_sql UTF8String];
+        
+        NSMutableArray *allRecordsArray = [[NSMutableArray alloc]init];
+        if (sqlite3_prepare_v2(database, getRecords_stmt, -1, &statement, NULL) == SQLITE_OK){
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                char *user = (char *) sqlite3_column_text(statement, 0);
+                char *meters = (char *)sqlite3_column_text(statement,1);
+                char *Glasses = (char *) sqlite3_column_text(statement, 2);
+                char *lefteye = (char *)sqlite3_column_text(statement,3);
+                char *righteye = (char *)sqlite3_column_text(statement,4);
+                char *time = (char *)sqlite3_column_text(statement,5);
+                
+                NSString *userName = [[NSString alloc] initWithUTF8String:user];
+                NSString *testMeters =[[NSString alloc] initWithUTF8String:meters];
+                NSString *wearGlasses = [[NSString alloc] initWithUTF8String:Glasses];
+                NSString *lefteyeResult = [[NSString alloc] initWithUTF8String:lefteye];
+                NSString *righteyeResult = [[NSString alloc] initWithUTF8String:righteye];
+                NSString *currentTime =[[NSString alloc] initWithUTF8String:time];
+                
+                allRecords *records = [[allRecords alloc] init];
+                records.userName = userName;
+                records.testMeters = testMeters;
+                records.wearGlasses = wearGlasses;
+                records.lefteyeResult = lefteyeResult;
+                records.righteyeResult = righteyeResult;
+                records.currentTime = currentTime;
+                [allRecordsArray addObject:records];
+                
+            }
+            sqlite3_reset(statement);
+        }
+        return allRecordsArray;
+    }
+    return nil;
+
 }
 
--(void)getNakedEyeRecordsForSelectedUser{
+-(NSArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser{
+    //database initialization
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentPath = [[NSString alloc] initWithString:
+                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
+    const char *dbpath = [documentPath UTF8String];
     
+    //get All Records
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        NSString *getRecords_sql = [NSString stringWithFormat:
+                                    @"select * from Records where userName='%@'and wearGlasses='Naked eye'",currentUser];
+        const char *getRecords_stmt = [getRecords_sql UTF8String];
+        
+        NSMutableArray *nakedeyeRecordsArray = [[NSMutableArray alloc]init];
+        if (sqlite3_prepare_v2(database, getRecords_stmt, -1, &statement, NULL) == SQLITE_OK){
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                char *user = (char *) sqlite3_column_text(statement, 0);
+                char *meters = (char *)sqlite3_column_text(statement,1);
+                char *Glasses = (char *) sqlite3_column_text(statement, 2);
+                char *lefteye = (char *)sqlite3_column_text(statement,3);
+                char *righteye = (char *)sqlite3_column_text(statement,4);
+                char *time = (char *)sqlite3_column_text(statement,5);
+                
+                NSString *userName = [[NSString alloc] initWithUTF8String:user];
+                NSString *testMeters =[[NSString alloc] initWithUTF8String:meters];
+                NSString *wearGlasses = [[NSString alloc] initWithUTF8String:Glasses];
+                NSString *lefteyeResult = [[NSString alloc] initWithUTF8String:lefteye];
+                NSString *righteyeResult = [[NSString alloc] initWithUTF8String:righteye];
+                NSString *currentTime =[[NSString alloc] initWithUTF8String:time];
+                
+                allRecords *records = [[allRecords alloc] init];
+                records.userName = userName;
+                records.testMeters = testMeters;
+                records.wearGlasses = wearGlasses;
+                records.lefteyeResult = lefteyeResult;
+                records.righteyeResult = righteyeResult;
+                records.currentTime = currentTime;
+                [nakedeyeRecordsArray addObject:records];
+                
+            }
+            sqlite3_reset(statement);
+        }
+        return nakedeyeRecordsArray;
+    }
+    return nil;
+
 }
 
--(void)getWithGlassesRecordsForSelectedUser{
+-(NSArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser{
+    //database initialization
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentPath = [[NSString alloc] initWithString:
+                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
+    const char *dbpath = [documentPath UTF8String];
     
+    //get All Records
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        NSString *getRecords_sql = [NSString stringWithFormat:
+                                    @"select * from Records where userName='%@'and wearGlasses='With glasses'",currentUser];
+        const char *getRecords_stmt = [getRecords_sql UTF8String];
+        
+        NSMutableArray *withglassesRecordsArray = [[NSMutableArray alloc]init];
+        if (sqlite3_prepare_v2(database, getRecords_stmt, -1, &statement, NULL) == SQLITE_OK){
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                char *user = (char *) sqlite3_column_text(statement, 0);
+                char *meters = (char *)sqlite3_column_text(statement,1);
+                char *Glasses = (char *) sqlite3_column_text(statement, 2);
+                char *lefteye = (char *)sqlite3_column_text(statement,3);
+                char *righteye = (char *)sqlite3_column_text(statement,4);
+                char *time = (char *)sqlite3_column_text(statement,5);
+                
+                NSString *userName = [[NSString alloc] initWithUTF8String:user];
+                NSString *testMeters =[[NSString alloc] initWithUTF8String:meters];
+                NSString *wearGlasses = [[NSString alloc] initWithUTF8String:Glasses];
+                NSString *lefteyeResult = [[NSString alloc] initWithUTF8String:lefteye];
+                NSString *righteyeResult = [[NSString alloc] initWithUTF8String:righteye];
+                NSString *currentTime =[[NSString alloc] initWithUTF8String:time];
+                
+                allRecords *records = [[allRecords alloc] init];
+                records.userName = userName;
+                records.testMeters = testMeters;
+                records.wearGlasses = wearGlasses;
+                records.lefteyeResult = lefteyeResult;
+                records.righteyeResult = righteyeResult;
+                records.currentTime = currentTime;
+                [withglassesRecordsArray addObject:records];
+                
+            }
+            sqlite3_reset(statement);
+        }
+        return withglassesRecordsArray;
+    }
+    return nil;
+
 }
 
 

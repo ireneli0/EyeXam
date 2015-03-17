@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186161C21AB8C53000A7DECC /* allRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 186161C11AB8C53000A7DECC /* allRecords.m */; };
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
 		18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */; };
@@ -71,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186161C01AB8C53000A7DECC /* allRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allRecords.h; path = "EyeXam/View Controller/allRecords.h"; sourceTree = "<group>"; };
+		186161C11AB8C53000A7DECC /* allRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = allRecords.m; path = "EyeXam/View Controller/allRecords.m"; sourceTree = "<group>"; };
 		18AEC2481AB6985F009B3BE4 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = SoundResource/correct.wav; sourceTree = "<group>"; };
 		18AEC2491AB6985F009B3BE4 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = SoundResource/wrong.wav; sourceTree = "<group>"; };
 		18AED71C1AB7BD1300D4EA57 /* DatabaseInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseInstance.h; path = "EyeXam/View Controller/DatabaseInstance.h"; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */,
 				18B5A9FD1AB8119400276A99 /* userInfo.h */,
 				18B5A9FE1AB8119400276A99 /* userInfo.m */,
+				186161C01AB8C53000A7DECC /* allRecords.h */,
+				186161C11AB8C53000A7DECC /* allRecords.m */,
 			);
 			name = DatabaseInstance;
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 			files = (
 				CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */,
 				CE449C6B1AB7FEB60019CBF3 /* ChangeUserViewController.m in Sources */,
+				186161C21AB8C53000A7DECC /* allRecords.m in Sources */,
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
 				18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */,
 				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,

@@ -23,16 +23,16 @@
 
 -(BOOL)addNewRecords:(NSString *)tableName
             withName:(NSString *)user
-       withtestMeter:(float)testMeters
+       withtestMeter:(NSString *)testMeters
          withGlasses:(NSString *)wearGlasses
-   withlefteyeResult:(float)lefteyeResult
-  withrighteyeResult:(float)righteyeResult
+   withlefteyeResult:(NSString *)lefteyeResult
+  withrighteyeResult:(NSString *)righteyeResult
             withTime:(NSString *)currenttime;
 
 -(NSArray *)getAllUsers;
--(void)getAllRecordsForSelectedUser;
--(void)getNakedEyeRecordsForSelectedUser;
--(void)getWithGlassesRecordsForSelectedUser;
+-(NSArray *)getAllRecordsForSelectedUser:(NSString *)currentUser;
+-(NSArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser;
+-(NSArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser;
 
 
 @end

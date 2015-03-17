@@ -470,16 +470,13 @@
             break;
         case 1:
             if (buttonIndex == 0) {
-                //Here
-                //saving results into database
-                //result for right eye is stored in self.resultForRightEye
-                //result for left eye is stored in self.resultForLeftEye
-                //meterValue
                 
+                NSString *testMeters = [NSString stringWithFormat:@"%f", self.meterValue];
+                NSString *lefteyeResult = [NSString stringWithFormat:@"%f", self.resultForLeftEye];
+                NSString *righteyeResult = [NSString stringWithFormat:@"%f", self.resultForRightEye];
                 NSString *currenttime = 0;
-                NSString *wearGlasses = @"YES";
                 
-                if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:self.userName withtestMeter:self.meterValue withGlasses:wearGlasses withlefteyeResult:self.resultForLeftEye withrighteyeResult:self.resultForRightEye withTime:currenttime]){
+                if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:self.userName withtestMeter:testMeters withGlasses:self.wearGlasses withlefteyeResult:lefteyeResult withrighteyeResult:righteyeResult withTime:currenttime]){
                     NSLog(@"update Records succeessfully");
                 }
            
