@@ -7,6 +7,7 @@
 //
 
 #import "ChangeUserViewController.h"
+#import "DatabaseInstance.h"
 
 @interface ChangeUserViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *allUsersTableView;
@@ -53,6 +54,8 @@
         //..
         //..
         //..
+        userInfo *userInfo =[self.allUsersArray objectAtIndex:indexPath.row];
+        [[DatabaseInstance getSharedInstance] deleteSelectedUser:userInfo.userName];
         [self.allUsersArray removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -81,12 +84,6 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
-
-
-
-
-
 
 /*
  // Override to support rearranging the table view.
