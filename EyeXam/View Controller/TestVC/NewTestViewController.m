@@ -9,6 +9,7 @@
 #import "NewTestViewController.h"
 #import "PopoverSettingsViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "DatabaseInstance.h"
 
 @interface NewTestViewController ()<NodeDeviceDelegate,VTNodeConnectionHelperDelegate,WYPopoverControllerDelegate>{
     WYPopoverController *settingsPopoverController;
@@ -473,7 +474,17 @@
                 //saving results into database
                 //result for right eye is stored in self.resultForRightEye
                 //result for left eye is stored in self.resultForLeftEye
-                //
+                //meterValue
+                
+                NSString *currenttime = 0;
+                NSString *wearGlasses = @"YES";
+                
+                if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:self.userName withtestMeter:self.meterValue withGlasses:wearGlasses withlefteyeResult:self.resultForLeftEye withrighteyeResult:self.resultForRightEye withTime:currenttime]){
+                    NSLog(@"update Records succeessfully");
+                }
+           
+                
+                
                 [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:0] animated:YES];
             }
             if (buttonIndex == 1) {
