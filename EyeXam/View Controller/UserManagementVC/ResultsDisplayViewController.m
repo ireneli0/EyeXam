@@ -35,11 +35,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(tableView.tag ==0){
-        //return naked eye result records count
+        //naked eye
         return [[[DatabaseInstance getSharedInstance]getNakedEyeRecordsForSelectedUser:self.userName] count];
 
     }else if (tableView.tag ==1){
-        //return with glasses eye result records count
+        //glasses eye
         return [[[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName] count];
     }
     return 0;
@@ -49,14 +49,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      UITableViewCell *cell = nil;
      if(tableView.tag ==0){
-         //return naked eye result cell
+         //naked eye result cell
          cell = [tableView dequeueReusableCellWithIdentifier:@"nakedEyeResultsTableCell" forIndexPath:indexPath];
          NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [nakedEyeResultsArray objectAtIndex:indexPath.row];
          cell.textLabel.text = [NSString stringWithFormat:@"%@:Left:%@,Right:%@,Distance:%@", recordsForCurrentUser.currentTime, recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
 
      }else if (tableView.tag ==1){//
-         //return with glasses eye result cell
+         //with glasses eye result cell
          cell = [tableView dequeueReusableCellWithIdentifier:@"withGlassesResultsTableCell" forIndexPath:indexPath];
          NSArray *withGlassesResultsArray = [[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [withGlassesResultsArray objectAtIndex:indexPath.row];
