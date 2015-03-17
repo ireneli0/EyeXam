@@ -49,15 +49,21 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        //hit delete
-        //here to add database delete code
-        //..
-        //..
-        //..
+
         userInfo *userInfo =[self.allUsersArray objectAtIndex:indexPath.row];
-        [[DatabaseInstance getSharedInstance] deleteSelectedUser:userInfo.userName];
-        [self.allUsersArray removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSLog(@"self.userName:%@, userInfo.userName:%@", self.userName, userInfo.userName);
+        if([self.userName isEqualToString: userInfo.userName]){
+            //cannot delete current user himself
+            UIAlertView *deleteCurrentUserAlert = [[UIAlertView alloc]
+                                            initWithTitle:@"Alert" message:@"You cannot delete yourself" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [deleteCurrentUserAlert show];
+            
+        }else{
+        
+            [[DatabaseInstance getSharedInstance] deleteSelectedUser:userInfo.userName];
+            [self.allUsersArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -65,12 +71,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    userInfo *userInfo = [self.allUsersArray objectAtIndex:indexPath.row];
+    if([self.userName isEqualToString:userInfo.userName]){
+        //do nothing if choose to change to current user
+    }else{
     UIAlertView *changeUserAlert = [[UIAlertView alloc]
                                  initWithTitle:@"Change Account" message:@"Are you sure you want to change to this account?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes",nil];
     [changeUserAlert show];
-    userInfo *userInfo = [self.allUsersArray objectAtIndex:indexPath.row];
-    NSLog(@"change from user :%@", self.userName);
     self.userName = userInfo.userName;
+    }
 }
 
 
