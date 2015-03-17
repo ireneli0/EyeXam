@@ -105,15 +105,15 @@ static sqlite3_stmt *statement = nil;
     if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
         NSString *insert_Recordssql = [NSString stringWithFormat:
                                      @"INSERT INTO '%@'(userName,testMeters,wearGlasses,lefteyeResult,righteyeResult,testTime) VALUES (\"%@\",\"%f\",\"%@\",\"%f\",\"%f\",\"%@\")",tableName,user,testMeters,wearGlasses,lefteyeResult,righteyeResult,currenttime];
-        const char *insert_users = [insert_Recordssql UTF8String];
+        const char *insert_records = [insert_Recordssql UTF8String];
         
-        sqlite3_prepare_v2(database, insert_users, -1, &statement, NULL);
+        sqlite3_prepare_v2(database, insert_records, -1, &statement, NULL);
         
         if (sqlite3_step(statement) == SQLITE_DONE){
             isSuccess = TRUE;
         }
         else{
-            if (sqlite3_prepare_v2(database, insert_users, -1, &statement, NULL) != SQLITE_DONE) {
+            if (sqlite3_prepare_v2(database, insert_records, -1, &statement, NULL) != SQLITE_DONE) {
                 NSLog(@"insert failed: %s", sqlite3_errmsg(database));}
         }
         sqlite3_finalize(statement);
