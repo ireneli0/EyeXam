@@ -68,7 +68,6 @@ static sqlite3_stmt *statement = nil;
 {
      BOOL isSuccess = FALSE;
 
-    NSLog(@"%@,%@,%@,%@",tableName,user,wearGlasses,eyesightType);
      if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
         NSString *insert_userssql = [NSString stringWithFormat:
                                   @"INSERT INTO '%@'(userName,wearGlasses,eyesightType) VALUES (\"%@\", \"%@\", \"%@\")",tableName,user,wearGlasses,eyesightType];
