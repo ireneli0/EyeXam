@@ -479,10 +479,8 @@
                 NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
                 [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
                 currenttime = [formatter stringFromDate:[NSDate date]];
-                NSLog(currenttime);
                 
-                if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:self.userName withtestMeter:testMeters withGlasses:self.wearGlasses withlefteyeResult:lefteyeResult withrighteyeResult:righteyeResult withTime:currenttime]
-                   &&[[DatabaseInstance getSharedInstance]getAllRecordsForSelectedUser:self.userName]){
+                if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:self.userName withtestMeter:testMeters withGlasses:self.wearGlasses withlefteyeResult:lefteyeResult withrighteyeResult:righteyeResult withTime:currenttime]){
                     NSLog(@"update Records succeessfully");
                 }
                 
