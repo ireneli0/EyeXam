@@ -44,10 +44,14 @@
             ChangeUserViewController *cuVC = (ChangeUserViewController*)segue.destinationViewController;
             cuVC.userName = self.userName;
         }
-
+    }else if ([segue.identifier isEqualToString:@"AdjustDistance"]){
+        if ([segue.destinationViewController isKindOfClass:[AdjustDistanceViewController class]]) {
+            AdjustDistanceViewController *adVC = (AdjustDistanceViewController*)segue.destinationViewController;
+            adVC.userName = self.userName;
+        }
     }
     
-    
+    //
     
     
     

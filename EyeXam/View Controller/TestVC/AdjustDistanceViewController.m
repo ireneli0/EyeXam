@@ -9,6 +9,7 @@
 #import "AdjustDistanceViewController.h"
 #import "NewTestViewController.h"
 
+
 @interface AdjustDistanceViewController()
 
 @property (weak, nonatomic) IBOutlet UISlider *distanceSlider;
@@ -29,6 +30,23 @@
 - (IBAction)changeDistanceSlider:(id)sender {
     float distanceValue = self.distanceSlider.value * 3 +2;
     self.distanceLabel.text = [NSString stringWithFormat:@"%.1f m", distanceValue];
+}
+//
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+if ([segue.identifier isEqualToString:@"DoneAdjustingDistance"]){
+    if ([segue.destinationViewController isKindOfClass:[NewTestViewController class]]) {
+        NewTestViewController *ntVC = (NewTestViewController*)segue.destinationViewController;
+        ntVC.userName = self.userName;
+        ntVC.meterValue = self.distanceSlider.value * 3 +2;
+    }
+    
+}
+
+
+
+
+
 }
 
 @end

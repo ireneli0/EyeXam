@@ -91,6 +91,8 @@
                                                object:nil];
     self.title = @"New Test";
     self.buttonPressedCount = 0;
+    //self.x1Label.text = self.userName;
+    //self.x2Label.text = [NSString stringWithFormat:@"%.1f",self.meterValue ];
 //    self.accelorometerLabel.hidden = YES;
 //    self.gyroLabel.hidden = YES;
 //    self.magnetometerLabel.hidden = YES;
@@ -219,7 +221,7 @@
     NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
     if (reading.x>1.38) {
         //up -> 3
-        self.x1Label.text = [NSString stringWithFormat:@"x>1.38: %.3f", reading.x];
+        //self.x1Label.text = [NSString stringWithFormat:@"x>1.38: %.3f", reading.x];
         [userDictionary setObject:[NSNumber numberWithInt:3] forKey:@"inputDirection"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
     }else if (reading.x<-0.1) {
@@ -230,7 +232,7 @@
     }
     else if (reading.y<-0.75) {
         //left -> 1
-        self.x2Label.text  = [NSString stringWithFormat:@"y<-0.8: %.3f", reading.y];
+        //self.x2Label.text  = [NSString stringWithFormat:@"y<-0.8: %.3f", reading.y];
         [userDictionary setObject:[NSNumber numberWithInt:1] forKey:@"inputDirection"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
     }
