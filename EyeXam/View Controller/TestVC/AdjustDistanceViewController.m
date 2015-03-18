@@ -21,6 +21,8 @@
 - (void)viewDidLoad{
     self.title = @"Adjust Distance";
     self.distanceSlider.value = 0.0;
+    //default value is naked eye
+    self.wearGlasses = @"Naked eye";
 }
 
 
@@ -32,23 +34,16 @@
     float distanceValue = self.distanceSlider.value * 3 +2;
     self.distanceLabel.text = [NSString stringWithFormat:@"%.1f m", distanceValue];
 }
-//
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-if ([segue.identifier isEqualToString:@"DoneAdjustingDistance"]){
-    if ([segue.destinationViewController isKindOfClass:[NewTestViewController class]]) {
-        NewTestViewController *ntVC = (NewTestViewController*)segue.destinationViewController;
-        ntVC.userName = self.userName;
-        ntVC.meterValue = self.distanceSlider.value * 3 +2;
-        ntVC.wearGlasses = self.wearGlasses;
+    if ([segue.identifier isEqualToString:@"DoneAdjustingDistance"]){
+        if ([segue.destinationViewController isKindOfClass:[NewTestViewController class]]) {
+            NewTestViewController *ntVC = (NewTestViewController*)segue.destinationViewController;
+            ntVC.userName = self.userName;
+            ntVC.meterValue = self.distanceSlider.value * 3 +2;
+            ntVC.wearGlasses = self.wearGlasses;
+        }
     }
-    
-}
-
-
-
-
-
 }
 
 @end
