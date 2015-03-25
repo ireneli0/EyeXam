@@ -94,12 +94,13 @@
     self.buttonPressedCount = 0;
     //self.x1Label.text = self.wearGlasses;
     //self.x2Label.text = [NSString stringWithFormat:@"%.1f",self.meterValue ];
-//    self.accelorometerLabel.hidden = YES;
-//    self.gyroLabel.hidden = YES;
-//    self.magnetometerLabel.hidden = YES;
-//    self.x1Label.hidden = YES;
-//    self.x2Label.hidden = YES;
+    self.accelorometerLabel.hidden = YES;
+    self.gyroLabel.hidden = YES;
+    self.magnetometerLabel.hidden = YES;
+    self.x1Label.hidden = YES;
+    self.x2Label.hidden = YES;
     
+    self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
     //initialize the sounds
     //correct sound
     NSString *correct_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/correct" ofType:@"wav"];
@@ -153,6 +154,7 @@
 -(void) nodeDeviceButtonPushed: (VTNodeDevice *) device{
     switch (self.buttonPressedCount) {
         case 0:
+            self.testFlowInstructionLabel.text =@"Testing...";
             //button pushed 1st
             self.originAccX = self.accX;
             self.originAccY = self.accY;
@@ -356,7 +358,7 @@
     [self.condition lock];
     
     float resultForEye = 0.0;
-    float result[14] = {0.1, 0.12, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0, 1.2, 1.5, 2.0};
+    float result[14] = {0.1, 0.125, 0.16, 0.2, 0.25, 0.32, 0.4, 0.5, 0.63, 0.8, 1.0, 1.25, 1.6, 2.0};
     //current row number
     int i = 0;
     int errorCount = 0;//range [0, 13]
@@ -438,11 +440,11 @@
     
     
     if (i == -1) {
-        resultForEye = 0.01;
+        resultForEye = 0.1;
     }else{
         resultForEye = result[i-1];
     }
-    NSLog(@"result for eye is :%.2f", resultForEye);
+    NSLog(@"result for eye is :%.3f", resultForEye);
     
     if(self.buttonPressedCount ==1){
         self.resultForRightEye = resultForEye;
@@ -454,8 +456,14 @@
 
     }else if(self.buttonPressedCount ==2){
         self.resultForLeftEye = resultForEye;
-        NSString *resultString = [NSString stringWithFormat:@"Your test result is:\nright:%.2f\nleft:%.2f\nWould you like to save it?", self.resultForRightEye,self.resultForLeftEye];
         
+        //standardize the display form of results
+        int resultRight = 20/self.resultForRightEye;
+        int resultLeft = 20/self.resultForLeftEye;
+        
+        NSString *resultString = [NSString stringWithFormat:@"Your test result is:\nright:20/%d\nleft:20/%d\nWould you like to save it?", resultRight,resultLeft];
+        
+        self.testFlowInstructionLabel.text = @"Finished!";
         UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Finished!" message:resultString delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No, thanks" ,nil];
         saveAlert.tag = 1;
         [saveAlert show];
@@ -471,9 +479,12 @@
         case 1:
             if (buttonIndex == 0) {
                 
+                int resultRight = 20/self.resultForRightEye;
+                int resultLeft = 20/self.resultForLeftEye;
+                
                 NSString *testMeters = [NSString stringWithFormat:@"%.1f", self.meterValue];
-                NSString *lefteyeResult = [NSString stringWithFormat:@"%f", self.resultForLeftEye];
-                NSString *righteyeResult = [NSString stringWithFormat:@"%f", self.resultForRightEye];
+                NSString *lefteyeResult = [NSString stringWithFormat:@"20/%d", resultLeft];
+                NSString *righteyeResult = [NSString stringWithFormat:@"20/%d", resultRight];
                 
                 NSString *currenttime;
                 NSDateFormatter* formatter = [[NSDateFormatter alloc]init];

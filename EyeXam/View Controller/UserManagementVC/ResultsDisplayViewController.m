@@ -53,14 +53,14 @@
          cell = [tableView dequeueReusableCellWithIdentifier:@"nakedEyeResultsTableCell" forIndexPath:indexPath];
          NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [nakedEyeResultsArray objectAtIndex:indexPath.row];
-         cell.textLabel.text = [NSString stringWithFormat:@"%@:Left:%@,Right:%@,Distance:%@", recordsForCurrentUser.currentTime, recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.textLabel.text = [NSString stringWithFormat:@"%@:Left:%@,Right:%@,Distance:%@m", recordsForCurrentUser.currentTime, recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
 
      }else if (tableView.tag ==1){//
          //with glasses eye result cell
          cell = [tableView dequeueReusableCellWithIdentifier:@"withGlassesResultsTableCell" forIndexPath:indexPath];
          NSArray *withGlassesResultsArray = [[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [withGlassesResultsArray objectAtIndex:indexPath.row];
-         cell.textLabel.text = [NSString stringWithFormat:@"%@:Left:%@,Right:%@,Distance:%@", recordsForCurrentUser.currentTime, recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.textLabel.text = [NSString stringWithFormat:@"%@:Left:%@,Right:%@,Distance:%@m", recordsForCurrentUser.currentTime, recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
 
      }
      return cell;

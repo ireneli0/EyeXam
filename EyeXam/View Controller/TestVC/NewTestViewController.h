@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *gyroLabel;
 @property (weak, nonatomic) IBOutlet UILabel *magnetometerLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *testFlowInstructionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *eCharacterImageView;
 
 //passed value through segue
