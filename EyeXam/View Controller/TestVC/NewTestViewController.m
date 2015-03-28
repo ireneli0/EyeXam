@@ -17,27 +17,11 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 //dynamic 9-axis
-@property (nonatomic) float accX;
-@property (nonatomic) float accY;
-@property (nonatomic) float accZ;
-
-@property (nonatomic) float gyroX;
-@property (nonatomic) float gyroY;
-@property (nonatomic) float gyroZ;
-
 @property (nonatomic) float magX;
 @property (nonatomic) float magY;
 @property (nonatomic) float magZ;
 
 //static 9-axis of original point
-@property (nonatomic) float originAccX;
-@property (nonatomic) float originAccY;
-@property (nonatomic) float originAccZ;
-
-@property (nonatomic) float originGyroX;
-@property (nonatomic) float originGyroY;
-@property (nonatomic) float originGyroZ;
-
 @property (nonatomic) float originMagX;
 @property (nonatomic) float originMagY;
 @property (nonatomic) float originMagZ;
@@ -50,18 +34,17 @@
 //Threads
 @property (strong, nonatomic) NSCondition *condition;
 @property (nonatomic) BOOL lock;
-@property (nonatomic) int buttonPressedCount;
 @property (strong, nonatomic) NSThread *aThread;
 
 //value for user input
 @property (nonatomic) int userInputDirection;
 @property (strong, nonatomic) UIAlertView* changeEyeAlert;
-
+@property (nonatomic) int testFlowFlag;
+@property (nonatomic) int buttonPressedCount;
 
 //sounds
 @property (nonatomic) SystemSoundID correct_soundID;
 @property (nonatomic) SystemSoundID wrong_soundID;
-
 
 //result
 @property (nonatomic) float resultForRightEye;
@@ -92,13 +75,15 @@
                                                object:nil];
     self.title = @"New Test";
     self.buttonPressedCount = 0;
-    //self.x1Label.text = self.wearGlasses;
-    //self.x2Label.text = [NSString stringWithFormat:@"%.1f",self.meterValue ];
-    self.accelorometerLabel.hidden = YES;
-    self.gyroLabel.hidden = YES;
-    self.magnetometerLabel.hidden = YES;
-    self.x1Label.hidden = YES;
-    self.x2Label.hidden = YES;
+    self.testFlowFlag = 0;
+    self.resultForLeftEye =0;
+    self.resultForRightEye = 0;
+    
+//    self.accelorometerLabel.hidden = YES;
+//    self.gyroLabel.hidden = YES;
+//    self.magnetometerLabel.hidden = YES;
+//    self.x1Label.hidden = YES;
+//    self.x2Label.hidden = YES;
     
     self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
     //initialize the sounds
@@ -118,8 +103,6 @@
 
 - (void)handleUserInput:(NSNotification *)notification{
     self.userInputDirection= [[[notification userInfo] objectForKey:@"inputDirection"] intValue];
-    NSLog(@"1.got user input via notification: %d", self.userInputDirection);
-    
     self.lock = NO;
     [self.condition signal];
     //[self.condition unlock];
@@ -127,9 +110,7 @@
 }
 
 - (void)getNode:(NSNotification *)notification{
-    //NSLog(@"get peripheral via notification");
     self.peripheral = [[notification userInfo] objectForKey:@"connectedPeripheral"];
-    //NSLog(@"VC peripheral name:%@ ", self.peripheral.name);
     [self.nodeConnectionHelper connectDevice:self.peripheral forUseInBackground:NO];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"peripheral" object:nil];
 }
@@ -152,57 +133,100 @@
 }
 
 -(void) nodeDeviceButtonPushed: (VTNodeDevice *) device{
-    switch (self.buttonPressedCount) {
+    switch (self.testFlowFlag) {
         case 0:
-            self.testFlowInstructionLabel.text =@"Testing...";
-            //button pushed 1st
-            self.originAccX = self.accX;
-            self.originAccY = self.accY;
-            self.originAccZ = self.accZ;
-            self.originGyroX = self.gyroX;
-            self.originGyroY = self.gyroY;
-            self.originGyroZ = self.gyroZ;
-            self.originMagX = self.magX;
-            self.originMagY = self.magY;
-            self.originMagZ = self.magZ;
-            
-            NSLog(@"1_______________________________________1");
-            NSLog(@"origin\n");
-            NSLog(@"accx:%.2f, accy:%.2f, accz:%.2f", self.originAccX, self.originAccY, self.originAccZ);
-            NSLog(@"gyrx:%.2f, gyry:%.2f, gyrz:%.2f", self.originGyroX, self.originGyroY, self.originGyroZ);
-            NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.originMagX, self.originMagY, self.originMagZ);
-            NSLog(@"1_______________________________________1");
-            self.buttonPressedCount ++;
-            NSLog(@"button pressed count is :%i", self.buttonPressedCount);
-            //NSThread *aThread = [[NSThread alloc] initWithTarget:self selector:@selector(getOneEyeTested) object:nil];
-            [self launchNewTest];
+            //1st testing phrase:right
+            self.testFlowInstructionLabel.text =@"Testing right eye...";
 
-            
+            if (self.buttonPressedCount ==0) {
+                //1st time press button
+                self.originMagX = self.magX;
+                self.originMagY = self.magY;
+                self.originMagZ = self.magZ;
+                
+                NSLog(@"%i testing phrase", self.testFlowFlag+1);
+                NSLog(@"origin\n");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f_____origin1", self.originMagX, self.originMagY, self.originMagZ);
+                
+                self.buttonPressedCount ++;
+
+                [self launchNewTest];
+            }else{
+                
+                NSLog(@"dynamic\n");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.magX, self.magY, self.magZ);
+                NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
+
+                if ((self.magX - self.originMagX > 0.6)&&(self.magZ - self.originMagZ > 0.3)) {
+                    //left->1
+                    [userDictionary setObject:[NSNumber numberWithInt:1] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                    NSLog(@"left");
+                }else if ((self.magX - self.originMagX >0.4)&&(self.magZ-self.originMagZ<-0.4)){
+                    //right->0
+                    [userDictionary setObject:[NSNumber numberWithInt:0] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                    NSLog(@"right");
+                }else if((self.magX - self.originMagX >0.4)&&(self.magY - self.originMagY >0.5)&&(fabsf(self.magZ-self.originMagZ)<0.1)){
+                    //up -> 3
+                    [userDictionary setObject:[NSNumber numberWithInt:3] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                    NSLog(@"up");
+                }else if((self.magX - self.originMagX > 0.4)&&(self.magY - self.originMagY <-0.4)){
+                    //down -> 2
+                    [userDictionary setObject:[NSNumber numberWithInt:2] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                    NSLog(@"down");
+                }
+            }
+
             break;
         case 1:
-            //button pushed 2nd
-            [self.changeEyeAlert dismissWithClickedButtonIndex:0 animated:NO];
-            self.originAccX = self.accX;
-            self.originAccY = self.accY;
-            self.originAccZ = self.accZ;
-            self.originGyroX = self.gyroX;
-            self.originGyroY = self.gyroY;
-            self.originGyroZ = self.gyroZ;
-            self.originMagX = self.magX;
-            self.originMagY = self.magY;
-            self.originMagZ = self.magZ;
-            NSLog(@"2_______________________________________2");
-            NSLog(@"origin\n");
-            NSLog(@"accx:%.2f, accy:%.2f, accz:%.2f", self.originAccX, self.originAccY, self.originAccZ);
-            NSLog(@"gyrx:%.2f, gyry:%.2f, gyrz:%.2f", self.originGyroX, self.originGyroY, self.originGyroZ);
-            NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.originMagX, self.originMagY, self.originMagZ);
-            NSLog(@"2_______________________________________2");
+            //2nd testing phrase:left
+            self.testFlowInstructionLabel.text =@"Testing left eye...";
             
-            self.buttonPressedCount ++;
-            NSLog(@"button pressed count is :%i", self.buttonPressedCount);
-            //NSThread *aThread = [[NSThread alloc] initWithTarget:self selector:@selector(getOneEyeTested) object:nil];
-            [self launchNewTest];
-            
+            if (self.buttonPressedCount ==0) {
+                //1st time press button
+                [self.changeEyeAlert dismissWithClickedButtonIndex:0 animated:NO];
+                self.originMagX = self.magX;
+                self.originMagY = self.magY;
+                self.originMagZ = self.magZ;
+                
+                NSLog(@"%i testing phrase", self.testFlowFlag+1);
+                NSLog(@"origin\n");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f_____origin2", self.originMagX, self.originMagY, self.originMagZ);
+                
+                self.buttonPressedCount ++;
+                
+                [self launchNewTest];
+            }else{
+                
+                NSLog(@"dynamic_2\n");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.magX, self.magY, self.magZ);
+                NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
+                
+                if ((self.magX - self.originMagX > 0.6)&&(self.magZ - self.originMagZ > 0.3)) {
+                    //left->1
+                    [userDictionary setObject:[NSNumber numberWithInt:1] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                    NSLog(@"left");
+                }else if ((self.magX - self.originMagX >0.4)&&(self.magZ-self.originMagZ<-0.4)){
+                    //right->0
+                    [userDictionary setObject:[NSNumber numberWithInt:0] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                    NSLog(@"right");
+                }else if((self.magX - self.originMagX >0.4)&&(self.magY - self.originMagY >0.5)&&(fabsf(self.magZ-self.originMagZ)<0.1)){
+                    //up -> 3
+                    [userDictionary setObject:[NSNumber numberWithInt:3] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                }else if((self.magX - self.originMagX > 0.4)&&(self.magY - self.originMagY <-0.4)){
+                    //down -> 2
+                    [userDictionary setObject:[NSNumber numberWithInt:2] forKey:@"inputDirection"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
+                    
+                }
+            }
+
             break;
         case 2:
             break;
@@ -216,38 +240,10 @@
 
 - (void) nodeDeviceDidUpdateAccReading:(VTNodeDevice *)device withReading:(VTSensorReading *)reading{
     self.accelorometerLabel.text = [NSString stringWithFormat:@"x:%.2f,y:%.2f,z:%.2f",reading.x,reading.y,reading.z];
-    
-    self.accX = reading.x;
-    self.accY = reading.y;
-    self.accZ = reading.z;
-    
-    NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
-    if (reading.x>1.38) {
-        //up -> 3
-        self.x1Label.text = [NSString stringWithFormat:@"x>1.38: %.3f", reading.x];
-        [userDictionary setObject:[NSNumber numberWithInt:3] forKey:@"inputDirection"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
-    }else if (reading.x<-0.1) {
-        //down -> 2
-        //self.x2Label.text  = [NSString stringWithFormat:@"x<-0.1: %.3f", reading.x];
-        [userDictionary setObject:[NSNumber numberWithInt:2] forKey:@"inputDirection"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
-    }
-    else if (reading.y<-0.75) {
-        //left -> 1
-        self.x2Label.text  = [NSString stringWithFormat:@"y<-0.8: %.3f", reading.y];
-        [userDictionary setObject:[NSNumber numberWithInt:1] forKey:@"inputDirection"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
-    }
-    
-    
 }
 
 - (void)nodeDeviceDidUpdateGyroReading:(VTNodeDevice *)device withReading:(VTSensorReading *)reading{
     self.gyroLabel.text = [NSString stringWithFormat:@"x:%.2f,y:%.2f,z:%.2f",reading.x,reading.y,reading.z];
-    self.gyroX = reading.x;
-    self.gyroY = reading.y;
-    self.gyroZ = reading.z;
 }
 
 - (void)nodeDeviceDidUpdateMagReading:(VTNodeDevice *)device withReading:(VTSensorReading *)reading{
@@ -367,33 +363,25 @@
     
     do{
         [self.spinner startAnimating];
+        
         //implement random direction of optotype E
-        //randomDirection =  rand() % 4;
-        randomDirection = rand()%3 + 1;
-        //randomDirection = 2;
+        randomDirection =  rand() % 4;
+        
         NSLog(@"current Direction == %d, i = %d", randomDirection, i);
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", i]];
         UIImageOrientation imageOrientation = [self getImageOrientation:randomDirection];
         UIImage *imageTodisplay = [UIImage imageWithCGImage:[image CGImage] scale:1.0 orientation:imageOrientation];
         
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.eCharacterImageView setImage:imageTodisplay];
         });
         
-        //[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow: 1]];
-        
-        //[[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-        //wait for node sensor motion
-        //..
-        //..
-        
-        while(self.lock)
-        {
+
+        while(self.lock){
+            //wait for node sensor motion
             NSLog(@"Will Wait");
             [self.condition wait];
             
-            // the "did wait" will be printed only when you have signaled the condition change in the sendNewEvent method
             NSLog(@"Did Wait");
         }
         NSLog(@"2. userinput direction is %d", self.userInputDirection);
@@ -445,8 +433,10 @@
         resultForEye = result[i-1];
     }
     NSLog(@"result for eye is :%.3f", resultForEye);
+    self.testFlowFlag ++;
+    self.buttonPressedCount = 0;
     
-    if(self.buttonPressedCount ==1){
+    if(self.testFlowFlag ==1){
         self.resultForRightEye = resultForEye;
         NSString *resultString = [NSString stringWithFormat:@"Pressed the button on your NODE device to continue"];
         
@@ -454,7 +444,7 @@
         self.changeEyeAlert.tag = 0;
         [self.changeEyeAlert show];
 
-    }else if(self.buttonPressedCount ==2){
+    }else if(self.testFlowFlag ==2){
         self.resultForLeftEye = resultForEye;
         
         //standardize the display form of results
@@ -524,7 +514,6 @@
             imageOrientation = UIImageOrientationLeft;
             break;
         default:
-            
             break;
     }
     return imageOrientation;
