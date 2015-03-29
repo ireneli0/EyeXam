@@ -95,6 +95,8 @@ alpha:1.0]
     return 0;
 }
 
+//static condition
+//line color
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0 ||lineIndex ==1)
         return UIColorFromRGB(0x4cc552);
@@ -102,7 +104,7 @@ alpha:1.0]
         return UIColorFromRGB(0xff0000);
     
 }
-
+//line width
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex
 {
     if(lineIndex == 0 || lineIndex == 2)
@@ -110,7 +112,7 @@ alpha:1.0]
     else
         return 6.0f;
 }
-
+//line style
 - (JBLineChartViewLineStyle)lineChartView:(JBLineChartView *)lineChartView lineStyleForLineAtLineIndex:(NSUInteger)lineIndex
 {
     if(lineIndex == 0 || lineIndex == 2)
@@ -119,6 +121,64 @@ alpha:1.0]
         return JBLineChartViewLineStyleSolid;
 }
 
+
+//selected condition
+//vertical frame color
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView verticalSelectionColorForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    if(lineIndex == 0 ||lineIndex ==1)
+        return UIColorFromRGB(0x4cc552);
+    else
+        return UIColorFromRGB(0xff0000);
+
+}
+//vertical frame width
+- (CGFloat)verticalSelectionWidthForLineChartView:(JBLineChartView *)lineChartView
+{
+        return 20.0f;
+}
+//line color
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView selectionColorForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    if(lineIndex == 0 ||lineIndex ==1)
+        return UIColorFromRGB(0x4cc552);
+    else
+        return UIColorFromRGB(0xff0000);
+}
+
+
+//dot configuration
+//show dots
+- (BOOL)lineChartView:(JBLineChartView *)lineChartView showsDotsForLineAtLineIndex:(NSUInteger)lineIndex{
+
+    if (lineIndex == 0 || lineIndex ==2)
+        return true;
+    else
+        return false;
+}
+//dot radius
+- (CGFloat)lineChartView:(JBLineChartView *)lineChartView dotRadiusForDotAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex{
+    CGFloat dotSize = 10.0f;
+    if (lineIndex == 0 ||lineIndex ==2)
+        return  dotSize;
+    else
+        return 0;
+    
+}
+//dot color
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex{
+    if(lineIndex == 0 ||lineIndex ==1)
+        return UIColorFromRGB(0x4cc552);
+    else
+        return UIColorFromRGB(0xff0000);
+}
+//dot selection color
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView selectionColorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex{
+    return UIColorFromRGB(0xffffff);
+}
+- (BOOL)lineChartView:(JBLineChartView *)lineChartView shouldHideDotViewOnSelectionAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex{
+    return true;
+}
 
 
 

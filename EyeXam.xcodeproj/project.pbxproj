@@ -21,7 +21,6 @@
 		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
 		CE2C28661AC66B4500222E8F /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C28631AC66B4500222E8F /* JBLineChartView.m */; };
 		CE2C28691AC66D9400222E8F /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C28681AC66D9400222E8F /* JBChartView.m */; };
-		CE449C5A1AB7DE220019CBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE449C581AB7DE220019CBF3 /* Main.storyboard */; };
 		CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */; };
 		CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */; };
 		CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */ = {isa = PBXBuildFile; fileRef = CE449C641AB7E6C00019CBF3 /* EYE.png */; };
@@ -34,6 +33,7 @@
 		CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D36791AB629FD002DE674 /* ViewController.m */; };
 		CE7D36811AB62A0E002DE674 /* AdjustDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D367C1AB62A0E002DE674 /* AdjustDistanceViewController.m */; };
 		CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D367E1AB62A0E002DE674 /* NewTestViewController.m */; };
+		CE8E2FBF1AC8AFE6000751A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE449C581AB7DE220019CBF3 /* Main.storyboard */; };
 		CEA1E2541A9DB07E004E3A9B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2531A9DB07E004E3A9B /* CoreBluetooth.framework */; };
 		CEA1E2561A9DB086004E3A9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2551A9DB086004E3A9B /* CoreLocation.framework */; };
 		CEA1E2581A9DB091004E3A9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E2571A9DB091004E3A9B /* libz.dylib */; };
@@ -513,12 +513,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8E2FBF1AC8AFE6000751A0 /* Main.storyboard in Resources */,
 				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				CEC7121B1AB6AA8900B1751E /* 1.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
 				CE0839721AB8C5030036BAAB /* Add.png in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
-				CE449C5A1AB7DE220019CBF3 /* Main.storyboard in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
 				18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */,
