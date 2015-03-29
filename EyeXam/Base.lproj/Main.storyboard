@@ -475,10 +475,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7K-J0-4E3">
-                                <rect key="frame" x="261" y="248" width="500" height="500"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="umk-4s-t21">
                                 <rect key="frame" x="814" y="635" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -520,7 +516,6 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="accelorometerLabel" destination="HTG-y3-ay5" id="iZj-uw-XMp"/>
-                        <outlet property="eCharacterImageView" destination="D7K-J0-4E3" id="HbM-HO-L0k"/>
                         <outlet property="gyroLabel" destination="qGF-Jc-Dof" id="jMv-hF-HOi"/>
                         <outlet property="instructionLabel" destination="pRs-HJ-ZHB" id="eW6-yT-6Ht"/>
                         <outlet property="magnetometerLabel" destination="E38-Hu-edW" id="NzF-9V-bmd"/>

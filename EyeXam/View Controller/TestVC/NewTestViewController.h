@@ -26,11 +26,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *testFlowInstructionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *eCharacterImageView;
+
 
 //passed value through segue
 @property (strong, nonatomic) NSString *userName;
 @property (nonatomic)  float meterValue;
 @property (strong, nonatomic) NSString * wearGlasses;
+
+//resize UIImage
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end
