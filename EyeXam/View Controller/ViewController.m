@@ -22,6 +22,25 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"EyeXam";
+//    int resultRight = 20/1.0;
+//    int resultLeft = 20/2.0;
+//    
+//    float meterValue = 2.0;
+//    NSString *testMeters = [NSString stringWithFormat:@"%.1f", meterValue];
+//    NSString *lefteyeResult = [NSString stringWithFormat:@"20/%d", resultLeft];
+//    NSString *righteyeResult = [NSString stringWithFormat:@"20/%d", resultRight];
+//
+//    NSString *wearGlasses = @"With glasses";
+//    NSString *userName = @"Yi";
+//    NSString *currenttime;
+//    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+//    [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+//    currenttime = [formatter stringFromDate:[NSDate date]];
+//    
+//    if([[DatabaseInstance getSharedInstance]addNewRecords:@"Records" withName:userName withtestMeter:testMeters withGlasses:wearGlasses withlefteyeResult:lefteyeResult withrighteyeResult:righteyeResult withTime:currenttime]){
+//        NSLog(@"update Records succeessfully");
+//    }
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{

@@ -19,6 +19,8 @@
 		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
 		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
+		CE2C28661AC66B4500222E8F /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C28631AC66B4500222E8F /* JBLineChartView.m */; };
+		CE2C28691AC66D9400222E8F /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C28681AC66D9400222E8F /* JBChartView.m */; };
 		CE449C5A1AB7DE220019CBF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE449C581AB7DE220019CBF3 /* Main.storyboard */; };
 		CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */; };
 		CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */; };
@@ -93,6 +95,10 @@
 		CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
 		CE249BE31AB6282700DE63A1 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = EyeXam/ImageResource/correct.png; sourceTree = "<group>"; };
 		CE249BE41AB6282700DE63A1 /* wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wrong.jpg; path = EyeXam/ImageResource/wrong.jpg; sourceTree = "<group>"; };
+		CE2C28621AC66B4500222E8F /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBLineChartView.h; path = EyeXam/Model/LineChartView/JBLineChartView.h; sourceTree = "<group>"; };
+		CE2C28631AC66B4500222E8F /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBLineChartView.m; path = EyeXam/Model/LineChartView/JBLineChartView.m; sourceTree = "<group>"; };
+		CE2C28671AC66D9400222E8F /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBChartView.h; path = EyeXam/Model/LineChartView/JBChartView.h; sourceTree = "<group>"; };
+		CE2C28681AC66D9400222E8F /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBChartView.m; path = EyeXam/Model/LineChartView/JBChartView.m; sourceTree = "<group>"; };
 		CE449C591AB7DE220019CBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE449C5E1AB7E1DA0019CBF3 /* ResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/ResultsDisplayViewController.h"; sourceTree = "<group>"; };
 		CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/ResultsDisplayViewController.m"; sourceTree = "<group>"; };
@@ -234,6 +240,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE2C285D1AC66B3200222E8F /* LineChartView */ = {
+			isa = PBXGroup;
+			children = (
+				CE2C28671AC66D9400222E8F /* JBChartView.h */,
+				CE2C28681AC66D9400222E8F /* JBChartView.m */,
+				CE2C28621AC66B4500222E8F /* JBLineChartView.h */,
+				CE2C28631AC66B4500222E8F /* JBLineChartView.m */,
+			);
+			name = LineChartView;
+			sourceTree = "<group>";
+		};
 		CE64FB621A9ED8CF0000D1DA /* PopoverViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +295,7 @@
 		CEDF15161A9D94A500CF8AC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE2C285D1AC66B3200222E8F /* LineChartView */,
 				CEDF15171A9D94B200CF8AC4 /* RadioButton */,
 			);
 			name = Model;
@@ -578,6 +596,7 @@
 				186161C21AB8C53000A7DECC /* allRecords.m in Sources */,
 				CEEC12231A9D8F99008FF50F /* AppDelegate.m in Sources */,
 				18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */,
+				CE2C28661AC66B4500222E8F /* JBLineChartView.m in Sources */,
 				CE7D36821AB62A0E002DE674 /* NewTestViewController.m in Sources */,
 				CE0839761AB8ECF00036BAAB /* ViewProfileViewController.m in Sources */,
 				CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */,
@@ -586,6 +605,7 @@
 				CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */,
 				CEEC12201A9D8F99008FF50F /* main.m in Sources */,
 				18B5A9FF1AB8119400276A99 /* userInfo.m in Sources */,
+				CE2C28691AC66D9400222E8F /* JBChartView.m in Sources */,
 				CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */,
 				CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */,
 				CE64FB6D1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m in Sources */,

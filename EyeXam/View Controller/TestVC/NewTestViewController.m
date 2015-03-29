@@ -26,10 +26,8 @@
 @property (nonatomic) float originMagY;
 @property (nonatomic) float originMagZ;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *x1Label;
 @property (weak, nonatomic) IBOutlet UILabel *x2Label;
-
 
 //Threads
 @property (strong, nonatomic) NSCondition *condition;
