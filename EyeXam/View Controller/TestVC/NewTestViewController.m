@@ -48,6 +48,10 @@
 @property (nonatomic) float resultForRightEye;
 @property (nonatomic) float resultForLeftEye;
 
+//imageView
+@property (strong,nonatomic) UIImageView* 
+eCharacterImageView;
+
 @end
 
 @implementation NewTestViewController
@@ -84,6 +88,11 @@
 //    self.x2Label.hidden = YES;
     
     self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
+    
+    //initial eCharacterImageView
+    self.eCharacterImageView =[[UIImageView alloc] initWithFrame:CGRectMake(250,250,500,500)];
+    [self.view addSubview:self.eCharacterImageView];
+    
     //initialize the sounds
     //correct sound
     NSString *correct_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/correct" ofType:@"wav"];
@@ -364,11 +373,20 @@
         
         //implement random direction of optotype E
         randomDirection =  rand() % 4;
+//        randomDirection = 1;
+//        NSLog(@"%d",randomDirection);
+
         
         NSLog(@"current Direction == %d, i = %d", randomDirection, i);
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", i]];
         UIImageOrientation imageOrientation = [self getImageOrientation:randomDirection];
-        UIImage *imageTodisplay = [UIImage imageWithCGImage:[image CGImage] scale:1.0 orientation:imageOrientation];
+        float optotypesize = self.meterValue/2*500;
+        UIImage *resizeImage = [NewTestViewController imageWithImage:image scaledToSize:CGSizeMake(optotypesize, optotypesize)];
+          NSLog(@"%f,%f",resizeImage.size.width, resizeImage.size.height);
+        UIImage *imageTodisplay = [UIImage imageWithCGImage:[resizeImage CGImage] scale:1.0 orientation:imageOrientation];
+          NSLog(@"%f,%f",imageTodisplay.size.width, imageTodisplay.size.height);
+        self.eCharacterImageView.frame = CGRectMake(self.eCharacterImageView.frame.origin.x, self.eCharacterImageView.frame.origin.y,imageTodisplay.size.width/2, imageTodisplay.size.height/2);
+          NSLog(@"%f,%f,%f,%f",self.eCharacterImageView.frame.origin.x, self.eCharacterImageView.frame.origin.y,imageTodisplay.size.width/2, imageTodisplay.size.height/2);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.eCharacterImageView setImage:imageTodisplay];
@@ -515,6 +533,14 @@
             break;
     }
     return imageOrientation;
+}
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 @end
