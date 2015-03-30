@@ -38,7 +38,6 @@ alpha:1.0]
     
     self.lineChartView.frame = CGRectMake(100, 100, self.view.bounds.size.width - 200, 500);
     
-    //self.lineChartView.frame = CGRectMake(100,100,800,500);
     self.lineChartView.backgroundColor = UIColorFromRGB(0xb7e3e4);
     
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(100, 200, self.view.bounds.size.width - (100 * 2), 20)];
@@ -54,7 +53,7 @@ alpha:1.0]
     footerView.rightLabel.text = lastRecordForCurrentUser.currentTime;
     footerView.rightLabel.textColor = [UIColor whiteColor];
     footerView.sectionCount = [nakedEyeResultsArray count];
-    self.lineChartView.footerView = footerView;
+    //self.lineChartView.footerView = footerView;
     
     [self.view addSubview:self.lineChartView];
     
@@ -73,7 +72,6 @@ alpha:1.0]
     [super viewWillAppear:animated];
     self.userNameLabel.text = self.userName;
     [self.lineChartView setState:JBChartViewStateExpanded];
-    //[self.lineChartView reloadData];
 }
 
 - (BOOL)shouldExtendSelectionViewIntoFooterPaddingForChartView:(JBChartView *)chartView
@@ -239,8 +237,9 @@ alpha:1.0]
         [self.informationView setValueText:[NSString stringWithFormat:@"%.2f", glassesLeft] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
         
+    }else{
+        [self.informationView setHidden:NO animated:YES];
     }
-
 
 }
 
@@ -249,7 +248,6 @@ alpha:1.0]
     [self.informationView setHidden:YES animated:YES];
 
 }
-
 
 
 @end
