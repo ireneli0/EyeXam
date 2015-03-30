@@ -90,7 +90,7 @@ eCharacterImageView;
     self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
     
     //initial eCharacterImageView
-    self.eCharacterImageView =[[UIImageView alloc] initWithFrame:CGRectMake(250,250,500,500)];
+    self.eCharacterImageView =[[UIImageView alloc] initWithFrame:CGRectMake(430,350,500,500)];
     [self.view addSubview:self.eCharacterImageView];
     
     //initialize the sounds
@@ -376,17 +376,18 @@ eCharacterImageView;
 //        randomDirection = 1;
 //        NSLog(@"%d",randomDirection);
 
-        
+        float offset_x = 430 - (self.meterValue - 2)*43;
+        float offset_y = 350 - (self.meterValue - 2)*33;
         NSLog(@"current Direction == %d, i = %d", randomDirection, i);
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", i]];
         UIImageOrientation imageOrientation = [self getImageOrientation:randomDirection];
         float optotypesize = self.meterValue/2*200;
         UIImage *resizeImage = [NewTestViewController imageWithImage:image scaledToSize:CGSizeMake(optotypesize, optotypesize)];
-          NSLog(@"%f,%f",resizeImage.size.width, resizeImage.size.height);
+          //NSLog(@"%f,%f",resizeImage.size.width, resizeImage.size.height);
         UIImage *imageTodisplay = [UIImage imageWithCGImage:[resizeImage CGImage] scale:1.0 orientation:imageOrientation];
-          NSLog(@"%f,%f",imageTodisplay.size.width, imageTodisplay.size.height);
-        self.eCharacterImageView.frame = CGRectMake(self.eCharacterImageView.frame.origin.x, self.eCharacterImageView.frame.origin.y,imageTodisplay.size.width/2, imageTodisplay.size.height/2);
-          NSLog(@"%f,%f,%f,%f",self.eCharacterImageView.frame.origin.x, self.eCharacterImageView.frame.origin.y,imageTodisplay.size.width/2, imageTodisplay.size.height/2);
+          //NSLog(@"%f,%f",imageTodisplay.size.width, imageTodisplay.size.height);
+        self.eCharacterImageView.frame = CGRectMake(offset_x,offset_y,imageTodisplay.size.width/2, imageTodisplay.size.height/2);
+          //NSLog(@"%f,%f,%f,%f",self.eCharacterImageView.frame.origin.x, self.eCharacterImageView.frame.origin.y,imageTodisplay.size.width/2, imageTodisplay.size.height/2);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.eCharacterImageView setImage:imageTodisplay];
