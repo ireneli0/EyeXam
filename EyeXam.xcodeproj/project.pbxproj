@@ -30,13 +30,15 @@
 		CE0839721AB8C5030036BAAB /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839701AB8C5030036BAAB /* Add.png */; };
 		CE0839731AB8C5030036BAAB /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839711AB8C5030036BAAB /* Delete.png */; };
 		CE0839761AB8ECF00036BAAB /* ViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0839751AB8ECF00036BAAB /* ViewProfileViewController.m */; };
+		CE1BE2CE1AC8D5F200C3FBF8 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE2CB1AC8D5F200C3FBF8 /* JBLineChartFooterView.m */; };
+		CE1BE2CF1AC8D5F200C3FBF8 /* LineChartResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE2CD1AC8D5F200C3FBF8 /* LineChartResultsDisplayViewController.m */; };
+		CE1BE2D51AC8E28500C3FBF8 /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE2D41AC8E28500C3FBF8 /* JBChartInformationView.m */; };
 		CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */; };
 		CE249BE51AB6282700DE63A1 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE31AB6282700DE63A1 /* correct.png */; };
 		CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE249BE41AB6282700DE63A1 /* wrong.jpg */; };
 		CE2C28661AC66B4500222E8F /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C28631AC66B4500222E8F /* JBLineChartView.m */; };
 		CE2C28691AC66D9400222E8F /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C28681AC66D9400222E8F /* JBChartView.m */; };
 		CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */; };
-		CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */; };
 		CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */ = {isa = PBXBuildFile; fileRef = CE449C641AB7E6C00019CBF3 /* EYE.png */; };
 		CE449C6B1AB7FEB60019CBF3 /* ChangeUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE449C6A1AB7FEB60019CBF3 /* ChangeUserViewController.m */; };
 		CE449C701AB802530019CBF3 /* linechart.png in Resources */ = {isa = PBXBuildFile; fileRef = CE449C6F1AB802530019CBF3 /* linechart.png */; };
@@ -105,6 +107,12 @@
 		CE0839711AB8C5030036BAAB /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Delete.png; path = EyeXam/ImageResource/Delete.png; sourceTree = "<group>"; };
 		CE0839741AB8ECF00036BAAB /* ViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewProfileViewController.h; path = "EyeXam/View Controller/UserManagementVC/ViewProfileViewController.h"; sourceTree = "<group>"; };
 		CE0839751AB8ECF00036BAAB /* ViewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewProfileViewController.m; path = "EyeXam/View Controller/UserManagementVC/ViewProfileViewController.m"; sourceTree = "<group>"; };
+		CE1BE2CA1AC8D5F200C3FBF8 /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBLineChartFooterView.h; path = "EyeXam/View Controller/UserManagementVC/LineChartVC/JBLineChartFooterView.h"; sourceTree = "<group>"; };
+		CE1BE2CB1AC8D5F200C3FBF8 /* JBLineChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBLineChartFooterView.m; path = "EyeXam/View Controller/UserManagementVC/LineChartVC/JBLineChartFooterView.m"; sourceTree = "<group>"; };
+		CE1BE2CC1AC8D5F200C3FBF8 /* LineChartResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineChartResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/LineChartVC/LineChartResultsDisplayViewController.h"; sourceTree = "<group>"; };
+		CE1BE2CD1AC8D5F200C3FBF8 /* LineChartResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineChartResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/LineChartVC/LineChartResultsDisplayViewController.m"; sourceTree = "<group>"; };
+		CE1BE2D31AC8E28500C3FBF8 /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBChartInformationView.h; path = "EyeXam/View Controller/UserManagementVC/LineChartVC/JBChartInformationView.h"; sourceTree = "<group>"; };
+		CE1BE2D41AC8E28500C3FBF8 /* JBChartInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBChartInformationView.m; path = "EyeXam/View Controller/UserManagementVC/LineChartVC/JBChartInformationView.m"; sourceTree = "<group>"; };
 		CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewUserInformationViewController.h; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.h"; sourceTree = "<group>"; };
 		CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewUserInformationViewController.m; path = "EyeXam/View Controller/UserManagementVC/NewUserInformationViewController.m"; sourceTree = "<group>"; };
 		CE249BE31AB6282700DE63A1 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = EyeXam/ImageResource/correct.png; sourceTree = "<group>"; };
@@ -116,8 +124,6 @@
 		CE449C591AB7DE220019CBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE449C5E1AB7E1DA0019CBF3 /* ResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/ResultsDisplayViewController.h"; sourceTree = "<group>"; };
 		CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/ResultsDisplayViewController.m"; sourceTree = "<group>"; };
-		CE449C611AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineChartResultsDisplayViewController.h; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.h"; sourceTree = "<group>"; };
-		CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineChartResultsDisplayViewController.m; path = "EyeXam/View Controller/UserManagementVC/LineChartResultsDisplayViewController.m"; sourceTree = "<group>"; };
 		CE449C641AB7E6C00019CBF3 /* EYE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EYE.png; path = EyeXam/ImageResource/EYE.png; sourceTree = "<group>"; };
 		CE449C691AB7FEB60019CBF3 /* ChangeUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeUserViewController.h; path = "EyeXam/View Controller/UserManagementVC/ChangeUserViewController.h"; sourceTree = "<group>"; };
 		CE449C6A1AB7FEB60019CBF3 /* ChangeUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeUserViewController.m; path = "EyeXam/View Controller/UserManagementVC/ChangeUserViewController.m"; sourceTree = "<group>"; };
@@ -240,6 +246,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE1BE2C91AC8D5DD00C3FBF8 /* LineChartVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BE2CA1AC8D5F200C3FBF8 /* JBLineChartFooterView.h */,
+				CE1BE2CB1AC8D5F200C3FBF8 /* JBLineChartFooterView.m */,
+				CE1BE2D31AC8E28500C3FBF8 /* JBChartInformationView.h */,
+				CE1BE2D41AC8E28500C3FBF8 /* JBChartInformationView.m */,
+				CE1BE2CC1AC8D5F200C3FBF8 /* LineChartResultsDisplayViewController.h */,
+				CE1BE2CD1AC8D5F200C3FBF8 /* LineChartResultsDisplayViewController.m */,
+			);
+			name = LineChartVC;
+			sourceTree = "<group>";
+		};
 		CE2C285D1AC66B3200222E8F /* LineChartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,12 +297,11 @@
 		CE7D36771AB629D5002DE674 /* UserManagementVC */ = {
 			isa = PBXGroup;
 			children = (
+				CE1BE2C91AC8D5DD00C3FBF8 /* LineChartVC */,
 				CE23919C1AB66CD9002A08A1 /* NewUserInformationViewController.h */,
 				CE23919D1AB66CD9002A08A1 /* NewUserInformationViewController.m */,
 				CE449C5E1AB7E1DA0019CBF3 /* ResultsDisplayViewController.h */,
 				CE449C5F1AB7E1DA0019CBF3 /* ResultsDisplayViewController.m */,
-				CE449C611AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.h */,
-				CE449C621AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m */,
 				CE449C691AB7FEB60019CBF3 /* ChangeUserViewController.h */,
 				CE449C6A1AB7FEB60019CBF3 /* ChangeUserViewController.m */,
 				CE0839741AB8ECF00036BAAB /* ViewProfileViewController.h */,
@@ -602,14 +620,16 @@
 				CE449C601AB7E1DA0019CBF3 /* ResultsDisplayViewController.m in Sources */,
 				CE7D367A1AB629FD002DE674 /* ViewController.m in Sources */,
 				CE23919E1AB66CD9002A08A1 /* NewUserInformationViewController.m in Sources */,
+				CE1BE2CE1AC8D5F200C3FBF8 /* JBLineChartFooterView.m in Sources */,
+				CE1BE2D51AC8E28500C3FBF8 /* JBChartInformationView.m in Sources */,
 				CE64FB651A9EDA010000D1DA /* PopoverSettingsViewController.m in Sources */,
 				CEEC12201A9D8F99008FF50F /* main.m in Sources */,
 				18B5A9FF1AB8119400276A99 /* userInfo.m in Sources */,
+				CE1BE2CF1AC8D5F200C3FBF8 /* LineChartResultsDisplayViewController.m in Sources */,
 				CE2C28691AC66D9400222E8F /* JBChartView.m in Sources */,
 				CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */,
 				CE64FB681A9EE06A0000D1DA /* WYPopoverController.m in Sources */,
 				CE64FB6D1A9EE5140000D1DA /* WYStoryboardPopoverSegue.m in Sources */,
-				CE449C631AB7E41C0019CBF3 /* LineChartResultsDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
