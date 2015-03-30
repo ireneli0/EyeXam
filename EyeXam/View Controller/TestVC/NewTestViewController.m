@@ -380,7 +380,7 @@ eCharacterImageView;
         NSLog(@"current Direction == %d, i = %d", randomDirection, i);
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", i]];
         UIImageOrientation imageOrientation = [self getImageOrientation:randomDirection];
-        float optotypesize = self.meterValue/2*500;
+        float optotypesize = self.meterValue/2*200;
         UIImage *resizeImage = [NewTestViewController imageWithImage:image scaledToSize:CGSizeMake(optotypesize, optotypesize)];
           NSLog(@"%f,%f",resizeImage.size.width, resizeImage.size.height);
         UIImage *imageTodisplay = [UIImage imageWithCGImage:[resizeImage CGImage] scale:1.0 orientation:imageOrientation];
