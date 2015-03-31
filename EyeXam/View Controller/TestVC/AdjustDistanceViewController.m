@@ -23,6 +23,9 @@
     self.distanceSlider.value = 0.0;
     //default value is naked eye
     self.wearGlasses = @"Naked eye";
+    [self.distanceSlider setThumbImage:[UIImage imageNamed:@"slider_dot.png"] forState:UIControlStateNormal];
+    [self.distanceSlider setMinimumTrackImage:[UIImage imageNamed:@"slider_indicator.png"] forState:UIControlStateNormal];
+    [self.distanceSlider setMaximumTrackImage:[UIImage imageNamed:@"slider_containder.png"] forState:UIControlStateNormal];
 }
 
 
