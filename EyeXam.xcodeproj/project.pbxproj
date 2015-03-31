@@ -26,8 +26,8 @@
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
 		18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */; };
 		18B5A9FF1AB8119400276A99 /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A9FE1AB8119400276A99 /* userInfo.m */; };
-		18BA17DC1ACA5A4F00D4C025 /* linechart_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BA17DA1ACA5A4F00D4C025 /* linechart_icon1.png */; };
-		18BA17DD1ACA5A4F00D4C025 /* linechart_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BA17DB1ACA5A4F00D4C025 /* linechart_icon2.png */; };
+		18BA17E01ACA5B9500D4C025 /* linechart_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BA17DE1ACA5B9500D4C025 /* linechart_icon1.png */; };
+		18BA17E11ACA5B9500D4C025 /* linechart_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BA17DF1ACA5B9500D4C025 /* linechart_icon2.png */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
 		CE0839721AB8C5030036BAAB /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839701AB8C5030036BAAB /* Add.png */; };
 		CE0839731AB8C5030036BAAB /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839711AB8C5030036BAAB /* Delete.png */; };
@@ -103,8 +103,8 @@
 		18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseInstance.m; path = "EyeXam/View Controller/DatabaseInstance.m"; sourceTree = "<group>"; };
 		18B5A9FD1AB8119400276A99 /* userInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userInfo.h; path = "EyeXam/View Controller/userInfo.h"; sourceTree = "<group>"; };
 		18B5A9FE1AB8119400276A99 /* userInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = userInfo.m; path = "EyeXam/View Controller/userInfo.m"; sourceTree = "<group>"; };
-		18BA17DA1ACA5A4F00D4C025 /* linechart_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linechart_icon1.png; path = EyeXam/ImageResource/linechart_icon1.png; sourceTree = "<group>"; };
-		18BA17DB1ACA5A4F00D4C025 /* linechart_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linechart_icon2.png; path = EyeXam/ImageResource/linechart_icon2.png; sourceTree = "<group>"; };
+		18BA17DE1ACA5B9500D4C025 /* linechart_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linechart_icon1.png; path = EyeXam/ImageResource/linechart_icon1.png; sourceTree = "<group>"; };
+		18BA17DF1ACA5B9500D4C025 /* linechart_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linechart_icon2.png; path = EyeXam/ImageResource/linechart_icon2.png; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE0839701AB8C5030036BAAB /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Add.png; path = EyeXam/ImageResource/Add.png; sourceTree = "<group>"; };
@@ -336,8 +336,8 @@
 		CEDF151E1A9D959100CF8AC4 /* ImageResource */ = {
 			isa = PBXGroup;
 			children = (
-				18BA17DA1ACA5A4F00D4C025 /* linechart_icon1.png */,
-				18BA17DB1ACA5A4F00D4C025 /* linechart_icon2.png */,
+				18BA17DE1ACA5B9500D4C025 /* linechart_icon1.png */,
+				18BA17DF1ACA5B9500D4C025 /* linechart_icon2.png */,
 				CE0839701AB8C5030036BAAB /* Add.png */,
 				CE0839711AB8C5030036BAAB /* Delete.png */,
 				18AEC2891AB69D60009B3BE4 /* E characters */,
@@ -537,7 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BA17DD1ACA5A4F00D4C025 /* linechart_icon2.png in Resources */,
+				18BA17E11ACA5B9500D4C025 /* linechart_icon2.png in Resources */,
 				18015FF21AC8C2600023604C /* 10.png in Resources */,
 				18015FF01AC8C2600023604C /* 8.png in Resources */,
 				18015FEE1AC8C2600023604C /* 6.png in Resources */,
@@ -557,7 +557,7 @@
 				18015FE81AC8C2600023604C /* 0.png in Resources */,
 				18015FEF1AC8C2600023604C /* 7.png in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
-				18BA17DC1ACA5A4F00D4C025 /* linechart_icon1.png in Resources */,
+				18BA17E01ACA5B9500D4C025 /* linechart_icon1.png in Resources */,
 				18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */,
 				18015FE91AC8C2600023604C /* 1.png in Resources */,
 				18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */,
