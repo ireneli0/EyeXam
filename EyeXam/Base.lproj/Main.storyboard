@@ -232,6 +232,7 @@
                                 <rect key="frame" x="299" y="120" width="166" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Naked eye Results">
+                                    <color key="titleColor" red="0.10196078431372549" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -239,6 +240,7 @@
                                 <rect key="frame" x="514" y="120" width="176" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="With Glasses Results">
+                                    <color key="titleColor" red="0.10196078431372549" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -783,6 +785,7 @@
     <resources>
         <image name="EYE.png" width="1224" height="684"/>
         <image name="button_0.0.png" width="237" height="41"/>
+        <image name="button_0.png" width="234" height="45"/>
         <image name="button_1.png" width="234" height="45"/>
         <image name="checked.png" width="24" height="24"/>
         <image name="linechart_icon.png" width="32" height="32"/>

@@ -25,13 +25,13 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self.btn_startNewGame setImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
+    [self.btn_startNewGame setBackgroundImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
     [self.btn_startNewGame setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [self.btn_checkPreviousResult setImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
+    [self.btn_checkPreviousResult setBackgroundImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
     [self.btn_checkPreviousResult setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [self.btn_viewMyProfile setImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
+    [self.btn_viewMyProfile setBackgroundImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
     [self.btn_viewMyProfile setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [self.btn_changeUser setImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
+    [self.btn_changeUser setBackgroundImage:[UIImage imageNamed:@"button_1.png"] forState:UIControlStateSelected];
     [self.btn_changeUser setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     
 }
