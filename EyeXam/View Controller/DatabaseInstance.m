@@ -92,6 +92,7 @@ static sqlite3_stmt *statement = nil;
               [allRecordsArray addObject:userName];
           }
           count = allRecordsArray.count;
+          sqlite3_close(database);
     }
         if(count != 0){
             isExists = TRUE;
@@ -124,6 +125,7 @@ static sqlite3_stmt *statement = nil;
                  NSLog(@"insert failed: %s", sqlite3_errmsg(database));}
          }
          sqlite3_finalize(statement);
+         sqlite3_close(database);
     }
     return isSuccess;
 }
@@ -154,6 +156,7 @@ static sqlite3_stmt *statement = nil;
                 NSLog(@"insert failed: %s", sqlite3_errmsg(database));}
         }
         sqlite3_finalize(statement);
+        sqlite3_close(database);
     }
     return isSuccess;
 }
@@ -191,7 +194,8 @@ static sqlite3_stmt *statement = nil;
                 [usersArray addObject:info];
                 
             }
-            sqlite3_reset(statement);
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
         }
         return usersArray;
     }
@@ -232,7 +236,8 @@ static sqlite3_stmt *statement = nil;
                 [usersArray addObject:info];
                 
             }
-            sqlite3_reset(statement);
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
         }
         return usersArray;
     }
@@ -281,7 +286,8 @@ static sqlite3_stmt *statement = nil;
                 [allRecordsArray addObject:records];
                 
             }
-            sqlite3_reset(statement);
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
         }
         return allRecordsArray;
     }
@@ -330,7 +336,8 @@ static sqlite3_stmt *statement = nil;
                 [nakedeyeRecordsArray addObject:records];
                 
             }
-            sqlite3_reset(statement);
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
         }
         return nakedeyeRecordsArray;
     }
@@ -379,7 +386,8 @@ static sqlite3_stmt *statement = nil;
                 [withglassesRecordsArray addObject:records];
                 
             }
-            sqlite3_reset(statement);
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
         }
         return withglassesRecordsArray;
     }
@@ -406,6 +414,7 @@ static sqlite3_stmt *statement = nil;
                 NSLog(@"delete failed: %s", sqlite3_errmsg(database));}
         }
         sqlite3_finalize(statement);
+        sqlite3_close(database);
     }
     
     
@@ -431,6 +440,7 @@ static sqlite3_stmt *statement = nil;
                 NSLog(@"delete failed: %s", sqlite3_errmsg(database));}
         }
         sqlite3_finalize(statement);
+        sqlite3_close(database);
     }
     return isSuccess;
 }

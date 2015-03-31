@@ -26,6 +26,23 @@
 @property (nonatomic) float originMagY;
 @property (nonatomic) float originMagZ;
 
+//up
+@property (nonatomic) float upOriginMagX;
+@property (nonatomic) float upOriginMagY;
+@property (nonatomic) float upOriginMagZ;
+//down
+@property (nonatomic) float downOriginMagX;
+@property (nonatomic) float downOriginMagY;
+@property (nonatomic) float downOriginMagZ;
+//left
+@property (nonatomic) float leftOriginMagX;
+@property (nonatomic) float leftOriginMagY;
+@property (nonatomic) float leftOriginMagZ;
+//right
+@property (nonatomic) float rightOriginMagX;
+@property (nonatomic) float rightOriginMagY;
+@property (nonatomic) float rightOriginMagZ;
+
 @property (weak, nonatomic) IBOutlet UILabel *x1Label;
 @property (weak, nonatomic) IBOutlet UILabel *x2Label;
 
@@ -76,8 +93,8 @@ eCharacterImageView;
                                                  name:@"alreadyGotUserDirection"
                                                object:nil];
     self.title = @"New Test";
-    self.buttonPressedCount = 0;
-    self.testFlowFlag = 0;
+    self.buttonPressedCount = -5;
+    self.testFlowFlag = -1;
     self.resultForLeftEye =0;
     self.resultForRightEye = 0;
     
@@ -141,6 +158,52 @@ eCharacterImageView;
 
 -(void) nodeDeviceButtonPushed: (VTNodeDevice *) device{
     switch (self.testFlowFlag) {
+            
+        case -1:
+            //calibrating phrase
+            self.testFlowInstructionLabel.text =@"Calibrating...->up";
+            if(self.buttonPressedCount == -5){
+                //start calibrating
+                self.buttonPressedCount ++;
+            
+            }else if(self.buttonPressedCount == -4){
+                //original up axes value
+                self.testFlowInstructionLabel.text =@"Calibrating...->down";
+                self.upOriginMagX = self.magX;
+                self.upOriginMagY = self.magY;
+                self.upOriginMagZ = self.magZ;
+                NSLog(@"up calibrating phrase\n");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f_____origin_up", self.upOriginMagX, self.upOriginMagY, self.upOriginMagZ);
+                self.buttonPressedCount ++;
+            }else if(self.buttonPressedCount == -3){
+                self.testFlowInstructionLabel.text =@"Calibrating...->left";
+                self.downOriginMagX = self.magX;
+                self.downOriginMagY = self.magY;
+                self.downOriginMagZ = self.magZ;
+                NSLog(@"down calibrating phrase");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f_____origin_down", self.downOriginMagX, self.downOriginMagY, self.downOriginMagZ);
+                self.buttonPressedCount ++;
+            }else if(self.buttonPressedCount == -2){
+                self.testFlowInstructionLabel.text =@"Calibrating...->right";
+                self.leftOriginMagX = self.magX;
+                self.leftOriginMagY = self.magY;
+                self.leftOriginMagZ = self.magZ;
+                NSLog(@"left calibrating phrase");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f_____origin_left", self.leftOriginMagX, self.leftOriginMagY, self.leftOriginMagZ);
+                self.buttonPressedCount ++;
+            }else if (self.buttonPressedCount == -1){
+                self.testFlowInstructionLabel.text =@"Calibrating phrase completed!";
+                self.rightOriginMagX = self.magX;
+                self.rightOriginMagY = self.magY;
+                self.rightOriginMagZ = self.magZ;
+                NSLog(@"right calibrating phrase");
+                NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f_____origin_right", self.rightOriginMagX, self.rightOriginMagY, self.rightOriginMagZ);
+                self.buttonPressedCount ++;
+                self.testFlowFlag ++;
+            }
+                
+            
+            break;
         case 0:
             //1st testing phrase:right
             self.testFlowInstructionLabel.text =@"Testing right eye...";
@@ -164,22 +227,22 @@ eCharacterImageView;
                 NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.magX, self.magY, self.magZ);
                 NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
 
-                if ((self.magX - self.originMagX > 0.6)&&(self.magZ - self.originMagZ > 0.3)) {
+                if (fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magZ-self.leftOriginMagZ)<0.05) {
                     //left->1
                     [userDictionary setObject:[NSNumber numberWithInt:1] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
                     NSLog(@"left");
-                }else if ((self.magX - self.originMagX >0.4)&&(self.magZ-self.originMagZ<-0.4)){
+                }else if(fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magZ-self.rightOriginMagZ)<0.05){
                     //right->0
                     [userDictionary setObject:[NSNumber numberWithInt:0] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
                     NSLog(@"right");
-                }else if((self.magX - self.originMagX >0.4)&&(self.magY - self.originMagY >0.5)&&(fabsf(self.magZ-self.originMagZ)<0.1)){
+                }else if(fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magY-self.upOriginMagY)<0.05){
                     //up -> 3
                     [userDictionary setObject:[NSNumber numberWithInt:3] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
                     NSLog(@"up");
-                }else if((self.magX - self.originMagX > 0.4)&&(self.magY - self.originMagY <-0.4)){
+                }else if(fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magY-self.downOriginMagY)<0.05){
                     //down -> 2
                     [userDictionary setObject:[NSNumber numberWithInt:2] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
@@ -212,26 +275,28 @@ eCharacterImageView;
                 NSLog(@"magx:%.2f, magy:%.2f, magz:%.2f", self.magX, self.magY, self.magZ);
                 NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
                 
-                if ((self.magX - self.originMagX > 0.6)&&(self.magZ - self.originMagZ > 0.3)) {
+                if (fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magZ-self.leftOriginMagZ)<0.05) {
                     //left->1
                     [userDictionary setObject:[NSNumber numberWithInt:1] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
                     NSLog(@"left");
-                }else if ((self.magX - self.originMagX >0.4)&&(self.magZ-self.originMagZ<-0.4)){
+                }else if(fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magZ-self.rightOriginMagZ)<0.05){
                     //right->0
                     [userDictionary setObject:[NSNumber numberWithInt:0] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
                     NSLog(@"right");
-                }else if((self.magX - self.originMagX >0.4)&&(self.magY - self.originMagY >0.5)&&(fabsf(self.magZ-self.originMagZ)<0.1)){
+                }else if(fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magY-self.upOriginMagY)<0.05){
                     //up -> 3
                     [userDictionary setObject:[NSNumber numberWithInt:3] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
-                }else if((self.magX - self.originMagX > 0.4)&&(self.magY - self.originMagY <-0.4)){
+                    NSLog(@"up");
+                }else if(fabsf(self.magX -self.originMagX)>0.2&&fabsf(self.magY-self.downOriginMagY)<0.05){
                     //down -> 2
                     [userDictionary setObject:[NSNumber numberWithInt:2] forKey:@"inputDirection"];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"alreadyGotUserDirection" object:nil userInfo:userDictionary];
-                    
+                    NSLog(@"down");
                 }
+
             }
 
             break;

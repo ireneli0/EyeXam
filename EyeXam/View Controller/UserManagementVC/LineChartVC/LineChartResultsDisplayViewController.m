@@ -30,13 +30,17 @@ alpha:1.0]
 
 @implementation LineChartResultsDisplayViewController
 
--(void)loadView{
-    [super loadView];
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars=NO;
+    self.automaticallyAdjustsScrollViewInsets=NO;
+    
     self.lineChartView = [[JBLineChartView alloc] init];
     self.lineChartView.dataSource = self;
     self.lineChartView.delegate = self;
     
-    self.lineChartView.frame = CGRectMake(120, 130, self.view.bounds.size.width - 200, 500);
+    self.lineChartView.frame = CGRectMake(0,65, self.view.bounds.size.width, self.view.bounds.size.height-115);
     
     self.lineChartView.backgroundColor = UIColorFromRGB(0xFFF8DC);
     
@@ -49,22 +53,20 @@ alpha:1.0]
     allRecords *lastRecordForCurrentUser = [nakedEyeResultsArray lastObject];
                  
     footerView.leftLabel.text = firstRecordForCurrentUser.currentTime;
-    footerView.leftLabel.textColor = [UIColor whiteColor];
+    footerView.leftLabel.textColor = [UIColor blackColor];
     footerView.rightLabel.text = lastRecordForCurrentUser.currentTime;
-    footerView.rightLabel.textColor = [UIColor whiteColor];
+    footerView.rightLabel.textColor = [UIColor blackColor];
     footerView.sectionCount = [nakedEyeResultsArray count];
-    //self.lineChartView.footerView = footerView;
+    self.lineChartView.footerView = footerView;
     
     [self.view addSubview:self.lineChartView];
     
-    self.informationView = [[JBChartInformationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [self.informationView setValueAndUnitTextColor:[UIColor colorWithWhite:1.0 alpha:0.75]];
+    self.informationView = [[JBChartInformationView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+    [self.informationView setValueAndUnitTextColor:[UIColor blackColor]];
     [self.informationView setTitleTextColor:[UIColor blackColor]];
     [self.informationView setTextShadowColor:nil];
-    [self.informationView setSeparatorColor:[UIColor redColor]];
-    //[self.view addSubview:self.informationView];
-    
-    [self.lineChartView reloadData];
+    [self.informationView setSeparatorColor:[UIColor clearColor]];
+    [self.view addSubview:self.informationView];
     
     
 }
@@ -72,6 +74,7 @@ alpha:1.0]
     [super viewWillAppear:animated];
     self.userNameLabel.text = self.userName;
     [self.lineChartView setState:JBChartViewStateExpanded];
+    [self.lineChartView reloadData];
 }
 
 - (BOOL)shouldExtendSelectionViewIntoFooterPaddingForChartView:(JBChartView *)chartView
@@ -193,7 +196,7 @@ alpha:1.0]
     else
         return UIColorFromRGB(0xff0000);
 }
-/*
+
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint
 {
     
@@ -204,7 +207,7 @@ alpha:1.0]
 
         NSArray *resultForRightEye = [recordsForCurrentUser.righteyeResult componentsSeparatedByString: @"/"];
         float nakedRight = [[resultForRightEye objectAtIndex:0] floatValue]/[[resultForRightEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"%.2f", nakedRight] unitText:@""];
+        [self.informationView setValueText:[NSString stringWithFormat:@"Right naked eye:%.2f", nakedRight] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
 
     }else if (lineIndex ==1){
@@ -214,7 +217,7 @@ alpha:1.0]
         
         NSArray *resultForLeftEye = [recordsForCurrentUser.lefteyeResult componentsSeparatedByString: @"/"];
         float nakedLeft = [[resultForLeftEye objectAtIndex:0] floatValue]/[[resultForLeftEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"%.2f", nakedLeft] unitText:@""];
+        [self.informationView setValueText:[NSString stringWithFormat:@"Left naked eye:%.2f", nakedLeft] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
         
     }else if(lineIndex == 2){
@@ -224,7 +227,7 @@ alpha:1.0]
         
         NSArray *resultForRightEye = [recordsForCurrentUser.righteyeResult componentsSeparatedByString: @"/"];
         float glassesRight = [[resultForRightEye objectAtIndex:0] floatValue]/[[resultForRightEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"%.2f", glassesRight] unitText:@""];
+        [self.informationView setValueText:[NSString stringWithFormat:@"Right eye with glasses:%.2f", glassesRight] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
     }
     else if (lineIndex == 3){
@@ -234,7 +237,7 @@ alpha:1.0]
         
         NSArray *resultForLeftEye = [recordsForCurrentUser.lefteyeResult componentsSeparatedByString: @"/"];
         float glassesLeft = [[resultForLeftEye objectAtIndex:0] floatValue]/[[resultForLeftEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"%.2f", glassesLeft] unitText:@""];
+        [self.informationView setValueText:[NSString stringWithFormat:@"Left eye with glasses:%.2f", glassesLeft] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
         
     }else{
@@ -248,7 +251,6 @@ alpha:1.0]
     [self.informationView setHidden:YES animated:YES];
 
 }
-*/
 
 
 @end
