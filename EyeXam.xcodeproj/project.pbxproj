@@ -67,6 +67,10 @@
 		CEBA3DBF1ACB1CF400EA4EB8 /* slider_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DBC1ACB1CF400EA4EB8 /* slider_indicator.png */; };
 		CEBA3DC31ACB2BC700EA4EB8 /* input_0.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DC11ACB2BC700EA4EB8 /* input_0.png */; };
 		CEBA3DC41ACB2BC700EA4EB8 /* input_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DC21ACB2BC700EA4EB8 /* input_1.png */; };
+		CEC17F901ACB5E1B00554403 /* down_indicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F8C1ACB5E1B00554403 /* down_indicator.PNG */; };
+		CEC17F911ACB5E1B00554403 /* left_indicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F8D1ACB5E1B00554403 /* left_indicator.PNG */; };
+		CEC17F921ACB5E1B00554403 /* right_indicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F8E1ACB5E1B00554403 /* right_indicator.PNG */; };
+		CEC17F931ACB5E1B00554403 /* up_indicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F8F1ACB5E1B00554403 /* up_indicator.PNG */; };
 		CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF15291A9D961F00CF8AC4 /* RadioButton.m */; };
 		CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152B1A9D962E00CF8AC4 /* checked.png */; };
 		CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152C1A9D962E00CF8AC4 /* checked@2x.png */; };
@@ -168,6 +172,10 @@
 		CEBA3DBC1ACB1CF400EA4EB8 /* slider_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_indicator.png; path = EyeXam/ImageResource/slider/slider_indicator.png; sourceTree = "<group>"; };
 		CEBA3DC11ACB2BC700EA4EB8 /* input_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input_0.png; path = EyeXam/ImageResource/input/input_0.png; sourceTree = "<group>"; };
 		CEBA3DC21ACB2BC700EA4EB8 /* input_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input_1.png; path = EyeXam/ImageResource/input/input_1.png; sourceTree = "<group>"; };
+		CEC17F8C1ACB5E1B00554403 /* down_indicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down_indicator.PNG; path = EyeXam/ImageResource/calibrate_instructions/down_indicator.PNG; sourceTree = "<group>"; };
+		CEC17F8D1ACB5E1B00554403 /* left_indicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left_indicator.PNG; path = EyeXam/ImageResource/calibrate_instructions/left_indicator.PNG; sourceTree = "<group>"; };
+		CEC17F8E1ACB5E1B00554403 /* right_indicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = right_indicator.PNG; path = EyeXam/ImageResource/calibrate_instructions/right_indicator.PNG; sourceTree = "<group>"; };
+		CEC17F8F1ACB5E1B00554403 /* up_indicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up_indicator.PNG; path = EyeXam/ImageResource/calibrate_instructions/up_indicator.PNG; sourceTree = "<group>"; };
 		CEDF15281A9D961F00CF8AC4 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioButton.h; path = EyeXam/Model/RadioButton/RadioButton.h; sourceTree = "<group>"; };
 		CEDF15291A9D961F00CF8AC4 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioButton.m; path = EyeXam/Model/RadioButton/RadioButton.m; sourceTree = "<group>"; };
 		CEDF152B1A9D962E00CF8AC4 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checked.png; path = "EyeXam/ImageResource/radio-res-ios/checked.png"; sourceTree = "<group>"; };
@@ -359,6 +367,17 @@
 			name = input;
 			sourceTree = "<group>";
 		};
+		CEC17F831ACB5BE900554403 /* calibrate_instructions */ = {
+			isa = PBXGroup;
+			children = (
+				CEC17F8C1ACB5E1B00554403 /* down_indicator.PNG */,
+				CEC17F8D1ACB5E1B00554403 /* left_indicator.PNG */,
+				CEC17F8E1ACB5E1B00554403 /* right_indicator.PNG */,
+				CEC17F8F1ACB5E1B00554403 /* up_indicator.PNG */,
+			);
+			name = calibrate_instructions;
+			sourceTree = "<group>";
+		};
 		CEDF15161A9D94A500CF8AC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +400,7 @@
 		CEDF151E1A9D959100CF8AC4 /* ImageResource */ = {
 			isa = PBXGroup;
 			children = (
+				CEC17F831ACB5BE900554403 /* calibrate_instructions */,
 				CEBA3DC01ACB2BB500EA4EB8 /* input */,
 				CEBA3DB91ACB1CD000EA4EB8 /* slider */,
 				CEBA3DB41ACB189D00EA4EB8 /* buttons */,
@@ -600,16 +620,20 @@
 				CEBA3DBE1ACB1CF400EA4EB8 /* slider_dot.png in Resources */,
 				18015FEB1AC8C2600023604C /* 3.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
+				CEC17F901ACB5E1B00554403 /* down_indicator.PNG in Resources */,
 				CEBA3DB81ACB18B300EA4EB8 /* button_1.png in Resources */,
 				CE0839721AB8C5030036BAAB /* Add.png in Resources */,
 				18015FF11AC8C2600023604C /* 9.png in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
+				CEC17F911ACB5E1B00554403 /* left_indicator.PNG in Resources */,
 				CEBA3DBF1ACB1CF400EA4EB8 /* slider_indicator.png in Resources */,
+				CEC17F931ACB5E1B00554403 /* up_indicator.PNG in Resources */,
 				18015FF51AC8C2600023604C /* 13.png in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
 				18015FF31AC8C2600023604C /* 11.png in Resources */,
 				18015FE81AC8C2600023604C /* 0.png in Resources */,
 				18015FEF1AC8C2600023604C /* 7.png in Resources */,
+				CEC17F921ACB5E1B00554403 /* right_indicator.PNG in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
 				18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */,
 				18015FE91AC8C2600023604C /* 1.png in Resources */,

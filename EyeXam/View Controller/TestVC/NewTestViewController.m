@@ -64,8 +64,8 @@
 @property (nonatomic) float resultForLeftEye;
 
 //imageView
-@property (strong,nonatomic) UIImageView* 
-eCharacterImageView;
+@property (strong, nonatomic) UIImageView* eCharacterImageView;
+@property (strong, nonatomic) UIImageView* instructionImageView;
 
 @end
 
@@ -100,10 +100,13 @@ eCharacterImageView;
 //    self.gyroLabel.hidden = YES;
 //    self.magnetometerLabel.hidden = YES;
 
+    //initialize instructionImageView
+    self.instructionImageView  =[[UIImageView alloc] initWithFrame:CGRectMake(10, 30, 1024, 768)];
+    [self.view addSubview:self.instructionImageView];
     
     self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
     
-    //initial eCharacterImageView
+    //initialize eCharacterImageView
     self.eCharacterImageView =[[UIImageView alloc] initWithFrame:CGRectMake(430,350,500,500)];
     [self.view addSubview:self.eCharacterImageView];
     
@@ -159,6 +162,7 @@ eCharacterImageView;
         case -1:
             //calibrating phrase
             self.testFlowInstructionLabel.text =@"Calibrating...->up";
+            [self.instructionImageView setImage:[UIImage imageNamed:@"up_indicator.PNG"]];
             if(self.buttonPressedCount == -5){
                 //start calibrating
                 self.buttonPressedCount ++;
@@ -166,6 +170,7 @@ eCharacterImageView;
             }else if(self.buttonPressedCount == -4){
                 //original up axes value
                 self.testFlowInstructionLabel.text =@"Calibrating...->down";
+                [self.instructionImageView setImage:[UIImage imageNamed:@"down_indicator.PNG"]];
                 self.upOriginMagX = self.magX;
                 self.upOriginMagY = self.magY;
                 self.upOriginMagZ = self.magZ;
@@ -174,6 +179,7 @@ eCharacterImageView;
                 self.buttonPressedCount ++;
             }else if(self.buttonPressedCount == -3){
                 self.testFlowInstructionLabel.text =@"Calibrating...->left";
+                [self.instructionImageView setImage:[UIImage imageNamed:@"left_indicator.PNG"]];
                 self.downOriginMagX = self.magX;
                 self.downOriginMagY = self.magY;
                 self.downOriginMagZ = self.magZ;
@@ -182,6 +188,7 @@ eCharacterImageView;
                 self.buttonPressedCount ++;
             }else if(self.buttonPressedCount == -2){
                 self.testFlowInstructionLabel.text =@"Calibrating...->right";
+                [self.instructionImageView setImage:[UIImage imageNamed:@"right_indicator.PNG"]];
                 self.leftOriginMagX = self.magX;
                 self.leftOriginMagY = self.magY;
                 self.leftOriginMagZ = self.magZ;
@@ -190,6 +197,7 @@ eCharacterImageView;
                 self.buttonPressedCount ++;
             }else if (self.buttonPressedCount == -1){
                 self.testFlowInstructionLabel.text =@"Calibrating phrase completed!";
+                [self.instructionImageView removeFromSuperview];
                 self.rightOriginMagX = self.magX;
                 self.rightOriginMagY = self.magY;
                 self.rightOriginMagZ = self.magZ;
