@@ -20,7 +20,6 @@ green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
 blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
 alpha:1.0]
 
-
 @interface LineChartResultsDisplayViewController()<JBLineChartViewDataSource,JBLineChartViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (nonatomic, strong) JBLineChartView *lineChartView;
@@ -40,7 +39,7 @@ alpha:1.0]
     self.lineChartView.dataSource = self;
     self.lineChartView.delegate = self;
     
-    self.lineChartView.frame = CGRectMake(30,80, self.view.bounds.size.width - 60, self.view.bounds.size.height-160);
+    self.lineChartView.frame = CGRectMake(0,65, self.view.bounds.size.width, self.view.bounds.size.height-160);
     
     self.lineChartView.backgroundColor = UIColorFromRGB(0xFFF8DC);
     
@@ -61,11 +60,11 @@ alpha:1.0]
     
     [self.view addSubview:self.lineChartView];
     
-    self.informationView = [[JBChartInformationView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+    self.informationView = [[JBChartInformationView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/3, self.view.bounds.size.height-140, self.view.bounds.size.width/3, 80)];
     [self.informationView setValueAndUnitTextColor:[UIColor blackColor]];
     [self.informationView setTitleTextColor:[UIColor blackColor]];
     [self.informationView setTextShadowColor:nil];
-    [self.informationView setSeparatorColor:[UIColor clearColor]];
+    [self.informationView setSeparatorColor:[UIColor blackColor]];
     [self.view addSubview:self.informationView];
     
     
@@ -77,8 +76,7 @@ alpha:1.0]
     [self.lineChartView reloadData];
 }
 
-- (BOOL)shouldExtendSelectionViewIntoFooterPaddingForChartView:(JBChartView *)chartView
-{
+- (BOOL)shouldExtendSelectionViewIntoFooterPaddingForChartView:(JBChartView *)chartView{
     return NO;
 }
 
@@ -96,8 +94,7 @@ alpha:1.0]
     
 }
 
-- (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex
-{
+- (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0){
         //naked_right
         NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
@@ -156,16 +153,14 @@ alpha:1.0]
     
 }
 //line width
-- (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex
-{
+- (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0 || lineIndex == 2)
         return 4.0f;
     else
         return 4.0f;
 }
 //line style
-- (JBLineChartViewLineStyle)lineChartView:(JBLineChartView *)lineChartView lineStyleForLineAtLineIndex:(NSUInteger)lineIndex
-{
+- (JBLineChartViewLineStyle)lineChartView:(JBLineChartView *)lineChartView lineStyleForLineAtLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0 || lineIndex == 2)
         return JBLineChartViewLineStyleDashed;
     else
@@ -175,8 +170,7 @@ alpha:1.0]
 
 //selected condition
 //vertical frame color
-- (UIColor *)lineChartView:(JBLineChartView *)lineChartView verticalSelectionColorForLineAtLineIndex:(NSUInteger)lineIndex
-{
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView verticalSelectionColorForLineAtLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0 ||lineIndex ==1)
         return UIColorFromRGB(0x4cc552);
     else
@@ -184,21 +178,18 @@ alpha:1.0]
 
 }
 //vertical frame width
-- (CGFloat)verticalSelectionWidthForLineChartView:(JBLineChartView *)lineChartView
-{
+- (CGFloat)verticalSelectionWidthForLineChartView:(JBLineChartView *)lineChartView{
         return 20.0f;
 }
 //line color
-- (UIColor *)lineChartView:(JBLineChartView *)lineChartView selectionColorForLineAtLineIndex:(NSUInteger)lineIndex
-{
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView selectionColorForLineAtLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0 ||lineIndex ==1)
         return UIColorFromRGB(0x4cc552);
     else
         return UIColorFromRGB(0xff0000);
 }
 
-- (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint
-{
+- (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint{
     
     if(lineIndex == 0){
         //naked_right
@@ -246,8 +237,7 @@ alpha:1.0]
 
 }
 
-- (void)didDeselectLineInLineChartView:(JBLineChartView *)lineChartView
-{
+- (void)didDeselectLineInLineChartView:(JBLineChartView *)lineChartView{
     [self.informationView setHidden:YES animated:YES];
 
 }
