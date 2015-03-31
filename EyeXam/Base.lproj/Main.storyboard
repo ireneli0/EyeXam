@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Tr-5K-UnY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Tr-5K-UnY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -591,36 +591,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNs-bH-KBU">
-                                <rect key="frame" x="507" y="181" width="148" height="30"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you wear glasses?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYK-JM-V0N">
                                 <rect key="frame" x="507" y="264" width="302" height="30"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-PL-2Mp" customClass="RadioButton">
-                                <rect key="frame" x="743" y="327" width="120" height="30"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
-                                <inset key="titleEdgeInsets" minX="6" minY="2" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="No" image="unchecked.png">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="checked.png">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onWearGlassesRadioButton:" destination="mYG-mV-pAg" eventType="touchUpInside" id="O4m-r0-apo"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is your eyesight type?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meh-Qm-24P">
                                 <rect key="frame" x="507" y="410" width="362" height="30"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
@@ -628,7 +604,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8c-OS-7L4" customClass="RadioButton">
-                                <rect key="frame" x="535" y="327" width="120" height="30"/>
+                                <rect key="frame" x="506" y="327" width="120" height="30"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
                                 <inset key="titleEdgeInsets" minX="6" minY="2" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Yes" image="unchecked.png">
@@ -646,9 +622,9 @@
                                     <outletCollection property="groupButtons" destination="iSh-PL-2Mp" id="GbJ-Av-3vj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHs-jj-Qqd">
-                                <rect key="frame" x="684" y="181" width="179" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHs-jj-Qqd">
+                                <rect key="frame" x="506" y="183" width="303" height="45"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EYE.png" translatesAutoresizingMaskIntoConstraints="NO" id="V3n-Rw-gFt">
@@ -702,6 +678,24 @@
                                 <state key="highlighted" backgroundImage="button_1.png"/>
                                 <connections>
                                     <action selector="signUp:" destination="mYG-mV-pAg" eventType="touchUpInside" id="oRF-Ox-fKK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-PL-2Mp" customClass="RadioButton">
+                                <rect key="frame" x="689" y="327" width="120" height="30"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="6" minY="2" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="No" image="unchecked.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="checked.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onWearGlassesRadioButton:" destination="mYG-mV-pAg" eventType="touchUpInside" id="O4m-r0-apo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -783,6 +777,7 @@
     <resources>
         <image name="EYE.png" width="1224" height="684"/>
         <image name="button_0.0.png" width="237" height="41"/>
+        <image name="button_0.png" width="234" height="45"/>
         <image name="button_1.png" width="234" height="45"/>
         <image name="checked.png" width="24" height="24"/>
         <image name="linechart_icon.png" width="32" height="32"/>

@@ -65,6 +65,8 @@
 		CEBA3DBD1ACB1CF400EA4EB8 /* slider_container.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DBA1ACB1CF400EA4EB8 /* slider_container.png */; };
 		CEBA3DBE1ACB1CF400EA4EB8 /* slider_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DBB1ACB1CF400EA4EB8 /* slider_dot.png */; };
 		CEBA3DBF1ACB1CF400EA4EB8 /* slider_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DBC1ACB1CF400EA4EB8 /* slider_indicator.png */; };
+		CEBA3DC31ACB2BC700EA4EB8 /* input_0.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DC11ACB2BC700EA4EB8 /* input_0.png */; };
+		CEBA3DC41ACB2BC700EA4EB8 /* input_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DC21ACB2BC700EA4EB8 /* input_1.png */; };
 		CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF15291A9D961F00CF8AC4 /* RadioButton.m */; };
 		CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152B1A9D962E00CF8AC4 /* checked.png */; };
 		CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152C1A9D962E00CF8AC4 /* checked@2x.png */; };
@@ -164,6 +166,8 @@
 		CEBA3DBA1ACB1CF400EA4EB8 /* slider_container.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_container.png; path = EyeXam/ImageResource/slider/slider_container.png; sourceTree = "<group>"; };
 		CEBA3DBB1ACB1CF400EA4EB8 /* slider_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_dot.png; path = EyeXam/ImageResource/slider/slider_dot.png; sourceTree = "<group>"; };
 		CEBA3DBC1ACB1CF400EA4EB8 /* slider_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_indicator.png; path = EyeXam/ImageResource/slider/slider_indicator.png; sourceTree = "<group>"; };
+		CEBA3DC11ACB2BC700EA4EB8 /* input_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input_0.png; path = EyeXam/ImageResource/input/input_0.png; sourceTree = "<group>"; };
+		CEBA3DC21ACB2BC700EA4EB8 /* input_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input_1.png; path = EyeXam/ImageResource/input/input_1.png; sourceTree = "<group>"; };
 		CEDF15281A9D961F00CF8AC4 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioButton.h; path = EyeXam/Model/RadioButton/RadioButton.h; sourceTree = "<group>"; };
 		CEDF15291A9D961F00CF8AC4 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioButton.m; path = EyeXam/Model/RadioButton/RadioButton.m; sourceTree = "<group>"; };
 		CEDF152B1A9D962E00CF8AC4 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checked.png; path = "EyeXam/ImageResource/radio-res-ios/checked.png"; sourceTree = "<group>"; };
@@ -346,6 +350,15 @@
 			name = slider;
 			sourceTree = "<group>";
 		};
+		CEBA3DC01ACB2BB500EA4EB8 /* input */ = {
+			isa = PBXGroup;
+			children = (
+				CEBA3DC11ACB2BC700EA4EB8 /* input_0.png */,
+				CEBA3DC21ACB2BC700EA4EB8 /* input_1.png */,
+			);
+			name = input;
+			sourceTree = "<group>";
+		};
 		CEDF15161A9D94A500CF8AC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +381,7 @@
 		CEDF151E1A9D959100CF8AC4 /* ImageResource */ = {
 			isa = PBXGroup;
 			children = (
+				CEBA3DC01ACB2BB500EA4EB8 /* input */,
 				CEBA3DB91ACB1CD000EA4EB8 /* slider */,
 				CEBA3DB41ACB189D00EA4EB8 /* buttons */,
 				CEB837ED1ACA6AF600342FF8 /* linechart_icon.png */,
@@ -581,6 +595,7 @@
 				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				18015FEA1AC8C2600023604C /* 2.png in Resources */,
 				CEBA3DB71ACB18B300EA4EB8 /* button_0.png in Resources */,
+				CEBA3DC31ACB2BC700EA4EB8 /* input_0.png in Resources */,
 				187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */,
 				CEBA3DBE1ACB1CF400EA4EB8 /* slider_dot.png in Resources */,
 				18015FEB1AC8C2600023604C /* 3.png in Resources */,
@@ -600,6 +615,7 @@
 				18015FE91AC8C2600023604C /* 1.png in Resources */,
 				18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */,
 				18015FEC1AC8C2600023604C /* 4.png in Resources */,
+				CEBA3DC41ACB2BC700EA4EB8 /* input_1.png in Resources */,
 				CEB837F01ACA6AF600342FF8 /* table_icon.png in Resources */,
 				CE0839731AB8C5030036BAAB /* Delete.png in Resources */,
 				CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */,

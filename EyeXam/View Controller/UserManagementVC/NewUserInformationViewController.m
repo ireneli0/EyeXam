@@ -10,6 +10,13 @@
 #import "RadioButton.h"
 #import "AppDelegate.h"
 #import "DatabaseInstance.h"
+#import <QuartzCore/QuartzCore.h>
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
 
 @interface NewUserInformationViewController ()
 
@@ -18,9 +25,21 @@
 @implementation NewUserInformationViewController
 
 -(void)viewDidLoad{
-    self.userNameTextField.delegate = self;
-}
 
+    self.userNameTextField.delegate = self;
+    
+    self.userNameTextField.layer.cornerRadius=8.0f;
+    self.userNameTextField.layer.masksToBounds=YES;
+    self.userNameTextField.layer.borderColor=[UIColorFromRGB(0xababab) CGColor];
+    self.userNameTextField.layer.borderWidth= 2.0f;
+    
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    self.userNameTextField.layer.borderColor=[UIColorFromRGB(0x1abc9c) CGColor];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    self.userNameTextField.layer.borderColor=[UIColorFromRGB(0xababab) CGColor];
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
