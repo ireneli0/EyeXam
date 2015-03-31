@@ -39,7 +39,7 @@ alpha:1.0]
     self.lineChartView.dataSource = self;
     self.lineChartView.delegate = self;
     
-    self.lineChartView.frame = CGRectMake(0,65, self.view.bounds.size.width, self.view.bounds.size.height-160);
+    self.lineChartView.frame = CGRectMake(20,85, self.view.bounds.size.width-40, self.view.bounds.size.height-180);
     
     self.lineChartView.backgroundColor = UIColorFromRGB(0xffffff);
     
