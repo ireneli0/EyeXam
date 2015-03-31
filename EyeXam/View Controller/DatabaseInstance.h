@@ -37,5 +37,7 @@
 -(BOOL)deleteSelectedUser:(NSString *)selectedUser;
 -(BOOL)deleteSelectedUserRecord:(NSString *)selectedUser;
 -(BOOL)checkNewUserisExists:(NSString *)user;
+-(BOOL)deleteSelectedRecord:(NSString *)selectedUser
+                           :(NSString *)date;
 
 @end
