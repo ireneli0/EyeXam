@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *btn_startNewGame;
+@property (strong, nonatomic) IBOutlet UIButton *btn_checkPreviousResult;
+@property (strong, nonatomic) IBOutlet UIButton *btn_viewMyProfile;
+@property (strong, nonatomic) IBOutlet UIButton *btn_changeUser;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeUserLabel;
 @end
 
