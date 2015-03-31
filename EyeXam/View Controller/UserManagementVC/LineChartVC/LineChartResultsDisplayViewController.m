@@ -30,8 +30,8 @@ alpha:1.0]
 
 @implementation LineChartResultsDisplayViewController
 
--(void)loadView{
-    [super loadView];
+-(void)viewDidLoad{
+    [super viewDidLoad];
     self.lineChartView = [[JBLineChartView alloc] init];
     self.lineChartView.dataSource = self;
     self.lineChartView.delegate = self;
@@ -53,7 +53,7 @@ alpha:1.0]
     footerView.rightLabel.text = lastRecordForCurrentUser.currentTime;
     footerView.rightLabel.textColor = [UIColor whiteColor];
     footerView.sectionCount = [nakedEyeResultsArray count];
-    //self.lineChartView.footerView = footerView;
+    self.lineChartView.footerView = footerView;
     
     [self.view addSubview:self.lineChartView];
     
@@ -61,10 +61,10 @@ alpha:1.0]
     [self.informationView setValueAndUnitTextColor:[UIColor colorWithWhite:1.0 alpha:0.75]];
     [self.informationView setTitleTextColor:[UIColor blackColor]];
     [self.informationView setTextShadowColor:nil];
-    [self.informationView setSeparatorColor:[UIColor redColor]];
-    //[self.view addSubview:self.informationView];
+    [self.informationView setSeparatorColor:[UIColor clearColor]];
+    [self.view addSubview:self.informationView];
     
-    [self.lineChartView reloadData];
+    //[self.lineChartView reloadData];
     
     
 }
@@ -72,6 +72,7 @@ alpha:1.0]
     [super viewWillAppear:animated];
     self.userNameLabel.text = self.userName;
     [self.lineChartView setState:JBChartViewStateExpanded];
+    [self.lineChartView reloadData];
 }
 
 - (BOOL)shouldExtendSelectionViewIntoFooterPaddingForChartView:(JBChartView *)chartView
@@ -193,7 +194,7 @@ alpha:1.0]
     else
         return UIColorFromRGB(0xff0000);
 }
-/*
+
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint
 {
     
@@ -248,7 +249,6 @@ alpha:1.0]
     [self.informationView setHidden:YES animated:YES];
 
 }
-*/
 
 
 @end
