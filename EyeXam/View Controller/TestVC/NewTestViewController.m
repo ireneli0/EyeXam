@@ -43,8 +43,6 @@
 @property (nonatomic) float rightOriginMagY;
 @property (nonatomic) float rightOriginMagZ;
 
-@property (weak, nonatomic) IBOutlet UILabel *x1Label;
-@property (weak, nonatomic) IBOutlet UILabel *x2Label;
 
 //Threads
 @property (strong, nonatomic) NSCondition *condition;
@@ -101,8 +99,7 @@ eCharacterImageView;
 //    self.accelorometerLabel.hidden = YES;
 //    self.gyroLabel.hidden = YES;
 //    self.magnetometerLabel.hidden = YES;
-//    self.x1Label.hidden = YES;
-//    self.x2Label.hidden = YES;
+
     
     self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
     
