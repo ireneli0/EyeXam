@@ -21,19 +21,19 @@
 		18015FF31AC8C2600023604C /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE51AC8C2600023604C /* 11.png */; };
 		18015FF41AC8C2600023604C /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE61AC8C2600023604C /* 12.png */; };
 		18015FF51AC8C2600023604C /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE71AC8C2600023604C /* 13.png */; };
-		1811BAB31ACB62B200E1CDB7 /* calibration.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAAE1ACB62B200E1CDB7 /* calibration.mp3 */; };
-		1811BAB41ACB62B200E1CDB7 /* down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAAF1ACB62B200E1CDB7 /* down.mp3 */; };
-		1811BAB51ACB62B200E1CDB7 /* left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAB01ACB62B200E1CDB7 /* left.mp3 */; };
-		1811BAB61ACB62B200E1CDB7 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAB11ACB62B200E1CDB7 /* right.mp3 */; };
-		1811BAB71ACB62B200E1CDB7 /* up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAB21ACB62B200E1CDB7 /* up.mp3 */; };
-		1811BABE1ACB662E00E1CDB7 /* changeeye.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BABC1ACB662E00E1CDB7 /* changeeye.mp3 */; };
-		1811BABF1ACB662E00E1CDB7 /* starttest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BABD1ACB662E00E1CDB7 /* starttest.mp3 */; };
 		186161C21AB8C53000A7DECC /* allRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 186161C11AB8C53000A7DECC /* allRecords.m */; };
 		187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 187ED5B71ACB2164003C7696 /* button_0.0.png */; };
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
 		18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */; };
 		18B5A9FF1AB8119400276A99 /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A9FE1AB8119400276A99 /* userInfo.m */; };
+		18D14D591ACB6BB300D2E77B /* calibration.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18D14D521ACB6BB300D2E77B /* calibration.wav */; };
+		18D14D5A1ACB6BB300D2E77B /* changeeye.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18D14D531ACB6BB300D2E77B /* changeeye.wav */; };
+		18D14D5B1ACB6BB300D2E77B /* down.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18D14D541ACB6BB300D2E77B /* down.wav */; };
+		18D14D5C1ACB6BB300D2E77B /* left.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18D14D551ACB6BB300D2E77B /* left.wav */; };
+		18D14D5D1ACB6BB300D2E77B /* right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18D14D561ACB6BB300D2E77B /* right.wav */; };
+		18D14D5E1ACB6BB300D2E77B /* starttest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18D14D571ACB6BB300D2E77B /* starttest.wav */; };
+		18D14D5F1ACB6BB300D2E77B /* up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18D14D581ACB6BB300D2E77B /* up.wav */; };
 		84459CA9A62DF37680C34C3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546C4310E47E4FD46DB759A6 /* libPods.a */; };
 		CE0839721AB8C5030036BAAB /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839701AB8C5030036BAAB /* Add.png */; };
 		CE0839731AB8C5030036BAAB /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0839711AB8C5030036BAAB /* Delete.png */; };
@@ -114,13 +114,6 @@
 		18015FE51AC8C2600023604C /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = "EyeXam/ImageResource/E charaters/11.png"; sourceTree = "<group>"; };
 		18015FE61AC8C2600023604C /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12.png; path = "EyeXam/ImageResource/E charaters/12.png"; sourceTree = "<group>"; };
 		18015FE71AC8C2600023604C /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 13.png; path = "EyeXam/ImageResource/E charaters/13.png"; sourceTree = "<group>"; };
-		1811BAAE1ACB62B200E1CDB7 /* calibration.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = calibration.mp3; path = SoundResource/calibration.mp3; sourceTree = "<group>"; };
-		1811BAAF1ACB62B200E1CDB7 /* down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = down.mp3; path = SoundResource/down.mp3; sourceTree = "<group>"; };
-		1811BAB01ACB62B200E1CDB7 /* left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = left.mp3; path = SoundResource/left.mp3; sourceTree = "<group>"; };
-		1811BAB11ACB62B200E1CDB7 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = right.mp3; path = SoundResource/right.mp3; sourceTree = "<group>"; };
-		1811BAB21ACB62B200E1CDB7 /* up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = up.mp3; path = SoundResource/up.mp3; sourceTree = "<group>"; };
-		1811BABC1ACB662E00E1CDB7 /* changeeye.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = changeeye.mp3; path = SoundResource/changeeye.mp3; sourceTree = "<group>"; };
-		1811BABD1ACB662E00E1CDB7 /* starttest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = starttest.mp3; path = SoundResource/starttest.mp3; sourceTree = "<group>"; };
 		186161C01AB8C53000A7DECC /* allRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allRecords.h; path = "EyeXam/View Controller/allRecords.h"; sourceTree = "<group>"; };
 		186161C11AB8C53000A7DECC /* allRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = allRecords.m; path = "EyeXam/View Controller/allRecords.m"; sourceTree = "<group>"; };
 		187ED5B71ACB2164003C7696 /* button_0.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_0.0.png; path = EyeXam/ImageResource/buttons/button_0.0.png; sourceTree = "<group>"; };
@@ -130,6 +123,13 @@
 		18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseInstance.m; path = "EyeXam/View Controller/DatabaseInstance.m"; sourceTree = "<group>"; };
 		18B5A9FD1AB8119400276A99 /* userInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userInfo.h; path = "EyeXam/View Controller/userInfo.h"; sourceTree = "<group>"; };
 		18B5A9FE1AB8119400276A99 /* userInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = userInfo.m; path = "EyeXam/View Controller/userInfo.m"; sourceTree = "<group>"; };
+		18D14D521ACB6BB300D2E77B /* calibration.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = calibration.wav; path = SoundResource/calibration.wav; sourceTree = "<group>"; };
+		18D14D531ACB6BB300D2E77B /* changeeye.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = changeeye.wav; path = SoundResource/changeeye.wav; sourceTree = "<group>"; };
+		18D14D541ACB6BB300D2E77B /* down.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = down.wav; path = SoundResource/down.wav; sourceTree = "<group>"; };
+		18D14D551ACB6BB300D2E77B /* left.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = left.wav; path = SoundResource/left.wav; sourceTree = "<group>"; };
+		18D14D561ACB6BB300D2E77B /* right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = right.wav; path = SoundResource/right.wav; sourceTree = "<group>"; };
+		18D14D571ACB6BB300D2E77B /* starttest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = starttest.wav; path = SoundResource/starttest.wav; sourceTree = "<group>"; };
+		18D14D581ACB6BB300D2E77B /* up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = up.wav; path = SoundResource/up.wav; sourceTree = "<group>"; };
 		546C4310E47E4FD46DB759A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1ECEC7B81085F6CEA6555 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE0839701AB8C5030036BAAB /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Add.png; path = EyeXam/ImageResource/Add.png; sourceTree = "<group>"; };
@@ -239,13 +239,13 @@
 		18AEC2471AB6982A009B3BE4 /* SoundResource */ = {
 			isa = PBXGroup;
 			children = (
-				1811BABC1ACB662E00E1CDB7 /* changeeye.mp3 */,
-				1811BABD1ACB662E00E1CDB7 /* starttest.mp3 */,
-				1811BAAE1ACB62B200E1CDB7 /* calibration.mp3 */,
-				1811BAAF1ACB62B200E1CDB7 /* down.mp3 */,
-				1811BAB01ACB62B200E1CDB7 /* left.mp3 */,
-				1811BAB11ACB62B200E1CDB7 /* right.mp3 */,
-				1811BAB21ACB62B200E1CDB7 /* up.mp3 */,
+				18D14D521ACB6BB300D2E77B /* calibration.wav */,
+				18D14D531ACB6BB300D2E77B /* changeeye.wav */,
+				18D14D541ACB6BB300D2E77B /* down.wav */,
+				18D14D551ACB6BB300D2E77B /* left.wav */,
+				18D14D561ACB6BB300D2E77B /* right.wav */,
+				18D14D571ACB6BB300D2E77B /* starttest.wav */,
+				18D14D581ACB6BB300D2E77B /* up.wav */,
 				18AEC2481AB6985F009B3BE4 /* correct.wav */,
 				18AEC2491AB6985F009B3BE4 /* wrong.wav */,
 			);
@@ -629,11 +629,9 @@
 				CEBA3DBD1ACB1CF400EA4EB8 /* slider_container.png in Resources */,
 				18015FF21AC8C2600023604C /* 10.png in Resources */,
 				18015FF01AC8C2600023604C /* 8.png in Resources */,
-				1811BAB61ACB62B200E1CDB7 /* right.mp3 in Resources */,
 				18015FEE1AC8C2600023604C /* 6.png in Resources */,
 				18015FF41AC8C2600023604C /* 12.png in Resources */,
 				CE8E2FBF1AC8AFE6000751A0 /* Main.storyboard in Resources */,
-				1811BAB41ACB62B200E1CDB7 /* down.mp3 in Resources */,
 				18015FED1AC8C2600023604C /* 5.png in Resources */,
 				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				18015FEA1AC8C2600023604C /* 2.png in Resources */,
@@ -641,14 +639,15 @@
 				CEBA3DC31ACB2BC700EA4EB8 /* input_0.png in Resources */,
 				187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */,
 				CEBA3DBE1ACB1CF400EA4EB8 /* slider_dot.png in Resources */,
-				1811BABF1ACB662E00E1CDB7 /* starttest.mp3 in Resources */,
 				18015FEB1AC8C2600023604C /* 3.png in Resources */,
+				18D14D5A1ACB6BB300D2E77B /* changeeye.wav in Resources */,
+				18D14D5B1ACB6BB300D2E77B /* down.wav in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
 				CEC17F901ACB5E1B00554403 /* down_indicator.PNG in Resources */,
 				CEBA3DB81ACB18B300EA4EB8 /* button_1.png in Resources */,
-				1811BAB71ACB62B200E1CDB7 /* up.mp3 in Resources */,
 				CE0839721AB8C5030036BAAB /* Add.png in Resources */,
 				18015FF11AC8C2600023604C /* 9.png in Resources */,
+				18D14D5D1ACB6BB300D2E77B /* right.wav in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
 				CEC17F911ACB5E1B00554403 /* left_indicator.PNG in Resources */,
 				CEBA3DBF1ACB1CF400EA4EB8 /* slider_indicator.png in Resources */,
@@ -660,21 +659,22 @@
 				18015FEF1AC8C2600023604C /* 7.png in Resources */,
 				CEC17F921ACB5E1B00554403 /* right_indicator.PNG in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
-				1811BAB31ACB62B200E1CDB7 /* calibration.mp3 in Resources */,
 				18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */,
-				1811BAB51ACB62B200E1CDB7 /* left.mp3 in Resources */,
 				18015FE91AC8C2600023604C /* 1.png in Resources */,
 				18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */,
 				18015FEC1AC8C2600023604C /* 4.png in Resources */,
 				CEBA3DC41ACB2BC700EA4EB8 /* input_1.png in Resources */,
 				CEB837F01ACA6AF600342FF8 /* table_icon.png in Resources */,
+				18D14D5E1ACB6BB300D2E77B /* starttest.wav in Resources */,
+				18D14D5F1ACB6BB300D2E77B /* up.wav in Resources */,
 				CE0839731AB8C5030036BAAB /* Delete.png in Resources */,
+				18D14D591ACB6BB300D2E77B /* calibration.wav in Resources */,
 				CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */,
 				CEDF15311A9D962E00CF8AC4 /* unchecked.png in Resources */,
-				1811BABE1ACB662E00E1CDB7 /* changeeye.mp3 in Resources */,
 				CEEC122B1A9D8F99008FF50F /* Images.xcassets in Resources */,
 				CEB837EF1ACA6AF600342FF8 /* linechart_icon.png in Resources */,
 				CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */,
+				18D14D5C1ACB6BB300D2E77B /* left.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
