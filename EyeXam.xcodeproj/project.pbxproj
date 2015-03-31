@@ -59,6 +59,8 @@
 		CEA1E2601A9DB0B2004E3A9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1E25F1A9DB0B2004E3A9B /* SystemConfiguration.framework */; };
 		CEB837EF1ACA6AF600342FF8 /* linechart_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB837ED1ACA6AF600342FF8 /* linechart_icon.png */; };
 		CEB837F01ACA6AF600342FF8 /* table_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB837EE1ACA6AF600342FF8 /* table_icon.png */; };
+		CEBA3DB71ACB18B300EA4EB8 /* button_0.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DB51ACB18B300EA4EB8 /* button_0.png */; };
+		CEBA3DB81ACB18B300EA4EB8 /* button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBA3DB61ACB18B300EA4EB8 /* button_1.png */; };
 		CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF15291A9D961F00CF8AC4 /* RadioButton.m */; };
 		CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152B1A9D962E00CF8AC4 /* checked.png */; };
 		CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152C1A9D962E00CF8AC4 /* checked@2x.png */; };
@@ -152,6 +154,8 @@
 		CEA1E25F1A9DB0B2004E3A9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CEB837ED1ACA6AF600342FF8 /* linechart_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linechart_icon.png; path = EyeXam/ImageResource/linechart_icon.png; sourceTree = "<group>"; };
 		CEB837EE1ACA6AF600342FF8 /* table_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = table_icon.png; path = EyeXam/ImageResource/table_icon.png; sourceTree = "<group>"; };
+		CEBA3DB51ACB18B300EA4EB8 /* button_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_0.png; path = EyeXam/ImageResource/buttons/button_0.png; sourceTree = "<group>"; };
+		CEBA3DB61ACB18B300EA4EB8 /* button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_1.png; path = EyeXam/ImageResource/buttons/button_1.png; sourceTree = "<group>"; };
 		CEDF15281A9D961F00CF8AC4 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioButton.h; path = EyeXam/Model/RadioButton/RadioButton.h; sourceTree = "<group>"; };
 		CEDF15291A9D961F00CF8AC4 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioButton.m; path = EyeXam/Model/RadioButton/RadioButton.m; sourceTree = "<group>"; };
 		CEDF152B1A9D962E00CF8AC4 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checked.png; path = "EyeXam/ImageResource/radio-res-ios/checked.png"; sourceTree = "<group>"; };
@@ -314,6 +318,15 @@
 			name = UserManagementVC;
 			sourceTree = "<group>";
 		};
+		CEBA3DB41ACB189D00EA4EB8 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CEBA3DB51ACB18B300EA4EB8 /* button_0.png */,
+				CEBA3DB61ACB18B300EA4EB8 /* button_1.png */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
 		CEDF15161A9D94A500CF8AC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +349,7 @@
 		CEDF151E1A9D959100CF8AC4 /* ImageResource */ = {
 			isa = PBXGroup;
 			children = (
+				CEBA3DB41ACB189D00EA4EB8 /* buttons */,
 				CEB837ED1ACA6AF600342FF8 /* linechart_icon.png */,
 				CEB837EE1ACA6AF600342FF8 /* table_icon.png */,
 				CE0839701AB8C5030036BAAB /* Add.png */,
@@ -545,8 +559,10 @@
 				18015FED1AC8C2600023604C /* 5.png in Resources */,
 				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				18015FEA1AC8C2600023604C /* 2.png in Resources */,
+				CEBA3DB71ACB18B300EA4EB8 /* button_0.png in Resources */,
 				18015FEB1AC8C2600023604C /* 3.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
+				CEBA3DB81ACB18B300EA4EB8 /* button_1.png in Resources */,
 				CE0839721AB8C5030036BAAB /* Add.png in Resources */,
 				18015FF11AC8C2600023604C /* 9.png in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
