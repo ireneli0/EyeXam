@@ -58,6 +58,13 @@
 //sounds
 @property (nonatomic) SystemSoundID correct_soundID;
 @property (nonatomic) SystemSoundID wrong_soundID;
+@property (nonatomic) SystemSoundID calibration_soundID;
+@property (nonatomic) SystemSoundID up_soundID;
+@property (nonatomic) SystemSoundID down_soundID;
+@property (nonatomic) SystemSoundID left_soundID;
+@property (nonatomic) SystemSoundID right_soundID;
+@property (nonatomic) SystemSoundID starttest_soundID;
+@property (nonatomic) SystemSoundID changeeye_soundID;
 
 //result
 @property (nonatomic) float resultForRightEye;
@@ -120,6 +127,38 @@
     NSURL *wrong_soundURL = [NSURL fileURLWithPath:wrong_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)wrong_soundURL,&_wrong_soundID);
     
+    //start calibration phrase
+    NSString *calibration_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/calibration" ofType:@"wav"];
+    NSURL *calibration_soundURL = [NSURL fileURLWithPath:calibration_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)calibration_soundURL,&_calibration_soundID);
+    
+    //up
+    NSString *up_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/up" ofType:@"wav"];
+    NSURL *up_soundURL = [NSURL fileURLWithPath:up_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)up_soundURL,&_up_soundID);
+    //down
+    NSString *down_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/down" ofType:@"wav"];
+    NSURL *down_soundURL = [NSURL fileURLWithPath:down_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)down_soundURL,&_down_soundID);
+    //left
+    NSString *left_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/left" ofType:@"wav"];
+    NSURL *left_soundURL = [NSURL fileURLWithPath:left_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)left_soundURL,&_left_soundID);
+    //right
+    NSString *right_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/right" ofType:@"wav"];
+    NSURL *right_soundURL = [NSURL fileURLWithPath:right_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)right_soundURL,&_right_soundID);
+    
+    //start Test
+    NSString *starttest_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/starttest" ofType:@"wav"];
+    NSURL *starttest_soundURL = [NSURL fileURLWithPath:starttest_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)starttest_soundURL,&_starttest_soundID);
+    //change Eye
+    NSString *changeeye_soundPath = [[NSBundle mainBundle]pathForResource:@"SoundResource/changeeye" ofType:@"wav"];
+    NSURL *changeeye_soundURL = [NSURL fileURLWithPath:changeeye_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)changeeye_soundURL,&_changeeye_soundID);
+    
+    
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"alreadyGotUserDirection" object:nil];
@@ -161,6 +200,7 @@
             
         case -1:
             //calibrating phrase
+                        AudioServicesPlaySystemSound(_calibration_soundID);
             self.testFlowInstructionLabel.text =@"Calibrating...->up";
             [self.instructionImageView setImage:[UIImage imageNamed:@"up_indicator.PNG"]];
             if(self.buttonPressedCount == -5){
