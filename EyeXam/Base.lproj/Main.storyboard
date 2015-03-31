@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Tr-5K-UnY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Tr-5K-UnY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -128,7 +128,7 @@
             </objects>
             <point key="canvasLocation" x="1351" y="510"/>
         </scene>
-        <!--line chart-->
+        <!--Line Chart-->
         <scene sceneID="GvH-cF-0Cp">
             <objects>
                 <viewController id="m1S-50-HgV" customClass="LineChartResultsDisplayViewController" sceneMemberID="viewController">
@@ -155,7 +155,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="line chart" id="Te0-0k-k8x"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Line Chart" image="linechart_icon.png" id="Te0-0k-k8x"/>
                     <connections>
                         <outlet property="userNameLabel" destination="see-js-fjT" id="W1u-fX-VZW"/>
                     </connections>
@@ -164,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="120" y="2748"/>
         </scene>
-        <!--Results Display View Controller-->
+        <!--Table-->
         <scene sceneID="leb-qY-Odw">
             <objects>
                 <viewController id="oGO-yh-NkH" customClass="ResultsDisplayViewController" sceneMemberID="viewController">
@@ -267,7 +267,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="ful-Kl-vRz"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="table_icon.png" id="ful-Kl-vRz"/>
                     <connections>
                         <outlet property="btn_NakedeyeResults" destination="UaX-hw-2Ht" id="9KN-Bb-q76"/>
                         <outlet property="btn_WithglassedResults" destination="4Yi-jM-nlW" id="PRH-f0-mWZ"/>
@@ -763,6 +763,8 @@
     <resources>
         <image name="EYE.png" width="1224" height="684"/>
         <image name="checked.png" width="24" height="24"/>
+        <image name="linechart_icon.png" width="32" height="32"/>
+        <image name="table_icon.png" width="32" height="32"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
