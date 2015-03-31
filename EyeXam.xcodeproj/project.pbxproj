@@ -22,6 +22,7 @@
 		18015FF41AC8C2600023604C /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE61AC8C2600023604C /* 12.png */; };
 		18015FF51AC8C2600023604C /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE71AC8C2600023604C /* 13.png */; };
 		186161C21AB8C53000A7DECC /* allRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 186161C11AB8C53000A7DECC /* allRecords.m */; };
+		187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 187ED5B71ACB2164003C7696 /* button_0.0.png */; };
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
 		18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2491AB6985F009B3BE4 /* wrong.wav */; };
 		18AED71E1AB7BD1300D4EA57 /* DatabaseInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AED71D1AB7BD1300D4EA57 /* DatabaseInstance.m */; };
@@ -102,6 +103,7 @@
 		18015FE71AC8C2600023604C /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 13.png; path = "EyeXam/ImageResource/E charaters/13.png"; sourceTree = "<group>"; };
 		186161C01AB8C53000A7DECC /* allRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allRecords.h; path = "EyeXam/View Controller/allRecords.h"; sourceTree = "<group>"; };
 		186161C11AB8C53000A7DECC /* allRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = allRecords.m; path = "EyeXam/View Controller/allRecords.m"; sourceTree = "<group>"; };
+		187ED5B71ACB2164003C7696 /* button_0.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_0.0.png; path = EyeXam/ImageResource/buttons/button_0.0.png; sourceTree = "<group>"; };
 		18AEC2481AB6985F009B3BE4 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = SoundResource/correct.wav; sourceTree = "<group>"; };
 		18AEC2491AB6985F009B3BE4 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = SoundResource/wrong.wav; sourceTree = "<group>"; };
 		18AED71C1AB7BD1300D4EA57 /* DatabaseInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseInstance.h; path = "EyeXam/View Controller/DatabaseInstance.h"; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		CEBA3DB41ACB189D00EA4EB8 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				187ED5B71ACB2164003C7696 /* button_0.0.png */,
 				CEBA3DB51ACB18B300EA4EB8 /* button_0.png */,
 				CEBA3DB61ACB18B300EA4EB8 /* button_1.png */,
 			);
@@ -578,6 +581,7 @@
 				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				18015FEA1AC8C2600023604C /* 2.png in Resources */,
 				CEBA3DB71ACB18B300EA4EB8 /* button_0.png in Resources */,
+				187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */,
 				CEBA3DBE1ACB1CF400EA4EB8 /* slider_dot.png in Resources */,
 				18015FEB1AC8C2600023604C /* 3.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
