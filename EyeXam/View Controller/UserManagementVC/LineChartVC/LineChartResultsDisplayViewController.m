@@ -41,7 +41,7 @@ alpha:1.0]
     
     self.lineChartView.frame = CGRectMake(0,65, self.view.bounds.size.width, self.view.bounds.size.height-160);
     
-    self.lineChartView.backgroundColor = UIColorFromRGB(0xF0FFF0);
+    self.lineChartView.backgroundColor = UIColorFromRGB(0xffffff);
     
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(100, 200, self.view.bounds.size.width - (100 * 2), 20)];
     footerView.backgroundColor = [UIColor whiteColor];
