@@ -40,21 +40,21 @@ alpha:1.0]
     self.lineChartView.dataSource = self;
     self.lineChartView.delegate = self;
     
-    self.lineChartView.frame = CGRectMake(0,65, self.view.bounds.size.width, self.view.bounds.size.height-115);
+    self.lineChartView.frame = CGRectMake(30,80, self.view.bounds.size.width - 60, self.view.bounds.size.height-160);
     
     self.lineChartView.backgroundColor = UIColorFromRGB(0xFFF8DC);
     
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(100, 200, self.view.bounds.size.width - (100 * 2), 20)];
-    footerView.backgroundColor = [UIColor clearColor];
+    footerView.backgroundColor = [UIColor whiteColor];
     
     
     NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
     allRecords *firstRecordForCurrentUser = [nakedEyeResultsArray firstObject];
     allRecords *lastRecordForCurrentUser = [nakedEyeResultsArray lastObject];
-                 
-    footerView.leftLabel.text = firstRecordForCurrentUser.currentTime;
+    
+    footerView.leftLabel.text = [NSString stringWithFormat: @"First Test Taken at: %@",firstRecordForCurrentUser.currentTime];
     footerView.leftLabel.textColor = [UIColor blackColor];
-    footerView.rightLabel.text = lastRecordForCurrentUser.currentTime;
+    footerView.rightLabel.text = [NSString stringWithFormat: @"Last Test Taken at: %@",lastRecordForCurrentUser.currentTime];
     footerView.rightLabel.textColor = [UIColor blackColor];
     footerView.sectionCount = [nakedEyeResultsArray count];
     self.lineChartView.footerView = footerView;

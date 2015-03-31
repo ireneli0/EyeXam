@@ -62,6 +62,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
         _rightLabel.textColor = [UIColor whiteColor];
         _rightLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_rightLabel];
+        
     }
     return self;
 }
