@@ -421,6 +421,32 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
+-(BOOL)deleteSelectedRecord:(NSString *)selectedUser
+                           :(NSString *)date
+{
+    BOOL isSuccess = FALSE;
+    
+    if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
+        NSString *delete_Recordssql = [NSString stringWithFormat:
+                                       @"DELETE FROM Records WHERE userName = '%@'and testTime = '%@'",selectedUser,date];
+        const char *delete_selectedUserRecord = [delete_Recordssql UTF8String];
+        
+        sqlite3_prepare_v2(database, delete_selectedUserRecord, -1, &statement, NULL);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE){
+            isSuccess = TRUE;
+        }
+        else{
+            if (sqlite3_prepare_v2(database, delete_selectedUserRecord, -1, &statement, NULL) != SQLITE_DONE) {
+                NSLog(@"delete failed: %s", sqlite3_errmsg(database));}
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+    }
+    return isSuccess;
+}
+
+
 -(BOOL)deleteSelectedUserRecord:(NSString *)selectedUser
 {
     BOOL isSuccess = FALSE;
