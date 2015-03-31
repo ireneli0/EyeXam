@@ -36,9 +36,9 @@ alpha:1.0]
     self.lineChartView.dataSource = self;
     self.lineChartView.delegate = self;
     
-    self.lineChartView.frame = CGRectMake(100, 100, self.view.bounds.size.width - 200, 500);
+    self.lineChartView.frame = CGRectMake(120, 130, self.view.bounds.size.width - 200, 500);
     
-    self.lineChartView.backgroundColor = UIColorFromRGB(0xb7e3e4);
+    self.lineChartView.backgroundColor = UIColorFromRGB(0xFFF8DC);
     
     JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(100, 200, self.view.bounds.size.width - (100 * 2), 20)];
     footerView.backgroundColor = [UIColor clearColor];
@@ -62,7 +62,7 @@ alpha:1.0]
     [self.informationView setTitleTextColor:[UIColor blackColor]];
     [self.informationView setTextShadowColor:nil];
     [self.informationView setSeparatorColor:[UIColor redColor]];
-    [self.view addSubview:self.informationView];
+    //[self.view addSubview:self.informationView];
     
     [self.lineChartView reloadData];
     
@@ -147,18 +147,18 @@ alpha:1.0]
 //line color
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0 ||lineIndex ==1)
-        return UIColorFromRGB(0x4cc552);
+        return UIColorFromRGB(0x5CACEE);
     else
-        return UIColorFromRGB(0xff0000);
+        return UIColorFromRGB(0xFFB6C1);
     
 }
 //line width
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex
 {
     if(lineIndex == 0 || lineIndex == 2)
-        return 2.0f;
+        return 4.0f;
     else
-        return 6.0f;
+        return 4.0f;
 }
 //line style
 - (JBLineChartViewLineStyle)lineChartView:(JBLineChartView *)lineChartView lineStyleForLineAtLineIndex:(NSUInteger)lineIndex
@@ -193,7 +193,7 @@ alpha:1.0]
     else
         return UIColorFromRGB(0xff0000);
 }
-
+/*
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint
 {
     
@@ -248,6 +248,7 @@ alpha:1.0]
     [self.informationView setHidden:YES animated:YES];
 
 }
+*/
 
 
 @end

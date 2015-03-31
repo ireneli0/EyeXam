@@ -22,15 +22,15 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"EyeXam";
-//    int resultRight = 20/1.0;
-//    int resultLeft = 20/2.0;
+//    int resultRight = 20/0.5;
+//    int resultLeft = 20/0.5;
 //    
 //    float meterValue = 2.0;
 //    NSString *testMeters = [NSString stringWithFormat:@"%.1f", meterValue];
 //    NSString *lefteyeResult = [NSString stringWithFormat:@"20/%d", resultLeft];
 //    NSString *righteyeResult = [NSString stringWithFormat:@"20/%d", resultRight];
 //
-//    NSString *wearGlasses = @"With glasses";
+//    NSString *wearGlasses = @"Naked eye";
 //    NSString *userName = @"Yi";
 //    NSString *currenttime;
 //    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
