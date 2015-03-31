@@ -23,7 +23,6 @@ alpha:1.0]
 
 @end
 
-
 @implementation ResultsDisplayViewController
 
 - (void)viewDidLoad {
@@ -96,16 +95,20 @@ alpha:1.0]
          cell = [tableView dequeueReusableCellWithIdentifier:@"nakedEyeResultsTableCell"  forIndexPath:indexPath];
          NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [nakedEyeResultsArray objectAtIndex:indexPath.row];
-         cell.textLabel.text = [NSString stringWithFormat:@"      Result for  Left Eye: %@,   Right Eye: %@,  Distance: %@m",  recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.textLabel.text = [NSString stringWithFormat:@"    Result for  Left Eye: %@,   Right Eye: %@,  Distance: %@m",  recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:18.0f];
          cell.detailTextLabel.text = [NSString stringWithFormat:@"         Tested at %@", recordsForCurrentUser.currentTime];
+         cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12.0f];
 
      }else if (tableView.tag ==1){//
          //with glasses eye result cell
          cell = [tableView dequeueReusableCellWithIdentifier:@"withGlassesResultsTableCell" forIndexPath:indexPath];
          NSArray *withGlassesResultsArray = [[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [withGlassesResultsArray objectAtIndex:indexPath.row];
-         cell.textLabel.text = [NSString stringWithFormat:@"      Result for  Left Eye: %@,   Right Eye: %@,  Distance: %@m",  recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.textLabel.text = [NSString stringWithFormat:@"    Result for  Left Eye: %@,   Right Eye: %@,  Distance: %@m",  recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:18.0f];
          cell.detailTextLabel.text = [NSString stringWithFormat:@"         Tested at %@", recordsForCurrentUser.currentTime];
+         cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12.0f];
      }
      return cell;
 }
