@@ -147,7 +147,7 @@ alpha:1.0]
 //line color
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex{
     if(lineIndex == 0 ||lineIndex ==1)
-        return UIColorFromRGB(0x5CACEE);
+        return UIColorFromRGB(0xAEEEEE);
     else
         return UIColorFromRGB(0xFFB6C1);
     

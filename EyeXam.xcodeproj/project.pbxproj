@@ -21,6 +21,13 @@
 		18015FF31AC8C2600023604C /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE51AC8C2600023604C /* 11.png */; };
 		18015FF41AC8C2600023604C /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE61AC8C2600023604C /* 12.png */; };
 		18015FF51AC8C2600023604C /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 18015FE71AC8C2600023604C /* 13.png */; };
+		1811BAB31ACB62B200E1CDB7 /* calibration.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAAE1ACB62B200E1CDB7 /* calibration.mp3 */; };
+		1811BAB41ACB62B200E1CDB7 /* down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAAF1ACB62B200E1CDB7 /* down.mp3 */; };
+		1811BAB51ACB62B200E1CDB7 /* left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAB01ACB62B200E1CDB7 /* left.mp3 */; };
+		1811BAB61ACB62B200E1CDB7 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAB11ACB62B200E1CDB7 /* right.mp3 */; };
+		1811BAB71ACB62B200E1CDB7 /* up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BAB21ACB62B200E1CDB7 /* up.mp3 */; };
+		1811BABE1ACB662E00E1CDB7 /* changeeye.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BABC1ACB662E00E1CDB7 /* changeeye.mp3 */; };
+		1811BABF1ACB662E00E1CDB7 /* starttest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1811BABD1ACB662E00E1CDB7 /* starttest.mp3 */; };
 		186161C21AB8C53000A7DECC /* allRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 186161C11AB8C53000A7DECC /* allRecords.m */; };
 		187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 187ED5B71ACB2164003C7696 /* button_0.0.png */; };
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
@@ -107,6 +114,13 @@
 		18015FE51AC8C2600023604C /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = "EyeXam/ImageResource/E charaters/11.png"; sourceTree = "<group>"; };
 		18015FE61AC8C2600023604C /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12.png; path = "EyeXam/ImageResource/E charaters/12.png"; sourceTree = "<group>"; };
 		18015FE71AC8C2600023604C /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 13.png; path = "EyeXam/ImageResource/E charaters/13.png"; sourceTree = "<group>"; };
+		1811BAAE1ACB62B200E1CDB7 /* calibration.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = calibration.mp3; path = SoundResource/calibration.mp3; sourceTree = "<group>"; };
+		1811BAAF1ACB62B200E1CDB7 /* down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = down.mp3; path = SoundResource/down.mp3; sourceTree = "<group>"; };
+		1811BAB01ACB62B200E1CDB7 /* left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = left.mp3; path = SoundResource/left.mp3; sourceTree = "<group>"; };
+		1811BAB11ACB62B200E1CDB7 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = right.mp3; path = SoundResource/right.mp3; sourceTree = "<group>"; };
+		1811BAB21ACB62B200E1CDB7 /* up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = up.mp3; path = SoundResource/up.mp3; sourceTree = "<group>"; };
+		1811BABC1ACB662E00E1CDB7 /* changeeye.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = changeeye.mp3; path = SoundResource/changeeye.mp3; sourceTree = "<group>"; };
+		1811BABD1ACB662E00E1CDB7 /* starttest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = starttest.mp3; path = SoundResource/starttest.mp3; sourceTree = "<group>"; };
 		186161C01AB8C53000A7DECC /* allRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allRecords.h; path = "EyeXam/View Controller/allRecords.h"; sourceTree = "<group>"; };
 		186161C11AB8C53000A7DECC /* allRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = allRecords.m; path = "EyeXam/View Controller/allRecords.m"; sourceTree = "<group>"; };
 		187ED5B71ACB2164003C7696 /* button_0.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_0.0.png; path = EyeXam/ImageResource/buttons/button_0.0.png; sourceTree = "<group>"; };
@@ -225,6 +239,13 @@
 		18AEC2471AB6982A009B3BE4 /* SoundResource */ = {
 			isa = PBXGroup;
 			children = (
+				1811BABC1ACB662E00E1CDB7 /* changeeye.mp3 */,
+				1811BABD1ACB662E00E1CDB7 /* starttest.mp3 */,
+				1811BAAE1ACB62B200E1CDB7 /* calibration.mp3 */,
+				1811BAAF1ACB62B200E1CDB7 /* down.mp3 */,
+				1811BAB01ACB62B200E1CDB7 /* left.mp3 */,
+				1811BAB11ACB62B200E1CDB7 /* right.mp3 */,
+				1811BAB21ACB62B200E1CDB7 /* up.mp3 */,
 				18AEC2481AB6985F009B3BE4 /* correct.wav */,
 				18AEC2491AB6985F009B3BE4 /* wrong.wav */,
 			);
@@ -608,9 +629,11 @@
 				CEBA3DBD1ACB1CF400EA4EB8 /* slider_container.png in Resources */,
 				18015FF21AC8C2600023604C /* 10.png in Resources */,
 				18015FF01AC8C2600023604C /* 8.png in Resources */,
+				1811BAB61ACB62B200E1CDB7 /* right.mp3 in Resources */,
 				18015FEE1AC8C2600023604C /* 6.png in Resources */,
 				18015FF41AC8C2600023604C /* 12.png in Resources */,
 				CE8E2FBF1AC8AFE6000751A0 /* Main.storyboard in Resources */,
+				1811BAB41ACB62B200E1CDB7 /* down.mp3 in Resources */,
 				18015FED1AC8C2600023604C /* 5.png in Resources */,
 				CE449C701AB802530019CBF3 /* linechart.png in Resources */,
 				18015FEA1AC8C2600023604C /* 2.png in Resources */,
@@ -618,10 +641,12 @@
 				CEBA3DC31ACB2BC700EA4EB8 /* input_0.png in Resources */,
 				187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */,
 				CEBA3DBE1ACB1CF400EA4EB8 /* slider_dot.png in Resources */,
+				1811BABF1ACB662E00E1CDB7 /* starttest.mp3 in Resources */,
 				18015FEB1AC8C2600023604C /* 3.png in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
 				CEC17F901ACB5E1B00554403 /* down_indicator.PNG in Resources */,
 				CEBA3DB81ACB18B300EA4EB8 /* button_1.png in Resources */,
+				1811BAB71ACB62B200E1CDB7 /* up.mp3 in Resources */,
 				CE0839721AB8C5030036BAAB /* Add.png in Resources */,
 				18015FF11AC8C2600023604C /* 9.png in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
@@ -635,7 +660,9 @@
 				18015FEF1AC8C2600023604C /* 7.png in Resources */,
 				CEC17F921ACB5E1B00554403 /* right_indicator.PNG in Resources */,
 				CEDF15321A9D962E00CF8AC4 /* unchecked@2x.png in Resources */,
+				1811BAB31ACB62B200E1CDB7 /* calibration.mp3 in Resources */,
 				18AEC24B1AB6985F009B3BE4 /* wrong.wav in Resources */,
+				1811BAB51ACB62B200E1CDB7 /* left.mp3 in Resources */,
 				18015FE91AC8C2600023604C /* 1.png in Resources */,
 				18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */,
 				18015FEC1AC8C2600023604C /* 4.png in Resources */,
@@ -644,6 +671,7 @@
 				CE0839731AB8C5030036BAAB /* Delete.png in Resources */,
 				CE449C651AB7E6C00019CBF3 /* EYE.png in Resources */,
 				CEDF15311A9D962E00CF8AC4 /* unchecked.png in Resources */,
+				1811BABE1ACB662E00E1CDB7 /* changeeye.mp3 in Resources */,
 				CEEC122B1A9D8F99008FF50F /* Images.xcassets in Resources */,
 				CEB837EF1ACA6AF600342FF8 /* linechart_icon.png in Resources */,
 				CE249BE61AB6282700DE63A1 /* wrong.jpg in Resources */,
