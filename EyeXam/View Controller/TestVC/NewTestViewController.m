@@ -344,7 +344,7 @@ eCharacterImageView;
         
         settingsViewController.preferredContentSize = CGSizeMake(300, 300);
         
-        settingsViewController.title = @"Scanning for a NODE";
+        settingsViewController.title = @"Scan NODE";
         
         [settingsViewController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(close:)]];
         

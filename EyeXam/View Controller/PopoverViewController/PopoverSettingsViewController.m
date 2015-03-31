@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor colorWithRed:195./255. green:4./255. blue:94./255. alpha:1.]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blackColor]];
     
     
     self.nodeConnectionHelper = [VTNodeConnectionHelper connectionHelperwithDelegate:self];
@@ -55,13 +55,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
     UITableViewCell* cell = [aTableView dequeueReusableCellWithIdentifier:@"NodeDeviceCell"];
 
     CBPeripheral *peripheral = [self.nodeConnectionHelper.allNodeDevices objectAtIndex:indexPath.row];
-
     
     cell.textLabel.text = peripheral.name;
+    cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:16.0f];
     return cell;
 }
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
