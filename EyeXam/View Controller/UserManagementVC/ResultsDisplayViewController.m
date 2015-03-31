@@ -10,12 +10,19 @@
 #import "DatabaseInstance.h"
 #import "allRecords.h"
 
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
+
 @interface ResultsDisplayViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *nakedEyeResultDisplayTable;
 @property (weak, nonatomic) IBOutlet UITableView *withGlassesResultDisplayTable;
 
 @end
+
 
 @implementation ResultsDisplayViewController
 
@@ -24,8 +31,44 @@
     [self.tabBarController setTitle:@"Results Display"];
     self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     self.userNameLabel.text = self.userName;
+    //set attributes to button
+    self.btn_NakedeyeResults.layer.borderColor = UIColorFromRGB(0x1390FF).CGColor;
+    self.btn_NakedeyeResults.layer.borderWidth = 0.5;
+    self.btn_NakedeyeResults.layer.cornerRadius = 10;
+    [self.btn_NakedeyeResults addTarget:self action:@selector(showNakedeyeResults:) forControlEvents:UIControlEventTouchUpInside];
+    self.btn_WithglassedResults.layer.borderColor = UIColorFromRGB(0x1390FF).CGColor;
+    self.btn_WithglassedResults.layer.borderWidth = 0.5;
+    self.btn_WithglassedResults.layer.cornerRadius = 10;
+    [self.btn_WithglassedResults addTarget:self action:@selector(showWithglassesResults:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //initial displaying results
+    self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0x1390FF);
+    [self.btn_NakedeyeResults setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.nakedEyeResultDisplayTable.hidden = false;
+    self.withGlassesResultDisplayTable.hidden = true;
 }
 
+-(IBAction)showNakedeyeResults:(id)sender{
+    //change color attributes to buttons
+    self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0x1390FF);
+    [self.btn_NakedeyeResults setTitleColor:UIColorFromRGB(0xFFFFFF) forState:UIControlStateNormal];
+    self.btn_WithglassedResults.backgroundColor = UIColorFromRGB(0xFFFFFF);
+    [self.btn_WithglassedResults setTitleColor:UIColorFromRGB(0x1390FF) forState:UIControlStateNormal];
+    //change the results to be displayed
+    self.nakedEyeResultDisplayTable.hidden = false;
+    self.withGlassesResultDisplayTable.hidden = true;
+}
+
+-(IBAction)showWithglassesResults:(id)sender{
+    //change color attributes to buttons
+    self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0xFFFFFF);
+    [self.btn_NakedeyeResults setTitleColor:UIColorFromRGB(0x1390FF) forState:UIControlStateNormal];
+    self.btn_WithglassedResults.backgroundColor = UIColorFromRGB(0x1390FF);
+    [self.btn_WithglassedResults setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //change the results to be displayed
+    self.nakedEyeResultDisplayTable.hidden = true;
+    self.withGlassesResultDisplayTable.hidden = false;
+}
 
 #pragma mark - Table view data source
 
@@ -50,18 +93,19 @@
      UITableViewCell *cell = nil;
      if(tableView.tag ==0){
          //naked eye result cell
-         cell = [tableView dequeueReusableCellWithIdentifier:@"nakedEyeResultsTableCell" forIndexPath:indexPath];
+         cell = [tableView dequeueReusableCellWithIdentifier:@"nakedEyeResultsTableCell"  forIndexPath:indexPath];
          NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [nakedEyeResultsArray objectAtIndex:indexPath.row];
-         cell.textLabel.text = [NSString stringWithFormat:@"%@:Left:%@,Right:%@,Distance:%@m", recordsForCurrentUser.currentTime, recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.textLabel.text = [NSString stringWithFormat:@"      Result for  Left Eye: %@,   Right Eye: %@,  Distance: %@m",  recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.detailTextLabel.text = [NSString stringWithFormat:@"         Tested at %@", recordsForCurrentUser.currentTime];
 
      }else if (tableView.tag ==1){//
          //with glasses eye result cell
          cell = [tableView dequeueReusableCellWithIdentifier:@"withGlassesResultsTableCell" forIndexPath:indexPath];
          NSArray *withGlassesResultsArray = [[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName];
          allRecords *recordsForCurrentUser = [withGlassesResultsArray objectAtIndex:indexPath.row];
-         cell.textLabel.text = [NSString stringWithFormat:@"%@:Left:%@,Right:%@,Distance:%@m", recordsForCurrentUser.currentTime, recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
-
+         cell.textLabel.text = [NSString stringWithFormat:@"      Result for  Left Eye: %@,   Right Eye: %@,  Distance: %@m",  recordsForCurrentUser.lefteyeResult, recordsForCurrentUser.righteyeResult, recordsForCurrentUser.testMeters];
+         cell.detailTextLabel.text = [NSString stringWithFormat:@"         Tested at %@", recordsForCurrentUser.currentTime];
      }
      return cell;
 }

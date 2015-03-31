@@ -10,5 +10,7 @@
 
 @interface ResultsDisplayViewController : UIViewController
 @property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) IBOutlet UIButton *btn_NakedeyeResults;
+@property (strong, nonatomic) IBOutlet UIButton *btn_WithglassedResults;
 
 @end
