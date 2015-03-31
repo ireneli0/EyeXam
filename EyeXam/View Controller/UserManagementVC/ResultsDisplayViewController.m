@@ -32,17 +32,17 @@ alpha:1.0]
     self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     self.userNameLabel.text = self.userName;
     //set attributes to button
-    self.btn_NakedeyeResults.layer.borderColor = UIColorFromRGB(0x1390FF).CGColor;
+    self.btn_NakedeyeResults.layer.borderColor = UIColorFromRGB(0x1ABC9C).CGColor;
     self.btn_NakedeyeResults.layer.borderWidth = 0.5;
     self.btn_NakedeyeResults.layer.cornerRadius = 10;
     [self.btn_NakedeyeResults addTarget:self action:@selector(showNakedeyeResults:) forControlEvents:UIControlEventTouchUpInside];
-    self.btn_WithglassedResults.layer.borderColor = UIColorFromRGB(0x1390FF).CGColor;
+    self.btn_WithglassedResults.layer.borderColor = UIColorFromRGB(0x1ABC9C).CGColor;
     self.btn_WithglassedResults.layer.borderWidth = 0.5;
     self.btn_WithglassedResults.layer.cornerRadius = 10;
     [self.btn_WithglassedResults addTarget:self action:@selector(showWithglassesResults:) forControlEvents:UIControlEventTouchUpInside];
     
     //initial displaying results
-    self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0x1390FF);
+    self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0x1ABC9C);
     [self.btn_NakedeyeResults setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.nakedEyeResultDisplayTable.hidden = false;
     self.withGlassesResultDisplayTable.hidden = true;
@@ -50,10 +50,10 @@ alpha:1.0]
 
 -(IBAction)showNakedeyeResults:(id)sender{
     //change color attributes to buttons
-    self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0x1390FF);
+    self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0x1ABC9C);
     [self.btn_NakedeyeResults setTitleColor:UIColorFromRGB(0xFFFFFF) forState:UIControlStateNormal];
     self.btn_WithglassedResults.backgroundColor = UIColorFromRGB(0xFFFFFF);
-    [self.btn_WithglassedResults setTitleColor:UIColorFromRGB(0x1390FF) forState:UIControlStateNormal];
+    [self.btn_WithglassedResults setTitleColor:UIColorFromRGB(0x1ABC9C) forState:UIControlStateNormal];
     //change the results to be displayed
     self.nakedEyeResultDisplayTable.hidden = false;
     self.withGlassesResultDisplayTable.hidden = true;
@@ -62,8 +62,8 @@ alpha:1.0]
 -(IBAction)showWithglassesResults:(id)sender{
     //change color attributes to buttons
     self.btn_NakedeyeResults.backgroundColor = UIColorFromRGB(0xFFFFFF);
-    [self.btn_NakedeyeResults setTitleColor:UIColorFromRGB(0x1390FF) forState:UIControlStateNormal];
-    self.btn_WithglassedResults.backgroundColor = UIColorFromRGB(0x1390FF);
+    [self.btn_NakedeyeResults setTitleColor:UIColorFromRGB(0x1ABC9C) forState:UIControlStateNormal];
+    self.btn_WithglassedResults.backgroundColor = UIColorFromRGB(0x1ABC9C);
     [self.btn_WithglassedResults setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     //change the results to be displayed
     self.nakedEyeResultDisplayTable.hidden = true;
