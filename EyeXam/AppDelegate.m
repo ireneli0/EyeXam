@@ -34,7 +34,7 @@ alpha:1.0]
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
     
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x1abc9c)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x61e2c9)];
     
     if (self.authenticatedUser){
         self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
