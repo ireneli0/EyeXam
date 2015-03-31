@@ -23,6 +23,7 @@
     self.distanceSlider.value = 0.0;
     //default value is naked eye
     self.wearGlasses = @"Naked eye";
+
     [self.distanceSlider setThumbImage:[UIImage imageNamed:@"slider_dot.png"] forState:UIControlStateNormal];
     [self.distanceSlider setMinimumTrackImage:[UIImage imageNamed:@"slider_indicator.png"] forState:UIControlStateNormal];
     [self.distanceSlider setMaximumTrackImage:[UIImage imageNamed:@"slider_containder.png"] forState:UIControlStateNormal];
@@ -37,7 +38,9 @@
     float distanceValue = self.distanceSlider.value * 3 +2;
     self.distanceLabel.text = [NSString stringWithFormat:@"%.1f m", distanceValue];
 }
-
+- (CGRect)trackRectForBounds:(CGRect)bounds{
+    return bounds;
+}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"DoneAdjustingDistance"]){
         if ([segue.destinationViewController isKindOfClass:[NewTestViewController class]]) {
