@@ -29,11 +29,11 @@
   withrighteyeResult:(NSString *)righteyeResult
             withTime:(NSString *)currenttime;
 
--(NSArray *)getAllUsers;
+-(NSMutableArray *)getAllUsers;
 -(NSArray *)getAllInfoForSelectedUser:(NSString *)currentUser;
 -(NSArray *)getAllRecordsForSelectedUser:(NSString *)currentUser;
--(NSArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser;
--(NSArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser;
+-(NSMutableArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser;
+-(NSMutableArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser;
 -(BOOL)deleteSelectedUser:(NSString *)selectedUser;
 -(BOOL)deleteSelectedUserRecord:(NSString *)selectedUser;
 -(BOOL)checkNewUserisExists:(NSString *)user;

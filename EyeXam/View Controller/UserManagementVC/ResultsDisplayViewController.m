@@ -87,6 +87,36 @@ alpha:1.0]
     return 0;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(tableView.tag == 0){
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            
+            NSMutableArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
+            allRecords *recordsForCurrentUser = [nakedEyeResultsArray objectAtIndex:indexPath.row];
+            [[DatabaseInstance getSharedInstance] deleteSelectedRecord:self.userName :recordsForCurrentUser.currentTime];
+            [nakedEyeResultsArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+        }
+        
+    }
+    else{
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            
+            NSMutableArray *withGlassesResultsArray = [[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName];
+            allRecords *recordsForCurrentUser = [withGlassesResultsArray objectAtIndex:indexPath.row];
+            [[DatabaseInstance getSharedInstance] deleteSelectedRecord:self.userName :recordsForCurrentUser.currentTime];
+            [withGlassesResultsArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+        }
+        
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      UITableViewCell *cell = nil;

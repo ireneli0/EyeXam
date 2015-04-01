@@ -154,7 +154,7 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
--(NSArray *)getAllUsers{
+-(NSMutableArray *)getAllUsers{
     //database initialization
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -288,7 +288,7 @@ static sqlite3_stmt *statement = nil;
 
 }
 
--(NSArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser{
+-(NSMutableArray *)getNakedEyeRecordsForSelectedUser:(NSString *)currentUser{
     //database initialization
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -338,7 +338,7 @@ static sqlite3_stmt *statement = nil;
 
 }
 
--(NSArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser{
+-(NSMutableArray *)getWithGlassesRecordsForSelectedUser:(NSString *)currentUser{
     //database initialization
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
