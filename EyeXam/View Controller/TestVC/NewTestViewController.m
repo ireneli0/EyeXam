@@ -65,6 +65,7 @@
 @property (nonatomic) SystemSoundID right_soundID;
 @property (nonatomic) SystemSoundID starttest_soundID;
 @property (nonatomic) SystemSoundID changeeye_soundID;
+@property (nonatomic) SystemSoundID testcompleted_soundID;
 
 //result
 @property (nonatomic) float resultForRightEye;
@@ -103,9 +104,12 @@
     self.resultForLeftEye =0;
     self.resultForRightEye = 0;
     
-//    self.accelorometerLabel.hidden = YES;
-//    self.gyroLabel.hidden = YES;
-//    self.magnetometerLabel.hidden = YES;
+    self.accelorometerLabel.hidden = YES;
+    self.gyroLabel.hidden = YES;
+    self.magnetometerLabel.hidden = YES;
+    self.instructionLabel.hidden = YES;
+    self.testFlowInstructionLabel.hidden = YES;
+    
 
     //initialize instructionImageView
     self.instructionImageView  =[[UIImageView alloc] initWithFrame:CGRectMake(10, 30, 1024, 768)];
@@ -114,7 +118,7 @@
     self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
     
     //initialize eCharacterImageView
-    self.eCharacterImageView =[[UIImageView alloc] initWithFrame:CGRectMake(430,350,500,500)];
+    self.eCharacterImageView =[[UIImageView alloc] initWithFrame:CGRectMake(350,280,500,500)];
     [self.view addSubview:self.eCharacterImageView];
     
     //initialize the sounds
@@ -158,6 +162,10 @@
     NSURL *changeeye_soundURL = [NSURL fileURLWithPath:changeeye_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)changeeye_soundURL,&_changeeye_soundID);
     
+    //test completed
+    NSString *testcompleted_soundPath = [[NSBundle mainBundle]pathForResource:@"testcompleted" ofType:@"mp3"];
+    NSURL *testcompleted_soundURL = [NSURL fileURLWithPath:testcompleted_soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)testcompleted_soundURL,&_changeeye_soundID);
     
 }
 - (void)viewDidDisappear:(BOOL)animated{
@@ -200,9 +208,6 @@
             
         case -1:
             //calibrating phrase
-            //AudioServicesPlaySystemSound(_calibration_soundID);
-
-            
             if(self.buttonPressedCount == -5){
                 //start calibrating
                 self.testFlowInstructionLabel.text =@"Calibrating...->up";
@@ -494,8 +499,8 @@
         randomDirection =  rand() % 4;
         
         //set up the location of UIImageView
-        float offset_x = 430 - (self.meterValue - 2)*43;
-        float offset_y = 350 - (self.meterValue - 2)*33;
+        float offset_x = 399 - (self.meterValue - 2)*43;
+        float offset_y = 300 - (self.meterValue - 2)*33;
         NSLog(@"current Direction == %d, i = %d", randomDirection, i);
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", i]];
         UIImageOrientation imageOrientation = [self getImageOrientation:randomDirection];
@@ -583,8 +588,8 @@
         self.resultForLeftEye = resultForEye;
         
         //standardize the display form of results
-        int resultRight = 20/self.resultForRightEye;
-        int resultLeft = 20/self.resultForLeftEye;
+        int resultRight = ceil(20/self.resultForRightEye);
+        int resultLeft = ceil(20/self.resultForLeftEye);
         
         NSString *resultString = [NSString stringWithFormat:@"Your test result is:\nright:20/%d\nleft:20/%d\nWould you like to save it?", resultRight,resultLeft];
         
@@ -592,6 +597,7 @@
         UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Completed!" message:resultString delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No, thanks" ,nil];
         saveAlert.tag = 1;
         [saveAlert show];
+        AudioServicesPlaySystemSound(_testcompleted_soundID);
     }
         //after finishing testing one eye, cancel the thread
     [self.aThread cancel];

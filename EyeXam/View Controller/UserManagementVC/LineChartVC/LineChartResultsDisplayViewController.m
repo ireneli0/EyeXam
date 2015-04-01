@@ -195,10 +195,8 @@ alpha:1.0]
         //naked_right
         NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
         allRecords *recordsForCurrentUser = [nakedEyeResultsArray objectAtIndex:horizontalIndex];
-
-        NSArray *resultForRightEye = [recordsForCurrentUser.righteyeResult componentsSeparatedByString: @"/"];
-        float nakedRight = [[resultForRightEye objectAtIndex:0] floatValue]/[[resultForRightEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"Right naked eye:%.2f", nakedRight] unitText:@""];
+        
+        [self.informationView setValueText:[NSString stringWithFormat:@"Right naked eye:%@", recordsForCurrentUser.righteyeResult] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
 
     }else if (lineIndex ==1){
@@ -206,9 +204,7 @@ alpha:1.0]
         NSArray *nakedEyeResultsArray = [[DatabaseInstance getSharedInstance] getNakedEyeRecordsForSelectedUser:self.userName];
         allRecords *recordsForCurrentUser = [nakedEyeResultsArray objectAtIndex:horizontalIndex];
         
-        NSArray *resultForLeftEye = [recordsForCurrentUser.lefteyeResult componentsSeparatedByString: @"/"];
-        float nakedLeft = [[resultForLeftEye objectAtIndex:0] floatValue]/[[resultForLeftEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"Left naked eye:%.2f", nakedLeft] unitText:@""];
+        [self.informationView setValueText:[NSString stringWithFormat:@"Left naked eye:%@", recordsForCurrentUser.lefteyeResult] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
         
     }else if(lineIndex == 2){
@@ -216,9 +212,7 @@ alpha:1.0]
         NSArray *withGlassesResultsArray = [[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName];
         allRecords *recordsForCurrentUser = [withGlassesResultsArray objectAtIndex:horizontalIndex];
         
-        NSArray *resultForRightEye = [recordsForCurrentUser.righteyeResult componentsSeparatedByString: @"/"];
-        float glassesRight = [[resultForRightEye objectAtIndex:0] floatValue]/[[resultForRightEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"Right eye with glasses:%.2f", glassesRight] unitText:@""];
+        [self.informationView setValueText:[NSString stringWithFormat:@"Right eye with glasses:%@", recordsForCurrentUser.righteyeResult] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
     }
     else if (lineIndex == 3){
@@ -226,9 +220,7 @@ alpha:1.0]
         NSArray *withGlassesResultsArray = [[DatabaseInstance getSharedInstance] getWithGlassesRecordsForSelectedUser:self.userName];
         allRecords *recordsForCurrentUser = [withGlassesResultsArray objectAtIndex:horizontalIndex];
         
-        NSArray *resultForLeftEye = [recordsForCurrentUser.lefteyeResult componentsSeparatedByString: @"/"];
-        float glassesLeft = [[resultForLeftEye objectAtIndex:0] floatValue]/[[resultForLeftEye objectAtIndex:1] floatValue];
-        [self.informationView setValueText:[NSString stringWithFormat:@"Left eye with glasses:%.2f", glassesLeft] unitText:@""];
+        [self.informationView setValueText:[NSString stringWithFormat:@"Left eye with glasses:%@", recordsForCurrentUser.lefteyeResult] unitText:@""];
         [self.informationView setHidden:NO animated:YES];
         
     }else{
