@@ -28,6 +28,7 @@
 		180E1A691ACB87AF0073354F /* right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A621ACB87AF0073354F /* right.wav */; };
 		180E1A6A1ACB87AF0073354F /* starttest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A631ACB87AF0073354F /* starttest.wav */; };
 		180E1A6B1ACB87AF0073354F /* up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A641ACB87AF0073354F /* up.wav */; };
+		180E1A6D1ACB8C000073354F /* testcompleted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A6C1ACB8C000073354F /* testcompleted.mp3 */; };
 		186161C21AB8C53000A7DECC /* allRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 186161C11AB8C53000A7DECC /* allRecords.m */; };
 		187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 187ED5B71ACB2164003C7696 /* button_0.0.png */; };
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
@@ -121,6 +122,7 @@
 		180E1A621ACB87AF0073354F /* right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = right.wav; path = SoundResource/right.wav; sourceTree = "<group>"; };
 		180E1A631ACB87AF0073354F /* starttest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = starttest.wav; path = SoundResource/starttest.wav; sourceTree = "<group>"; };
 		180E1A641ACB87AF0073354F /* up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = up.wav; path = SoundResource/up.wav; sourceTree = "<group>"; };
+		180E1A6C1ACB8C000073354F /* testcompleted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = testcompleted.mp3; path = SoundResource/testcompleted.mp3; sourceTree = "<group>"; };
 		186161C01AB8C53000A7DECC /* allRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allRecords.h; path = "EyeXam/View Controller/allRecords.h"; sourceTree = "<group>"; };
 		186161C11AB8C53000A7DECC /* allRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = allRecords.m; path = "EyeXam/View Controller/allRecords.m"; sourceTree = "<group>"; };
 		187ED5B71ACB2164003C7696 /* button_0.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_0.0.png; path = EyeXam/ImageResource/buttons/button_0.0.png; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 		CEEC121C1A9D8F99008FF50F /* EyeXam */ = {
 			isa = PBXGroup;
 			children = (
+				180E1A6C1ACB8C000073354F /* testcompleted.mp3 */,
 				180E1A5E1ACB87AF0073354F /* calibration.wav */,
 				180E1A5F1ACB87AF0073354F /* changeeye.wav */,
 				180E1A601ACB87AF0073354F /* down.wav */,
@@ -654,6 +657,7 @@
 				CEC17F931ACB5E1B00554403 /* up_indicator.PNG in Resources */,
 				18015FF51AC8C2600023604C /* 13.png in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
+				180E1A6D1ACB8C000073354F /* testcompleted.mp3 in Resources */,
 				18015FF31AC8C2600023604C /* 11.png in Resources */,
 				18015FE81AC8C2600023604C /* 0.png in Resources */,
 				18015FEF1AC8C2600023604C /* 7.png in Resources */,
