@@ -28,7 +28,6 @@
 		180E1A691ACB87AF0073354F /* right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A621ACB87AF0073354F /* right.wav */; };
 		180E1A6A1ACB87AF0073354F /* starttest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A631ACB87AF0073354F /* starttest.wav */; };
 		180E1A6B1ACB87AF0073354F /* up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A641ACB87AF0073354F /* up.wav */; };
-		180E1A6D1ACB8C000073354F /* testcompleted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 180E1A6C1ACB8C000073354F /* testcompleted.mp3 */; };
 		186161C21AB8C53000A7DECC /* allRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 186161C11AB8C53000A7DECC /* allRecords.m */; };
 		187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 187ED5B71ACB2164003C7696 /* button_0.0.png */; };
 		18AEC24A1AB6985F009B3BE4 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18AEC2481AB6985F009B3BE4 /* correct.wav */; };
@@ -79,6 +78,9 @@
 		CEC17F911ACB5E1B00554403 /* left_indicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F8D1ACB5E1B00554403 /* left_indicator.PNG */; };
 		CEC17F921ACB5E1B00554403 /* right_indicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F8E1ACB5E1B00554403 /* right_indicator.PNG */; };
 		CEC17F931ACB5E1B00554403 /* up_indicator.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F8F1ACB5E1B00554403 /* up_indicator.PNG */; };
+		CEC17F951ACBAEE900554403 /* testcompleted.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F941ACBAEE900554403 /* testcompleted.wav */; };
+		CEC17F971ACBB51C00554403 /* connectNode.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F961ACBB51C00554403 /* connectNode.png */; };
+		CEC17F991ACBBF9000554403 /* startTest.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC17F981ACBBF9000554403 /* startTest.png */; };
 		CEDF152A1A9D961F00CF8AC4 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF15291A9D961F00CF8AC4 /* RadioButton.m */; };
 		CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152B1A9D962E00CF8AC4 /* checked.png */; };
 		CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDF152C1A9D962E00CF8AC4 /* checked@2x.png */; };
@@ -122,7 +124,6 @@
 		180E1A621ACB87AF0073354F /* right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = right.wav; path = SoundResource/right.wav; sourceTree = "<group>"; };
 		180E1A631ACB87AF0073354F /* starttest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = starttest.wav; path = SoundResource/starttest.wav; sourceTree = "<group>"; };
 		180E1A641ACB87AF0073354F /* up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = up.wav; path = SoundResource/up.wav; sourceTree = "<group>"; };
-		180E1A6C1ACB8C000073354F /* testcompleted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = testcompleted.mp3; path = SoundResource/testcompleted.mp3; sourceTree = "<group>"; };
 		186161C01AB8C53000A7DECC /* allRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allRecords.h; path = "EyeXam/View Controller/allRecords.h"; sourceTree = "<group>"; };
 		186161C11AB8C53000A7DECC /* allRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = allRecords.m; path = "EyeXam/View Controller/allRecords.m"; sourceTree = "<group>"; };
 		187ED5B71ACB2164003C7696 /* button_0.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_0.0.png; path = EyeXam/ImageResource/buttons/button_0.0.png; sourceTree = "<group>"; };
@@ -192,6 +193,9 @@
 		CEC17F8D1ACB5E1B00554403 /* left_indicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left_indicator.PNG; path = EyeXam/ImageResource/calibrate_instructions/left_indicator.PNG; sourceTree = "<group>"; };
 		CEC17F8E1ACB5E1B00554403 /* right_indicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = right_indicator.PNG; path = EyeXam/ImageResource/calibrate_instructions/right_indicator.PNG; sourceTree = "<group>"; };
 		CEC17F8F1ACB5E1B00554403 /* up_indicator.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up_indicator.PNG; path = EyeXam/ImageResource/calibrate_instructions/up_indicator.PNG; sourceTree = "<group>"; };
+		CEC17F941ACBAEE900554403 /* testcompleted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = testcompleted.wav; path = SoundResource/testcompleted.wav; sourceTree = "<group>"; };
+		CEC17F961ACBB51C00554403 /* connectNode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = connectNode.png; path = EyeXam/ImageResource/calibrate_instructions/connectNode.png; sourceTree = "<group>"; };
+		CEC17F981ACBBF9000554403 /* startTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startTest.png; path = EyeXam/ImageResource/calibrate_instructions/startTest.png; sourceTree = "<group>"; };
 		CEDF15281A9D961F00CF8AC4 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioButton.h; path = EyeXam/Model/RadioButton/RadioButton.h; sourceTree = "<group>"; };
 		CEDF15291A9D961F00CF8AC4 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioButton.m; path = EyeXam/Model/RadioButton/RadioButton.m; sourceTree = "<group>"; };
 		CEDF152B1A9D962E00CF8AC4 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checked.png; path = "EyeXam/ImageResource/radio-res-ios/checked.png"; sourceTree = "<group>"; };
@@ -386,6 +390,8 @@
 		CEC17F831ACB5BE900554403 /* calibrate_instructions */ = {
 			isa = PBXGroup;
 			children = (
+				CEC17F981ACBBF9000554403 /* startTest.png */,
+				CEC17F961ACBB51C00554403 /* connectNode.png */,
 				CEC17F8C1ACB5E1B00554403 /* down_indicator.PNG */,
 				CEC17F8D1ACB5E1B00554403 /* left_indicator.PNG */,
 				CEC17F8E1ACB5E1B00554403 /* right_indicator.PNG */,
@@ -483,7 +489,7 @@
 		CEEC121C1A9D8F99008FF50F /* EyeXam */ = {
 			isa = PBXGroup;
 			children = (
-				180E1A6C1ACB8C000073354F /* testcompleted.mp3 */,
+				CEC17F941ACBAEE900554403 /* testcompleted.wav */,
 				180E1A5E1ACB87AF0073354F /* calibration.wav */,
 				180E1A5F1ACB87AF0073354F /* changeeye.wav */,
 				180E1A601ACB87AF0073354F /* down.wav */,
@@ -643,6 +649,7 @@
 				187ED5B81ACB2164003C7696 /* button_0.0.png in Resources */,
 				CEBA3DBE1ACB1CF400EA4EB8 /* slider_dot.png in Resources */,
 				18015FEB1AC8C2600023604C /* 3.png in Resources */,
+				CEC17F991ACBBF9000554403 /* startTest.png in Resources */,
 				180E1A661ACB87AF0073354F /* changeeye.wav in Resources */,
 				180E1A671ACB87AF0073354F /* down.wav in Resources */,
 				CE249BE51AB6282700DE63A1 /* correct.png in Resources */,
@@ -653,12 +660,13 @@
 				180E1A691ACB87AF0073354F /* right.wav in Resources */,
 				CEDF15301A9D962E00CF8AC4 /* checked@2x.png in Resources */,
 				CEC17F911ACB5E1B00554403 /* left_indicator.PNG in Resources */,
+				CEC17F951ACBAEE900554403 /* testcompleted.wav in Resources */,
 				CEBA3DBF1ACB1CF400EA4EB8 /* slider_indicator.png in Resources */,
 				CEC17F931ACB5E1B00554403 /* up_indicator.PNG in Resources */,
 				18015FF51AC8C2600023604C /* 13.png in Resources */,
 				CEDF152F1A9D962E00CF8AC4 /* checked.png in Resources */,
-				180E1A6D1ACB8C000073354F /* testcompleted.mp3 in Resources */,
 				18015FF31AC8C2600023604C /* 11.png in Resources */,
+				CEC17F971ACBB51C00554403 /* connectNode.png in Resources */,
 				18015FE81AC8C2600023604C /* 0.png in Resources */,
 				18015FEF1AC8C2600023604C /* 7.png in Resources */,
 				CEC17F921ACB5E1B00554403 /* right_indicator.PNG in Resources */,

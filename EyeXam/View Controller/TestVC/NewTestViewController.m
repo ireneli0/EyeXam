@@ -109,10 +109,10 @@
     self.magnetometerLabel.hidden = YES;
     self.instructionLabel.hidden = YES;
     self.testFlowInstructionLabel.hidden = YES;
-    
 
     //initialize instructionImageView
     self.instructionImageView  =[[UIImageView alloc] initWithFrame:CGRectMake(10, 30, 1024, 768)];
+    [self.instructionImageView setImage:[UIImage imageNamed:@"connectNode.png"]];
     [self.view addSubview:self.instructionImageView];
     
     self.instructionLabel.text = [NSString stringWithFormat:@"Please stand away %.1f meters from the screen.", self.meterValue];
@@ -163,9 +163,9 @@
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)changeeye_soundURL,&_changeeye_soundID);
     
     //test completed
-    NSString *testcompleted_soundPath = [[NSBundle mainBundle]pathForResource:@"testcompleted" ofType:@"mp3"];
+    NSString *testcompleted_soundPath = [[NSBundle mainBundle]pathForResource:@"testcompleted" ofType:@"wav"];
     NSURL *testcompleted_soundURL = [NSURL fileURLWithPath:testcompleted_soundPath];
-    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)testcompleted_soundURL,&_changeeye_soundID);
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)testcompleted_soundURL,&_testcompleted_soundID);
     
 }
 - (void)viewDidDisappear:(BOOL)animated{
@@ -249,7 +249,7 @@
             }else if (self.buttonPressedCount == -1){
                 self.testFlowInstructionLabel.text =@"Calibrating phrase completed!";
                 AudioServicesPlaySystemSound(_starttest_soundID);
-                [self.instructionImageView removeFromSuperview];
+                [self.instructionImageView setImage:[UIImage imageNamed:@"startTest.png"]];
                 self.rightOriginMagX = self.magX;
                 self.rightOriginMagY = self.magY;
                 self.rightOriginMagZ = self.magZ;
@@ -258,11 +258,11 @@
                 self.buttonPressedCount ++;
                 self.testFlowFlag ++;
             }
-                
             
             break;
         case 0:
             //1st testing phrase:right
+            [self.instructionImageView removeFromSuperview];
             self.testFlowInstructionLabel.text =@"Testing right eye...";
 
             if (self.buttonPressedCount ==0) {

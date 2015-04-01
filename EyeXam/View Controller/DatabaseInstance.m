@@ -29,13 +29,6 @@ static sqlite3_stmt *statement = nil;
 -(BOOL)createTables{
     BOOL isSuccess = YES;
     char *errMsg;
-    //database initialization
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    documentPath = [[NSString alloc] initWithString:
-//                    [documentsDirectory stringByAppendingPathComponent: @"EyeXam.db"]];
-
-    
     //create database if it does not exist
 
       if(sqlite3_open([documentPath UTF8String], &database)==SQLITE_OK){
