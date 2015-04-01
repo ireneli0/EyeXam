@@ -136,24 +136,24 @@
     NSString *up_soundPath = [[NSBundle mainBundle]pathForResource:@"up" ofType:@"wav"];
     NSURL *up_soundURL = [NSURL fileURLWithPath:up_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)up_soundURL,&_up_soundID);
-//    //down
+    //down
     NSString *down_soundPath = [[NSBundle mainBundle]pathForResource:@"down" ofType:@"wav"];
     NSURL *down_soundURL = [NSURL fileURLWithPath:down_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)down_soundURL,&_down_soundID);
-//    //left
+    //left
     NSString *left_soundPath = [[NSBundle mainBundle]pathForResource:@"left" ofType:@"wav"];
     NSURL *left_soundURL = [NSURL fileURLWithPath:left_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)left_soundURL,&_left_soundID);
-//    //right
+    //right
     NSString *right_soundPath = [[NSBundle mainBundle]pathForResource:@"right" ofType:@"wav"];
     NSURL *right_soundURL = [NSURL fileURLWithPath:right_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)right_soundURL,&_right_soundID);
     
-//    //start Test
+    //start Test
     NSString *starttest_soundPath = [[NSBundle mainBundle]pathForResource:@"starttest" ofType:@"wav"];
     NSURL *starttest_soundURL = [NSURL fileURLWithPath:starttest_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)starttest_soundURL,&_starttest_soundID);
-//    //change Eye
+    //change Eye
     NSString *changeeye_soundPath = [[NSBundle mainBundle]pathForResource:@"changeeye" ofType:@"wav"];
     NSURL *changeeye_soundURL = [NSURL fileURLWithPath:changeeye_soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)changeeye_soundURL,&_changeeye_soundID);
@@ -200,17 +200,21 @@
             
         case -1:
             //calibrating phrase
-                        AudioServicesPlaySystemSound(_calibration_soundID);
-            self.testFlowInstructionLabel.text =@"Calibrating...->up";
-            [self.instructionImageView setImage:[UIImage imageNamed:@"up_indicator.PNG"]];
+            //AudioServicesPlaySystemSound(_calibration_soundID);
+
+            
             if(self.buttonPressedCount == -5){
                 //start calibrating
+                self.testFlowInstructionLabel.text =@"Calibrating...->up";
+                [self.instructionImageView setImage:[UIImage imageNamed:@"up_indicator.PNG"]];
+                AudioServicesPlaySystemSound(_up_soundID);
                 self.buttonPressedCount ++;
             
             }else if(self.buttonPressedCount == -4){
                 //original up axes value
                 self.testFlowInstructionLabel.text =@"Calibrating...->down";
                 [self.instructionImageView setImage:[UIImage imageNamed:@"down_indicator.PNG"]];
+                AudioServicesPlaySystemSound(_down_soundID);
                 self.upOriginMagX = self.magX;
                 self.upOriginMagY = self.magY;
                 self.upOriginMagZ = self.magZ;
@@ -220,6 +224,7 @@
             }else if(self.buttonPressedCount == -3){
                 self.testFlowInstructionLabel.text =@"Calibrating...->left";
                 [self.instructionImageView setImage:[UIImage imageNamed:@"left_indicator.PNG"]];
+                AudioServicesPlaySystemSound(_left_soundID);
                 self.downOriginMagX = self.magX;
                 self.downOriginMagY = self.magY;
                 self.downOriginMagZ = self.magZ;
@@ -229,6 +234,7 @@
             }else if(self.buttonPressedCount == -2){
                 self.testFlowInstructionLabel.text =@"Calibrating...->right";
                 [self.instructionImageView setImage:[UIImage imageNamed:@"right_indicator.PNG"]];
+                AudioServicesPlaySystemSound(_right_soundID);
                 self.leftOriginMagX = self.magX;
                 self.leftOriginMagY = self.magY;
                 self.leftOriginMagZ = self.magZ;
@@ -237,6 +243,7 @@
                 self.buttonPressedCount ++;
             }else if (self.buttonPressedCount == -1){
                 self.testFlowInstructionLabel.text =@"Calibrating phrase completed!";
+                AudioServicesPlaySystemSound(_starttest_soundID);
                 [self.instructionImageView removeFromSuperview];
                 self.rightOriginMagX = self.magX;
                 self.rightOriginMagY = self.magY;
@@ -375,6 +382,8 @@
 - (void)close:(id)sender{
     [settingsPopoverController dismissPopoverAnimated:YES completion:^{
         [self popoverControllerDidDismissPopover:settingsPopoverController];
+        AudioServicesPlaySystemSound(_calibration_soundID);
+        
     }];
 }
 
@@ -568,6 +577,7 @@
         self.changeEyeAlert = [[UIAlertView alloc] initWithTitle:@"Change to left eye!" message:resultString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         self.changeEyeAlert.tag = 0;
         [self.changeEyeAlert show];
+        AudioServicesPlaySystemSound(_changeeye_soundID);
 
     }else if(self.testFlowFlag ==2){
         self.resultForLeftEye = resultForEye;
@@ -578,8 +588,8 @@
         
         NSString *resultString = [NSString stringWithFormat:@"Your test result is:\nright:20/%d\nleft:20/%d\nWould you like to save it?", resultRight,resultLeft];
         
-        self.testFlowInstructionLabel.text = @"Finished!";
-        UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Finished!" message:resultString delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No, thanks" ,nil];
+        self.testFlowInstructionLabel.text = @"Completed!";
+        UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Completed!" message:resultString delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No, thanks" ,nil];
         saveAlert.tag = 1;
         [saveAlert show];
     }
